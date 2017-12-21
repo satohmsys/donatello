@@ -15,29 +15,27 @@ const path = require( 'path' );
 const ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
 // const extractTextPlugin = new ExtractTextPlugin( 'css/[name].css');
 
-var path = {
+var paths = {
 	assets: 'assets',
 	context: './_dev' ,
 	output: {
-		path : './_public/assets/'
+		path : './_public/assets'
 	},
-	contentBase: './_public/'
+	contentBase: './_public'
 };
-
-
 
 module.exports = [{
 	/**
 	* buildのディレクトリ
 	*/
-	context: path.join( __dirname , './_dev' ),
+	context: path.join( __dirname , paths.context ),
 
 	/**
 	* buildの起点となるファイル
 	* 複数指定する場合、Object だと出力ファイルも複数
 	*/
 	entry: {
-		bundle: './js/index.js',
+		bundle: './js/index.js'
 	},
 
 	/**
@@ -46,16 +44,16 @@ module.exports = [{
 	* publicPath webpack-dev-server起動時にこの相対パスから配信
 	*/
 	output:{
-		path: path.join( __dirname , './_public/assets/js/' ),
-		publicPath: '/assets/js/',
-		filename: 'bundle.js'
+		path: path.join( __dirname , paths.output.path + '/js/' ),
+		publicPath: '/assets/',
+		filename: '[name].js'
 	},
 
 	/**
 	* devServer設定
 	*/
 	devServer: {
-		contentBase: path.join( __dirname , './_public/'),
+		contentBase: path.join( __dirname , paths.contentBase),
 		inline: true,
 		hot: true,
 		port: 3000
@@ -86,8 +84,9 @@ module.exports = [{
 				exclude: '/node_modules',
 				loader: ExtractTextPlugin.extract( {
 					fallback:'style-loader',
-					use: 'css-loader!sass-loader'})
-				// loaders: [ 'style-loader', 'css-loader', 'sass-loader']
+					use: 'css-loader!sass-loader'
+				})
+				// loader: ExtractTextPlugin.extract( 'style-loader','css-loader')
 			},
 			{
 				test: /\.css$/,
@@ -96,6 +95,7 @@ module.exports = [{
 					fallback: 'style-loader',
 					use: 'css-loader'
 				})
+				// loader: ExtractTextPlugin.extract('style-loader','css-loader?-url&minimize&sourceMap!sass-loader?outputStyle=expanded')
 			},
 			{
 				test: /\.(gif|png|jpg|eot|woff|wof|ttf|svg|css)$/,
@@ -110,7 +110,7 @@ module.exports = [{
 	*/
 	plugins: [
 		new webpack.HotModuleReplacementPlugin(),
-		new ExtractTextPlugin( 'css/[name].css')
+		new ExtractTextPlugin( '/css/[name].css')
 		//new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
     ],
 
@@ -126,5 +126,69 @@ module.exports = [{
     resolve: {
     	extensions: ['.scss', '.js']
     }
-}
+},
+{
+	/**
+	* buildのディレクトリ
+	*/
+	context: path.join( __dirname , paths.context ),
+
+	/**
+	* buildの起点となるファイル
+	* 複数指定する場合、Object だと出力ファイルも複数
+	*/
+	entry: {
+		index: './index.html'
+	},
+
+	/**
+	* 出力先
+	* OSによってdirnameのパスが異なるのでpath.joinで解決する
+	* publicPath webpack-dev-server起動時にこの相対パスから配信
+	*/
+	output:{
+		path: path.join( __dirname , paths.contentBase  ),
+		publicPath: './',
+		filename: '[name].html'
+	},
+
+	/**
+	* devServer設定
+	*/
+	// devServer: {
+	// 	contentBase: path.join( __dirname , paths.contentBase),
+	// 	inline: true,
+	// 	hot: true,
+	// 	port: 3000
+	// },
+
+	devtool: 'source-map',
+
+	/**
+	*ファイル変換
+	*loaderは右から左に適用
+	*/
+	module: {
+		loaders: [
+			{
+				test: /.html/,
+				loader: 'html-loader'
+			},
+			{
+				test: /\.js$/,
+				exclude: '/node_modules',
+				loader: 'babel-loader',
+				query: {
+					presets: [ 'es2015' ]				
+				}
+			},
+			{
+				test: /\.(gif|png|jpg|eot|woff|wof|ttf|svg|css)$/,
+				exclude: '/node_modules',				
+				loader: 'url-loader'
+			}
+		]
+	}
+},
+
 ]
