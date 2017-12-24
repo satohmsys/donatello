@@ -1,0 +1,1885 @@
+//////////////////////////////////////////
+
+//module
+
+//include by style.scss
+
+//////////////////////////////////////////
+
+
+
+////////////////////
+
+// header
+
+////////////////////
+
+/////// ヘッダー ラッパー
+.siteHeader
+{
+	line-height: 1;
+	padding-top: 20px;
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 10;
+	color: #fff;
+	
+	//////// メインヴィジュアルをスクロールで超過
+	// @at-root .scrollOverVisual:not(.navOpen) & {
+	@at-root .scrollOverVisual & {
+		&,
+		&_logo{
+			color: $green_black;
+		}
+		&_logo{
+			.handWrite{
+				color: $blue;
+			}
+		}	
+
+		@include break( sp, min ){
+			.button-nav a{
+				color: #fff;
+				background-color: $green_black;
+				&:before{
+					border-color: $green_black;
+				}
+			}
+		}	
+	}	
+
+	/////// navigation open (clicked and scroll	
+	@at-root .scrollOverVisual.navOpen & {
+		&,
+		&_logo{
+			color: #fff;
+		}		
+	}
+
+	 > .wrap{
+		width: 100%;
+		display: table;
+		.siteHeader_logo,
+		.siteHeader_nav	{
+			display: table-cell;
+			vertical-align: middle;
+		}
+	}
+
+	&_logo{
+		width: 100px;
+		line-height: 1;
+		color: #fff;
+		position: relative;
+		
+		a{
+			color: inherit;
+		}
+		
+		.name{
+			font-size: 1.25em;
+			font-family: $fontFamily_wf_bold;
+		}
+		.handWrite{
+			position: absolute;
+			top: 1.35em;
+			left: 2em;
+			color: $green_dark;
+			font-family: $fontFamily_damion;
+		}
+	}
+	
+
+	//////// media queries 
+	@include break( sp ){
+		padding-top: 0;
+		position: static;
+		
+		 > .wrap{
+			display: block;
+			.siteHeader_logo,
+			.siteHeader_nav	{
+				display: block;
+			}
+		}
+		&_logo{
+			position: fixed;
+			z-index: 10;
+			top: 20px;
+			
+			text-shadow: 0 0 5px rgba( #000, 0.15 );
+			.handWrite{
+				top: 0.8em;
+			}
+		}
+
+	} //max 580	
+}
+
+
+
+////////////////////
+
+// navigation
+
+////////////////////
+
+.siteHeader_nav
+{
+	float: right;
+	clear: both;
+	text-align: center;
+	letter-spacing: 0.04em;
+	font-size: 0.9em;
+	font-family: $fontFamily_wf_light;
+	
+
+
+	li
+	{
+		vertical-align: middle;
+		display: inline-block;
+		list-style: none;
+		text-align: center;
+		
+		&:last-child{
+			margin-right: 0;
+		}
+	}
+
+	li:not( .nav_contact ){
+		&:after{
+			margin-left: 15px;
+			margin-right: 15px;
+			content:  "/";
+			display: inline-block;
+			vertical-align: middle;
+		}
+		a{
+			line-height: 1;
+			// display: block;
+			color: inherit;
+			position: relative;
+			
+			&:before{
+				content: " ";
+				width: 0%;
+				height: 3px;
+				display: block;
+				margin: auto;
+				position: absolute;
+				transition: all 0.5s ease 0s;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				background-color: currentColor;
+			}
+
+			@include break( tab, min ){
+				@include mouseOver(){
+					&:not( .current ):before{
+						width: 100%;
+					}
+				}	
+			}
+
+			@include break( sp ){
+
+				color: #fff;
+				
+			}
+
+			
+		}
+	}
+
+	li.current,
+	li.current-menu-item
+	{
+		a{
+			pointer-events: none;
+		}
+		a:before{
+			width: 100%;
+		}
+	}
+
+
+	//////// media queries 
+	@include break( sp ){
+		font-size: 1em;
+		.wrap{
+		    width: 100%;
+		    height: 100%;
+		    display: flex;
+			max-width: none;
+			padding-top: 0%;
+			padding-right: 0;
+			padding-left: 0;
+		    flex-direction: column;
+		    justify-content: center;
+		    align-items: center;
+		    align-content: center;
+		    position: fixed;
+		    z-index: -10;
+		    top: 0;
+		    left: 0;		
+			float: none;
+			font-family: $fontFamily_wf_medium;
+		}
+		
+		li
+		{
+			font-size: 1.5em;
+			padding: 20px;
+			display: block;
+			opacity: 0;
+			position: relative;
+			z-index: -10;
+			transform: translateX(10px);
+			
+			//ナビ開いてない状態
+			a{
+				pointer-events: none;
+				z-index: -10;
+			}
+		}
+
+		li:not( .nav_contact ){
+			&:after{
+				display: none;
+			}
+		}		
+
+		.button-nav
+		{
+			padding-right: 0;
+			padding-left: 0;
+ 			a{
+				width: auto;
+				padding: 0.5em 1.5em;
+				margin-left: auto;
+				margin-right: auto;
+			}			
+		}
+
+		/////// navigation open (clicked
+		@at-root .navOpen &{
+			.wrap{
+				z-index: 10;
+			}
+			li{
+				opacity: 1;
+				transform: translateX(0px);
+
+				transition: all 0.3s ease 0s;
+			
+				@for $i from 1 through 6 {
+
+					&:nth-child( #{$i} ){
+						$delay: 0.85 + (0.15 * $i);
+						transition-delay: #{$delay}s;
+					}
+				}	
+
+				//ナビ開いた状態
+				a{
+					pointer-events: auto;
+					z-index: 9;
+				}						
+			}
+			
+		}
+
+	} //max 580
+
+	
+}
+
+////( スマホ用 )開閉アイコン
+.navToggle
+{
+	display: none;
+
+	@include break( sp ){
+		display: block;
+	$buttonSize : 50px;
+	$buttonTextColor: #fff;
+	
+	&_hitArea,
+	&:after{
+		width: $buttonSize;
+		height: $buttonSize;
+		line-height: 1;
+		padding: 5px;
+		box-sizing: border-box;
+		display: block;
+		position: fixed;
+		bottom: 2%;
+		right: 2%;
+		cursor: pointer;
+	}
+
+	&_hitArea{
+		z-index: 100;
+	}
+
+	&:after{
+		content: " ";
+		// will-change: width, height, border-radius;
+		z-index: 8;
+		transition:all 0.3s linear 0s;
+		border-radius: 100%;
+		box-shadow: 0 4px 4px rgba( #000, 0.1), 0 0 10px rgba( #000, 0.3 );
+		background-color: darken( $blue, 35 );		
+	}
+	
+	
+	//icon
+	&_icon
+	{
+
+		height: 20px;
+		top: 0;
+		bottom: 0;
+		
+		//bar
+		&,
+		&:before , 
+		&:after, 		
+		&_lineCenter{
+			width: 70%;
+			line-height: 0;
+			margin: auto;
+			display: block;
+			position: absolute;
+			right: 0;
+			left: 0;			
+		}
+
+		&:before , 
+		&:after, 		
+		&_lineCenter{
+			height: 1px;
+			background-color: $buttonTextColor;		
+			transition: easeInOutCirc(0.3s);		
+		}		
+		
+		&:before , 
+		&:after{
+			content: " "; 
+			transform-origin: -1px;
+		}
+		//top
+		&:before{
+			top: 0;
+		} 
+		//center
+		&_lineCenter{
+			top: 0;
+			bottom: 0;
+		}
+		//bottom
+		&:after{
+			bottom: 0;
+		}		
+	}
+
+	/////// navigation open (clicked
+	@at-root .navOpen
+	{
+		overflow: hidden;
+	
+		.navToggle
+		{
+			&_hitArea{
+				z-index: 11;
+			}
+
+			&:after{
+				width: 100%;
+				height: 100%;
+				right: 0;
+				bottom: 0;
+				border-radius: 0;
+				box-shadow: none;
+				// @include background-image( linear-gradient( to right, $green, $blue ) );	
+				background-color: darken( $blue, 20 );		
+			}
+			
+			
+			//icon
+			&_icon
+			{
+				
+				//bar
+				//top
+				&:before{
+					transform: rotate( 45deg );
+				} 
+				//center
+				&_lineCenter{
+					width: 200%;
+					opacity: 0;
+				}
+				//bottom
+				&:after{
+					transform: rotate( -45deg );
+				}		
+			}
+		}	
+
+	}		
+	} // min 580
+}
+
+
+
+
+
+
+////////////////////
+
+// footer
+
+////////////////////
+
+.siteFooter
+{
+
+	@extend %gradation;
+	
+	&.hasGradation{
+		padding-top: 175px;
+		position: relative;
+		
+		//////// gradation
+		&:before{
+			content: " ";
+			display: block;
+			width: 100%;
+			height: 0;
+			position: absolute;
+		    z-index: 2;
+			top: 0;
+			padding-top: 200px;
+			overflow: hidden;
+			@include background-image( linear-gradient( to bottom, rgba( #fafafa, 1 ), rgba( #fafafa, 0.5 ) 50%, rgba( #fafafa, 0 ) 100%) );
+		    // background: transparent url(../img/gradation-bottom.png) left bottom repeat-x;
+		    // background-size: 10px auto;
+		    
+		}    
+	    @include break( sp ){
+	    	padding-top: 60px;
+	    	&:before{
+		    	padding-top: 100px;
+				// background-size: 5px auto;    		    		
+	    	}
+	    }	    
+		
+	}	
+
+	.credit{	
+		margin-top: 100px;
+		padding-top: 1em;
+		padding-bottom: 1em;
+		
+		////フッター上部
+		&_top
+		{
+			margin-bottom: 1em;
+			text-align: center;
+			font-size: $small;
+			
+			li{
+				margin-left: 1em;
+				padding-left: 1em;
+				display: inline-block;
+				vertical-align: middle;
+				border-left: solid 1px #fff;
+			}
+			li:first-child{
+				margin-left: 0;
+				padding-left: 0;
+				border-left: none;
+			}
+		}
+		
+		//copyright
+		.copyright{
+			color: #fff;
+			font-size: 0.65em;
+			text-align: center;
+		}
+
+
+		//////// media queries 
+		@include break( sp ){
+
+			margin-top: 70px;
+			&_top
+			{
+				li{
+					margin-left: 0;
+					padding-top: 0.5em;
+					padding-bottom: 0.5em;
+					padding-left: 0;
+					display: block;
+					border-left: 0;
+					border-bottom: solid 1px #333;
+				}
+			}
+
+		} //max 580
+	}
+}
+
+
+
+////////////////////
+
+// logo area
+
+////////////////////
+
+.siteHeader_logo{
+	// display: inline-block;
+	// float: left;
+}
+
+
+
+////////////////////
+
+// inquiry
+
+////////////////////
+
+%line{
+	line-height: 1;
+	content: " ";
+	background-color: #fff;	
+}
+
+.section-contact{
+	min-height: 0;
+	height: auto;
+	padding-bottom: 0;
+
+	.wrap{
+		display: block;
+	}
+	.section_index{
+		font-size: 6.66em;
+	}
+	.section_caption{
+		margin-bottom: 2em;
+	}
+
+	@include break( sp ){
+
+		padding-top: 60px;
+		.section_index{
+			font-size: 7vh;
+		}		
+
+	}	
+}
+
+
+.inquiry
+{
+	overflow: hidden;
+	color: #fff;	
+	
+	.wrap{
+		max-width: 680px;
+		padding-right: 30px;
+		padding-left: 30px;
+		box-sizing: border-box;	
+	}
+	
+
+	@extend %gradation;
+	
+	.section_index{
+		line-height: 1;
+		margin-bottom: 0.5em;
+		text-align: center;
+		text-shadow: 0 0 5px rgba(#000, 0.05);		
+		font-family: $fontFamily_wf_ultra;
+		
+		span{
+			@extend %popspan;
+
+		}
+	}
+	&_index{
+		line-height: 1;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		font-family: $fontFamily_wf_bold;
+		justify-content: space-between;
+		
+		&:after{
+			width: 70%;
+			height: 2px;				
+			@extend %line;
+		}
+		&_text{
+			flex-basis: 30%;
+		}
+
+	}
+
+	&_content{
+		padding-bottom: 40px;
+		position: relative;
+		border-bottom: solid 2px #fff;
+		
+		&:before,
+		&:after{
+			@extend %line;
+			height: 100%;
+			width: 2px;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+		}
+		//←
+		&:before{
+			left: 0;
+		}
+		//→
+		&:after{
+			height: calc( 100% + 30px );
+			top: -28px;
+			right: 0;
+			
+			@include break( sp ){
+				height: calc( 100% + 32px );
+				top: -32px;				
+			}
+		}
+	}
+
+	/////// sns
+	&_footer{
+		margin-top: 45px;
+	}
+
+
+	.section_caption{
+		text-align: center;
+	}
+}
+
+.siteForm{
+	padding-left: 55px;
+	padding-right: 55px;
+	
+	@include break( sp ){
+		padding-left: 30px;
+		padding-right: 30px;
+	} 
+	
+
+	option{
+		opacity: 0.5em;
+		background-color: $green_deep;
+		&:hover,
+		&:active,
+		&:focus{
+			outline: none;
+		}
+	}
+
+	input:-webkit-autofill,
+	textarea:-webkit-autofill,
+	select:-webkit-autofill{
+		background-color: rgba( #fff,0.25 );
+	}
+
+	
+	&_row
+	{
+		width: 100%;
+		margin-top: 20px;
+		table-layout: fixed;
+		display: table;
+		
+		input,
+		select,
+		textarea,{
+			width: 100%;
+			padding: 0.5em;
+			transition: transition();
+			box-sizing: border-box;
+			border: none;
+			border-radius: 0;
+			border-bottom: solid 1px #fff;		
+			background-color: transparent;
+			color: #fff;		
+			
+			&::-webkit-input-placeholder,
+			&::-moz-placeholder
+			{
+				opacity: 0.3;
+				font-family: $fontFamily_wf_light;
+			}
+			
+			
+			&:focus,
+			&:active,
+			&:hover{
+				background-color: rgba( #fff,0.25 );
+				outline: none;
+			}			
+		}
+		select{
+			// width: 102%;
+			-webkit-appearance:none;		
+		}
+	}
+
+	&_row-button{
+		text-align: center;
+		margin-top: 30px;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		
+		.button:not( :last-child ){
+			margin-right: 5px;
+		}
+	}
+
+
+	&_label,
+	&_input{
+		display: table-cell;
+		vertical-align: middle;
+	}
+	&_label{
+		width: 50px;
+		padding-right: 20px;
+		@extend .wfMedium;
+	}
+
+	// &_input{
+	// 	width: 100%;
+		
+	// 	// input{
+	// 	// 	border-bottom: solid 1px #fff;		
+	// 	// }
+	// }
+
+	// &_button{
+		
+	// }
+
+	//////// contact form
+	
+	div.wpcf7 .ajax-loader{
+		margin: auto;
+		position: absolute;
+		right: 0;
+		bottom: 10px;
+		left: 0;
+		display: block;
+		background: none;
+		
+		@include iconfont(
+        $content: '\f021' ,
+        $icon-margin-right: 0px,
+        $top : 0px
+         );
+         
+         &:before{ 	
+			transform-origin: center;
+			animation: loadRotate 0.5s ease-in-out 0s infinite normal;
+         }
+	}
+
+	.button-form-return{
+		background-color: #eaeaea;
+	}
+
+	span.wpcf7-not-valid-tip{
+		text-align: right;
+		font-size: 0.7em;
+		line-height: 1;
+		padding-top: 5px;
+	}
+
+	div.wpcf7-response-output{
+		position: relative;
+		border-color: #fff;
+		border-width: 1px;
+		font-size: 0.8em;
+		text-align: center;
+		
+		&:before{
+			content: " ";
+			display: block;
+			width: 0;
+			height: 0;
+			margin: auto;
+			position: absolute;
+			top: -0.4em;
+			right: 0;
+			left: 0;
+			border-style: solid;
+			border-width: 0 4px 5px 4px;
+			border-color: transparent transparent #ffffff transparent;
+		}
+	}
+
+}
+
+
+
+
+
+////////////////////
+
+// button
+
+////////////////////
+
+%buttonDef{
+	transition-duration: 0.3s;
+	font-size: 1.35em;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	box-shadow: 0 0 5px rgba( #000, 0.05);
+	color: $green_black;
+	border: none;
+	background-color: #fefefe;		
+}
+
+%mouseOver{
+	a{
+		// color: #fff;
+		// background-color: $green_black;	
+		transform: scale(0.98);
+	}
+	a:before,
+	a:after{
+		transform: scale(1.25);
+		
+		opacity: 0;
+	}			
+}
+
+
+.button
+{
+	line-height: 1;
+	display: inline-block;
+	// overflow: hidden;
+	
+	a{
+		width: 150px;
+		display: inline-block;
+		position: relative;
+		// overflow: hidden;
+	}
+
+
+	&,
+	a{
+		@extend .wfMedium;
+		transition: transition();
+	}
+}
+
+.button-def{
+	a{ 
+		@extend %buttonDef;
+		&:before/*,
+		&:after*/{
+			content: " ";
+			display: block;
+			width: 100%;
+			height: 100%;
+			margin: auto;
+			box-sizing: border-box;
+			position: absolute;
+			top: 0%;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			border: solid 1px #fff;
+			transition: all 0.16s ease-in 0s;
+		}
+	
+	}
+ 	@include mouseOver(){
+		@extend %mouseOver;
+	}
+}
+
+.button-nav{
+	@extend .button-def;
+	a{
+		
+		width: 105px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		font-size: 1em;
+	}
+}
+
+.button-link{
+	a{
+		padding-top: 0.5em;
+		padding-bottom: 0.5em;
+		transition-duration: 0.2s;
+		font-size: 1em;
+		box-shadow: 0 0 5px rgba( #000, 0.05);
+		text-align: center;
+		border: none;
+		background-color: $green_black;
+		font-style: italic;
+		color: #fefefe;		
+		@extend .wfLight;		
+	}
+	@include mouseOver(){
+		a{
+			color: #fff;
+			background-color: darken( $green_black, 10 );
+		}
+		@extend %mouseOver;
+	}	
+}
+
+.button-form{
+	
+	@extend %buttonDef;		
+
+	width: 150px;
+	border: none;
+	position: relative;
+	background-color: #fff;
+
+	@include mouseOver(){
+		cursor: pointer;
+		color: #fff;
+		background-color: $green_black;
+	}	
+
+
+}
+
+/////// 関連ページに行く戻るボタン
+
+.relatedLink
+{
+	text-align: right;
+	font-family: $fontFamily_wf_light;
+	
+	ul
+	{
+		margin: 0;
+		li{
+			display: inline-block;
+			vertical-align: middle;
+		}	
+	}
+	
+	.button{
+		margin-left: 0.5em;
+	}
+}
+
+
+
+////////////////////
+
+// sns
+
+////////////////////
+
+.fixedSns{
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	height: 100%;
+	width: 1em;
+	font-size: 0.9em;
+	text-align: center;
+	color: #fff;
+	writing-mode: vertical-lr;
+	
+	
+	@at-root .scrollOverVisual & 
+	{	
+		a{
+			transition: none
+		}
+		
+		.fixedSns_sns
+		{
+			li{
+
+				a{}
+				a.icon-twitter,
+				a.icon-facebook{
+					&:before{
+						color: #cacaca;					
+					}
+				}
+				a.icon-twitter{
+					@include mouseOver(){
+						&:before{
+							color: $twitter;					
+						}						
+					}
+				}
+				a.icon-facebook{
+					@include mouseOver(){
+						&:before{
+							color: $facebook;					
+						}						
+					}
+				}				
+			}
+		}
+		.fixedSns_index{
+			color: #cccccc;			
+		}
+	}	
+	
+	.fixedSns_sns,
+	.fixedSns_index{
+		line-height: 1;
+		vertical-align: middle;
+		display: inline-block;	
+	}
+
+	.fixedSns_index{
+		margin-left: 0.8em;
+		margin-bottom: 8px;
+		transition: transition();
+		@extend .wfLight;
+	}
+
+	.mySns
+	{
+		li{
+			&:not( :last-child ){
+				margin-right: 0px;
+				margin-bottom: 3px;
+			}
+		}
+	}
+
+	@include break( sp ){
+		display: none;
+	}
+}
+
+
+.mySns
+{
+	line-height: 1;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-align: center;
+	
+	li
+	{
+		display: inline-block;
+		
+
+		[class*="icon"]:before{
+			transition: transition();
+		}
+		.icon-twitter{
+			@include mouseOver(){
+				&:before{
+					color: $twitter;
+				}
+			}
+		}
+		.icon-instagram{
+			@include mouseOver(){
+				&:before{
+					color: pink;
+				}
+			}
+		}
+		.icon-facebook{
+			@include mouseOver(){
+				&:before{
+					color: $facebook;
+				}
+			}
+		}		
+
+		a{
+			@extend .wfLight;
+			color: inherit;
+		}
+		
+		&:not( :last-child ){
+			margin-right: 20px;
+		}
+	}
+}
+
+
+
+////////////////////
+
+// back to top
+
+////////////////////
+
+.backToTop{
+	width: 50px;
+	height: 50px;
+	line-height: 1;
+	margin: 0;
+	padding: 0;
+	bottom: 0;
+	right: 10px;
+	position: fixed;
+	z-index: 7;
+	cursor: pointer;
+	display: none;
+
+	
+	transition: transform 0.5s;
+	
+	
+	i{
+		width: 30%;
+		height: 30%;
+		display: block;
+		display: block;
+		position: absolute;
+	    margin: auto;
+	    top: 25%;
+	    right: 0;
+	    bottom: 0;
+	    left: 0;		
+		transform: rotate(-45deg);
+		border-top: solid 1px #545454;
+		border-right: solid 1px #545454;
+		opacity: 0.5;
+	}
+	
+	&.moving{
+		opacity: 1;
+		@include rotate3d( 50, 1000, 500, 360deg, 500 );
+	}
+
+	@include break( sp ){
+		bottom: 70px;
+		right: 6px;
+	}
+}
+
+
+
+
+////////////////////
+
+// loadingAnim
+
+////////////////////
+
+.loadingAnim
+{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	// display: none;
+	background-color: #fafafa;
+	// background-color: lighten( desaturate($blue, 30 ), 45 );
+	will-change: opacity;
+
+	// .loading &{
+	// 	display: block;	
+	// }
+	.loaded &{
+		display: none;
+	}
+	
+	&,
+	.dots{
+	  position: fixed;
+	  z-index: 98;
+	  top: 0;
+	  bottom: 0;
+	  left: 0;
+	  right: 0;
+	  margin: auto;
+	}
+	
+	.dots {
+	  width: 200px;
+	  height: 200px;
+	  filter: url('#goo');
+	  animation: rotate-move 2s ease-in-out infinite;
+	}
+
+	.dot { 
+	  width: 70px;
+	  height: 70px;
+	  border-radius: 50%;
+	  background-color: #000;
+	  position: absolute;
+	  top: 0;
+	  bottom: 0;
+	  left: 0;
+	  right: 0;
+	  margin: auto;
+	}
+
+	.dot-3 {
+	  background-color: $green_deep;
+	  animation: dot-3-move 2s ease infinite;
+	}
+
+	.dot-2 {
+	  background-color: $green;
+	  animation: dot-2-move 2s ease infinite;
+	}
+
+	.dot-1 {
+	  background-color: $blue;
+	  animation: dot-1-move 2s ease infinite;
+	}
+	
+}
+
+
+
+////////////////////
+
+// intro
+
+////////////////////
+
+.loading{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.helloAfter{
+	.myIntroduction	{
+		opacity: 0;
+	}
+}
+
+.myIntroduction
+{
+	width: 100%;
+	height: 100%;
+	margin: auto;
+	position: fixed;
+	z-index: 99;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;	
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: $basefontColor;
+	// transition: all 2s ease 0.05s;	
+	will-change: transform;
+	// will-change: filter, opacity;
+	background-color: #eee;
+
+
+	@include break( sp ){
+		.wrap{
+			padding-left: 10%;
+			padding-right: 10%;
+		}
+	}
+
+	.noIntro & {
+		display: none;
+	}
+
+	[ class *= "text-" ]{
+		opacity: 0;
+		transform: translateY(-5px);
+		will-change: opacity,transform;
+		transition: all 0.9s linear 0.05s;
+		
+		&:last-of-type{
+		}
+	}
+	@for $i from 3 through 6 {
+		$delay: 0.3  + (0.6 * $i);
+				
+		.text-#{$i}{
+			transition-delay: #{$delay}s;
+		}
+	}
+	.text-1{
+		transition-delay: 0.3s;		
+	}
+	.text-2{
+		transition-delay: 1.2s;
+	}
+	.text-7{
+		transition-delay: 5.5s;	
+	}
+	
+	&_index{
+		max-width: 332px;
+		margin-right: auto;
+		margin-left: auto;
+		text-align: center;
+		line-height: 1;
+		
+		.indexHello{
+			line-height: 1;
+			margin-top: 0;
+			margin-bottom: 0px;
+			font-size: 8em;	
+			@extend .wfUltra;
+			text-align: center;
+			
+			@at-root .usefirefox &{
+				font-size: 3.5em;
+			}
+		}
+
+		svg{
+			max-width: 332px;
+			width: 100%;
+			overflow: visible;
+			text-align: center;
+		}
+		.indexMyname{
+			margin-top: 0;
+			margin-bottom: 0.45em;
+			font-size: 3.5em;
+			color: $green_black;
+			@extend .damion;
+		}
+
+		@include break( sp ){
+			.indexHello{
+				padding-left: 8%;
+				padding-right: 8%;
+			}
+			.indexMyname{
+				font-size: 2.25em;
+			}			
+		}		
+	}
+
+	&_content
+	{
+		font-size: 0.9em;
+		letter-spacing: 0.05em;
+		text-align: center;
+		font-weight: 200;
+		font-feature-settings: 'palt';
+		
+		@include break( sp ){
+			font-size: 3.55vw;			
+		}		
+		
+	}
+
+		// オーバーレイ
+		.myIntroduction_overlay{
+			content: " ";
+			width: 100%;
+			height: 100%;
+			margin: auto;
+			display: block;
+			position: fixed;
+			z-index: 96;
+			top: 100%;
+			right: 0;
+			left: 0;
+			// transition: all 0.45s linear 0.15s;
+		}
+		//* オーバーレイ 1 */
+		.myIntroduction_overlay-after{
+			// transition-delay: 0.4s;
+			background-color: lighten( desaturate($blue, 5 ), 0 );
+		}
+		//* オーバーレイ 2 */
+		.myIntroduction_overlay-before{
+			background-color: lighten( desaturate($green, 5 ), 0 );
+		}	
+
+
+	//////// エフェクト開始
+	.letsTalk &{
+		[ class *= "text-" ]{
+			opacity: 1;
+			transform: translateY(0px);
+		}		
+	}	
+	//////// エフェクト終了
+	.introEndAnim &{
+		[class*="text-"]{
+			opacity: 0;
+			// transform: translateY(-50px);
+		}		
+		@for $i from 1 through 6 {
+			$delay: 0.15 * $i;
+					
+			.text-#{$i}{
+				transition: all 1s ease-in #{$delay}s;
+				// transition-delay: #{$delay}s;
+			}
+		}
+
+		// .myIntroduction_overlay{
+		// 	top: -0%;
+		// }		
+	} 	
+
+}
+
+
+
+
+////////////////////
+
+// pjax
+
+////////////////////
+
+body{
+	// overflow: hidden;
+}
+
+/* オーバーレイ */
+body:after,
+body:before{
+	content: " ";
+	width: 0%;
+	height: 0%;
+	margin: auto;
+	display: block;
+	position: fixed;
+	z-index: 96;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	transition: all 4s ease 0s;
+}
+/* オーバーレイ 1 */
+body:after{
+	transition: all 4s ease 0.25s;
+	background-color: #fafafa;
+}
+/* オーバーレイ 2 */
+body:before{
+	// @extend %gradation;
+	background-color: lighten( desaturate($blue, 10 ), 40 );
+}
+
+
+[class *= "pjax"]:after{
+}
+
+
+/* 1.データ更新要求 */
+.pjax-fetch{
+	// -webkit-animation: moveToRight 1s ease 0s 1 alternate both;
+	// animation: moveToRight 1s ease 0s 1 alternate both;
+}
+.pjax-loaded body:before,
+.pjax-loaded body:after,
+.pjax-fetch body:before,
+.pjax-fetch body:after{
+	width: 6000px;
+	height: 6000px;
+	
+	@include break( sp ){
+		width: 2000px;
+		height: 2000px;		
+	}
+}
+
+
+/* 2.DOM更新直前 */
+.pjax-unload{
+}
+.pjax-unload:after{
+}
+
+
+/* 3.DOM更新完了 */
+.pjax-ready{
+}
+.pjax-ready:after{
+}
+
+
+/* 4.全更新完了 */
+.pjax-loaded{
+}
+.pjax-loaded body:after{
+	width: 100%;
+	left: 100%;
+}
+.pjax-loaded body:before{
+	width: 100%;
+	left: 100%;
+}
+
+
+
+////////////////////
+
+// main visual
+
+////////////////////
+
+
+///////　下層
+.pagevisual
+{
+	overflow: hidden;
+	color: #fff;
+	position: relative;
+	@extend %gradation;
+	
+
+	&.hasGradation{		
+	
+		//////// gradation
+		&:after{
+			content: " ";
+			display: block;
+			width: 100%;
+			height: 0;
+			position: absolute;
+		    z-index: 2;
+			bottom: 0;
+			padding-top: 100px;
+			overflow: hidden;
+			@include background-image( linear-gradient( to top, rgba( #fafafa, 1 ), rgba( #fafafa, 0.5 ) 50%, rgba( #fafafa, 0 ) 100%) );
+		    // background: transparent url(../img/gradation.png) left top repeat-x;
+		    // background-size: 10px auto;
+		    
+		    @include break( sp ){
+		    	padding-top: 100px;
+				// background-size: 5px auto;    	
+		    }	    
+		}
+
+	    .wrap{    	
+		    padding-bottom: 100px;
+		    @include break( sp ){
+				padding-bottom: 50px;			
+			}
+	    }
+
+		//グラである場合の背景色と上余白
+	    & + .main {
+	    	padding-top: 100px;
+	    	padding-bottom: 100px;
+	    	background-color: #fafafa;
+	    	
+	    	@include break( sp ){
+	    		padding-top: 12px;
+	    	}	    	
+	    }
+	}
+	
+	.wrap{
+		height: 80vh;
+		min-height: 600px;
+		position: relative;
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		
+		@include break( sp ){
+			height: 60vh;
+			min-height: 0;
+		}
+	}
+
+	&-child{
+		.wrap{
+			max-width: $outerWidth;
+			height: 65vh;
+			padding-bottom: 0;
+			position: static;
+			justify-content: flex-start;
+			
+			@include break( sp ){
+				height: 55vh;
+				padding-top: 70px;
+			}
+		}
+	}
+
+
+	&_copy{
+		position: relative;
+		z-index: 1;
+		font-size: 8.33em;
+		
+		@include break( sp ){
+			font-size: 15vw;
+		}	
+
+		p{
+			margin-top: 0;
+			margin-bottom: 0;
+		}	
+		
+		span{
+			@extend %popspan;
+		}
+		@at-root .loaded & span{
+			transform: translateY( 0 ) scale( 1 );
+			opacity: 1;			
+		}
+		// @at-root .inview & span{
+		// 	transform: translateY( 0 ) scale( 1 );
+		// 	opacity: 1;			
+		// }
+		
+		&_pagename{
+			// line-height: 0.85;
+			text-shadow: 0 0 5px rgba(#000, 0.15);
+			font-family: $fontFamily_wf_ultra;
+		}
+
+		.handWrite
+		{
+			margin-top: -1.4em;
+			transition: easeInOutBack($s : 0.4s, $prop : all);
+			transition-delay: 1.5s;	
+			transform: translateY(6px);
+			// transform:  scale(0.95);
+			transform-origin: 50% 25%;
+			opacity: 0;
+			text-align: right;	
+			font-size: 0.58em;
+			
+			&,
+			svg text{
+				line-height: 1;
+				color: $green_black;
+				font-family: $fontFamily_damion;
+			}
+			// @at-root .inview &	{
+			// 	transform: translateY(0);
+			// 	// transform: scale( 1 );
+			// 	opacity: 1;			
+			// }		
+			@at-root .loaded &	{
+				transform: translateY(0);
+				// transform: scale( 1 );
+				opacity: 1;			
+			}
+
+			@include break( sp ){
+			}
+		}
+	}
+
+	&-child{
+		.pagevisual_copy
+		{
+			text-shadow: 0 0 10px rgba( #000, 0.1 )	;
+			font-size: 1em;
+
+			&_pagename{
+				margin-bottom: 1em;
+				box-shadow: none;
+				font-size: 1.8em;
+				letter-spacing: 0.02em;
+				
+				@include break( sp ){
+					margin-bottom: 0em;
+				}				
+			}
+
+			&_productname{
+				margin-bottom: 1em;
+				font-size: 1.5em;
+				font-weight: 200;
+				letter-spacing: 0.02em;
+			}
+
+
+			&_type{
+				font-family: $fontFamily_wf_bold;
+			}
+			&_category{
+				position: relative;
+				z-index: 1;
+				padding-left: 1.2em;
+				transition: transition(0.3s);
+				
+
+				@include iconfont(
+		        $content: '\f0c1' ,
+		        $icon-margin-right: -1px,
+		        $font-size : 0.8em,
+		        $top: 0 );
+		        
+		        &:before{
+		        	text-indent: -1.2em;
+		        }
+	        
+				li{
+					font-family: $fontFamily_wf_light;
+					display: inline-block;
+					transition: transition(0.3s);
+					a{
+						color: inherit;
+					}
+					
+					&:not( :last-child ){
+						&:after{
+							content: "/";
+							margin: 0 2px;
+							display: inline-block;
+							transition: transition(0.3s);
+							
+							vertical-align: middle;
+							opacity: 0.5;
+						}
+					}
+				}				
+			}
+		}
+	}
+
+	
+	////////// image 
+	&_img{
+		width: 100%;
+		// max-width: none;
+		// width: auto;
+		// height: 100%;
+		margin: auto;
+		z-index: 0;
+		top: 0;
+		right: 0;
+		left: 0;
+			
+		@include break( sp ){
+			will-change: transform;
+		}
+		
+	}
+
+	&-child
+	{
+		.pagevisual_screen{
+			width: percentage( 430 / 950 );
+			// margin-left: auto;
+			// margin-right: 0;
+			
+			
+			position: absolute;
+			top: 100px;
+			right: 5%;
+			img{
+				width: 100%;
+			}
+
+			@include break( 1366 ){
+				width: percentage( 530 / 950 );
+				position: absolute;
+				right: 0;
+			} 
+
+			// @include break( sp ){
+			// 	width: 80%;
+			// 	margin: auto;
+			// 	position: static;
+			// }
+		}
+		div.pagevisual_screen{
+			padding: 2.2% 1% 4% 6.78%;
+			box-sizing: border-box;
+			right: 0%;
+			background: url(../../img/works/work-desktopframe.png) center top no-repeat;
+			background-size: 100% auto;
+			z-index: 4;
+			
+			box-sizing: border-box;
+			
+			@include break( 1366 ){
+				width: percentage( 530 / 950 );
+				padding-top: 2.5%;
+				padding-bottom: 8.4%;
+				padding-left: 7.5%;
+				position: absolute;
+				right: 0;				
+			}
+
+			@include break( tab ){
+				width: 100%;
+				position: static;
+				padding-top: 3.5%;
+				padding-right: 2%;
+				padding-left: 14.4%;
+			}
+			
+			
+			>figure{
+			
+				    overflow: hidden;
+				    height: 0;
+				    padding-top: 62.4%;
+				    position: relative;
+			
+				    img{
+				    	margin: auto;
+				    	position: absolute;
+				    	top: 0;
+				    	right: 0;
+				    	// bottom: 0;
+				    	left: 0;
+				    }
+			}
+		
+
+
+						
+		}
+
+	}	
+
+
+	//////// scroll down
+	
+	.icon-mouse{
+		bottom: 5%;
+		position: absolute;
+		right: 0;
+		left: 0;
+		z-index: 3;
+	}
+	&.hasGradation .icon-mouse{
+		bottom: 10%;
+	}
+}

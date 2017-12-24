@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<!--[if lte IE 9]>
+<html lang="ja" class="ie">
+<![endif]-->
+<!--[if !IE]<!-->
+<html lang="ja">
+   <!--<![endif]-->
+   <% include _inc/function %>
+   <%
+      $meta.title = 'WORKS'
+   %>
+   <%
+   $path = '';
+   $active = 'works';
+   $css = ['css/_include/style.css'];
+   $scripts_global=null;
+   $scripts=[
+$path + 'common/js/pjax/spica.js',
+$path + 'common/js/pjax/localsocket.js',
+$path + 'common/js/pjax/pjax-api.js',
+$path + 'common/js/pjax/config.js',   
+   $path + 'common/js/common.js',
+   $path + 'common/js/childpage.js',
+   'js/script.js'];
+   %>
+   <head>
+     <%- include($path + '_inc/_header') %>
+   </head>
+
+   <body class="works single-works works-child">
+
+      <%- $parts.loadingAnim %>  
+
+      <!-- ***** header  -->
+        <%- include($path + '_inc/_gnav', {logo: true}) %>
+      <!-- ///// header  -->
+
+
+      <!-- ***** mainvisual -->
+      <section class="pagevisual pagevisual-child hasGradation">
+         <div class="wrap">
+
+            <!-- *** text -->
+            <div class="pagevisual_copy">
+              <p class="pagevisual_copy_pagename">
+                WORKS
+              </p>
+               <h2 class="pagevisual_copy_productname">
+                パナソニック産機システムズ               
+               </h2>
+               <p class="pagevisual_copy_type">Website</p>
+                <ul class="pagevisual_copy_category">
+                  <li><a href="">design</a></li>
+                  <li><a href="">coding</a></li>
+                  <li><a href="">frontend</a></li>
+                </ul>               
+                <i class="icon icon-mouse"></i>
+            </div>
+            <!-- /// text -->
+
+         </div>
+
+        <!-- *** screen -->
+        <div class="pagevisual_screen">
+          <figure>
+            <img src="img/works/website1.jpg" alt=""/>
+          </figure>
+        </div>
+        <!-- /// screen -->
+      </section>
+      <!-- ///// mainvisual  -->
+      
+      <!-- ***** BODY START -->
+      <main class="main topGradation">
+
+        <section class="section-intro">
+           <div class="wrap">
+             
+              タフなデザインタフなデザインタフなデザインタフなデザインタフなデザインタフなデザイン。
+             <p>タフなデザイン</p>
+             
+             <p>ヤツともやりあっている。</p>
+
+             <p>だから、大学生はだから、大学生はだから、大学生はだから、大学生はだから、大学生はだから、大学生はだから、大学生は</p>
+           </div>
+           <aside class="launchLink">
+             <div class="wrap"><div class="button button-link">
+               <a href="" target="_blank">LAUNCH</a>
+             </div></div>
+           </aside>
+        </section>
+
+        <section class="section section-screenshots section-desktop twoColumn">
+          <div class="wrap">
+            <img src="img/works/sample-index.jpg" alt=""/>
+            <img src="img/works/sample-detail.jpg" alt=""/>
+            <img src="img/works/sample-whyhere.jpg" alt=""/>
+          </div>
+        </section>
+
+
+        <section class="section section-mobile">
+          <img src="img/works/lunethor.jpg" alt=""/>        
+        </section>
+
+
+        <div class="relatedLink">
+           <div class="wrap">
+             <ul>
+               <li>
+                  Back to<div class="button button-link"><a href="index.html">WORKS</a></div>
+               </li>
+             </ul>
+          </div>  
+        </div>
+
+        <section class="section section-related">
+          <div class="wrap">
+            <header class="section_index">
+                <h3>
+                   <svg viewBox="0 0 680 70">
+                     <defs>
+                        <linearGradient id="gradation">
+                           <stop offset="0" stop-color="#00d8fd"/>
+                           <stop offset="0.9" stop-color="#0eff9e"/>
+                        </linearGradient>
+                      </defs>
+                      <text text-anchor="middle" x="340" y="55" fill=url(#gradation)>
+                        RELATED WORKS
+                      </text>
+                   </svg>
+                </h3>
+             </header>
+             <div class="section_content">
+              <div class="worksArchive">
+                <article class="work">
+                  <a href="">
+                    <figure class="work_img"><img src="img/works/website1.jpg" alt=""/></figure>
+                    <div class="work_info">
+                      <h3 class="work_info_type">Website</h3>
+                      <ul class="work_info_category">
+                        <li>design</li>
+                        <li>coding</li>
+                        <li>frontend</li>
+                      </ul>
+                    </div></a>
+                </article>
+                
+                <article class="work">
+                  <a href="">
+                    <figure class="work_img"><img src="img/works/icon.jpg" alt=""/></figure>
+                    <div class="work_info">
+                      <h3 class="work_info_type">Website</h3>
+                      <ul class="work_info_category">
+                        <li>design</li>
+                        <li>coding</li>
+                        <li>frontend</li>
+                      </ul>
+                    </div></a>
+                </article>
+                
+                <article class="work">
+                  <a href="">
+                    <figure class="work_img"><img src="img/works/visual.jpg" alt=""/></figure>
+                    <div class="work_info">
+                      <h3 class="work_info_type">Website</h3>
+                      <ul class="work_info_category">
+                        <li>design</li>
+                        <li>coding</li>
+                        <li>frontend</li>
+                      </ul>
+                    </div></a>
+                </article>
+              </div>
+             </div>
+          </div>
+        </section>
+
+      </main>
+      <!-- //// BODY END -->
+     
+      <%- include( $path + '_inc/_footer', {hasGradation: true} ) %>
+
+      <%- $parts.backtotop %>
+
+      <%- $parts.fixedsns %>
+
+
+      <!-- ***** menu button -->
+      <%- $parts.toggle %>
+      <!-- //// menu button -->
+
+      
+     <%- include($path + '_inc/_intro') %>
+
+     <%- include($path + '_inc/_scripts') %>
+   </body>
+
+</html>

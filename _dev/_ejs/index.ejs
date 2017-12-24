@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<!--[if lte IE 9]>
+<html lang="ja" class="ie">
+<![endif]-->
+<!--[if !IE]<!-->
+<html lang="ja">
+   <!--<![endif]-->
+   <% include _inc/function %>   
+<%
+$path = '';
+$active = 'top';
+   $css = ['css/_include/style.css'];
+$scripts_global=null;
+$scripts=[
+$path + 'common/js/pjax/spica.js',
+$path + 'common/js/pjax/localsocket.js',
+$path + 'common/js/pjax/pjax-api.js',
+$path + 'common/js/pjax/config.js',
+$path + 'common/js/common.js',
+$path + 'common/js/common.js',
+ $path+'js/index/script.js'];
+
+%>
+   <head>
+     <%- include('_inc/_header') %>
+   </head>
+
+   <body class="index">
+      <%- $parts.loadingAnim %>   
+   
+      <!-- ***** header  -->
+      <header>
+         <div class="siteHeader">
+            <div class="wrap clearfix">
+              <%- include('_inc/_gnav', {logo: false}) %>
+            </div>
+         </div>
+      </header>
+      <!-- ///// header  -->
+      <div id="pageContent" data-content="index">
+
+
+      <!-- ***** mainvisual -->
+      <section class="mainvisual">
+         <div class="wrap">
+
+            <div class="mainvisual_copy">
+               <h1>
+                  <span class="mainvisual_copy_sup">
+                     <span><i>I am a WEB-CREATOR</i></span>
+                     based in Tokyo.
+                  </span>
+                  <span class="mainvisual_copy_myname">
+                     SATOH <br>
+                     <span class="firstName">MSYS</span>
+                  </span>
+                  <span class="handWrite">
+                     portfolio site
+                  </span>
+               </h1>
+            </div>
+
+            <i class="icon icon-mouse"></i>
+
+         </div>
+         <img srcset="img/index/_sp/main.png 768w, img/index/main.png" sizes="100vw" src="img/index/main.png" width="700" class="testmb mainvisual_img" alt="">
+      </section>
+      <!-- ///// mainvisual  -->
+      
+      <!-- ***** BODY START -->
+      <main class="main">
+
+         <!-- *** ABOUT -->            
+         <section id="about" class="section section-about">
+            <div class="wrap">
+               <article class="section_article">
+                  <header>
+                     <h2 class="section_index">ABOUT</h2>
+                  </header>
+                  <div class="section_content">
+                     東京のWEBデザイナー、サトウマサヤス(satohmsys)です。<br>デザイン、コーディング、フロントエンド。
+                  </div>
+                  <div class="section_footer">
+                     <div class="button button-def"><a href="about/">more</a></div>
+                  </div>
+               </article>
+               <img src="img/index/about-img-pc.png" width="867" alt="" class="section_bg section_bg-first">
+               <img src="img/index/about-img-cofee.png" width="225" alt="" class="section_bg section_bg-last">
+ 
+            </div>
+         </section>
+         <!-- /// ABOUT -->   
+
+         <!-- *** THINK -->            
+         <section id="think" class="section section-think">
+            <div class="wrap">
+               <article class="section_article">
+                  <header>
+                     <h2 class="section_index">THINK</h2>
+                  </header>
+                  <div class="section_content">
+                    「メッセージをデザインする」ことを意識しています。<br>
+                    色や写真を使って、使いやすさを計算し、流行を取り入れる。発信したいイメージを適切なかたちにする「意味のあるデザイン」をするのが、プロとしてのデザイナーの仕事だと考えています。
+                  </div>
+                  <div class="section_footer">
+                     <div class="button button-def"><a href="think/">more</a></div>
+                  </div>
+               </article>
+               <img src="img/index/think-img.png" width="538" alt="" class="section_bg section_bg-first">
+            </div>
+         </section>
+         <!-- /// THINK -->  
+
+          <!-- *** works -->            
+         <section id="works" class="section section-works">
+            <div class="wrap">
+               <article class="section_article">
+                  <header>
+                     <h2 class="section_index">WORKS</h2>
+                  </header>
+                  <div class="section_content">
+                     Webサイトのほか、キーヴィジュアルやロゴやアイコンのデザイン、コーディングの実績集です。
+                  </div>
+                  <div class="section_footer">
+                     <div class="button button-def"><a href="works/">more</a></div>
+                  </div>
+               </article>
+               <div class="section_bg">
+                  <div class="section_bg_skewWrapper">
+                     <div class="section_bg_panels">
+                        <div class="section_bg_panel panel">
+                           <h3 class="panel_catName">WEB</h3>
+                        </div>
+                        <div class="section_bg_panel panel">
+                           <h3 class="panel_catName">LOGO</h3>
+                        </div>
+                        <div class="section_bg_panel panel">
+                           <h3 class="panel_catName">VISUAL</h3>
+                        </div>
+                        <div class="section_bg_panel panel">
+                           <h3 class="panel_catName">CORDING</h3>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- /// THINK -->           
+
+      </main>
+      <!-- //// BODY END -->
+      </div>
+     
+     <%- include( $path + '_inc/_footer', {hasGradation: false} ) %>
+     <%- $parts.backtotop %>
+     <%- $parts.fixedsns %>
+
+      <!-- ***** menu button -->
+      <%- $parts.toggle %>
+      <!-- //// menu button -->
+
+      <!-- ***** 自己紹介 -->      
+      <%- include($path + '_inc/_intro') %>
+      <!-- ///// 自己紹介 -->
+
+     <%- include($path + '_inc/_scripts') %>
+   </body>
+
+</html>
