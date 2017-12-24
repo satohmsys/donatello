@@ -44,9 +44,9 @@ module.exports = [{
 	* publicPath webpack-dev-server起動時にこの相対パスから配信
 	*/
 	output:{
-		path: path.join( __dirname , paths.output.path + '/js/' ),
+		path: path.join( __dirname , paths.output.path + '' ),
 		publicPath: '/assets/',
-		filename: '[name].js'
+		filename: './js/[name].js'
 	},
 
 	/**
@@ -67,10 +67,6 @@ module.exports = [{
 	*/
 	module: {
 		loaders: [
-			{
-				test: /.html/,
-				loader: 'html-loader'
-			},
 			{
 				test: /\.js$/,
 				exclude: '/node_modules',
@@ -128,50 +124,22 @@ module.exports = [{
     }
 },
 {
-	/**
-	* buildのディレクトリ
-	*/
-	context: path.join( __dirname , paths.context ),
 
-	/**
-	* buildの起点となるファイル
-	* 複数指定する場合、Object だと出力ファイルも複数
-	*/
+	context: path.join( __dirname , paths.contentBase ),
 	entry: {
 		index: './index.html'
-	},
-
-	/**
-	* 出力先
-	* OSによってdirnameのパスが異なるのでpath.joinで解決する
-	* publicPath webpack-dev-server起動時にこの相対パスから配信
-	*/
+	}
+	,
 	output:{
-		path: path.join( __dirname , paths.contentBase  ),
-		publicPath: './',
+		path: path.join( __dirname , paths.contentBase + '/'  ),
+		publicPath: '/',
 		filename: '[name].html'
 	},
-
-	/**
-	* devServer設定
-	*/
-	// devServer: {
-	// 	contentBase: path.join( __dirname , paths.contentBase),
-	// 	inline: true,
-	// 	hot: true,
-	// 	port: 3000
-	// },
-
 	devtool: 'source-map',
-
-	/**
-	*ファイル変換
-	*loaderは右から左に適用
-	*/
 	module: {
 		loaders: [
 			{
-				test: /.html/,
+				test: /\.html$/,
 				loader: 'html-loader'
 			},
 			{
