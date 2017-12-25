@@ -1,77 +1,55 @@
-  
-   <footer class="siteFooter<% if( hasGradation == true ){%> hasGradation<%}%>">
-         <!-- ***** contact -->
-         <section id="contact" class="inquiry section section-contact">
-            <div class="wrap">
-               <header>
-                  <h2 class="section_index">CONTACT</h2>
-                  <p class="section_caption">当サイトに関するお問い合わせやアドバイス、<br>雑談ほか、デザイン作成依頼、イベントのお誘いはこちらから。</p>
-               </header>            
-               <header class="inquiry_index">
-                  <h3 class="inquiry_index_text">ASK ME ANYTHING!</h3>
-               </header>
-               <div class="inquiry_content">
-                  <div class="inquiry_content_form">
-                     <form class="siteForm" action="">
-                        <div class="siteForm_row">
-                           <label  class="siteForm_label" for="name">
-                              <span>Name</span>
-                           </label>
-                           <div class="siteForm_input">
-                              <input placeholder="name" type="text" id="name">
-                           </div>
-                        </div>
-                        <div class="siteForm_row">
-                           <label  class="siteForm_label" for="email">
-                              <span>Email</span>
-                           </label>
-                           <div class="siteForm_input">
-                              <input type="email" id="email">
-                           </div>
-                        </div>                        
-                        <div class="siteForm_row">
-                           <label  class="siteForm_label" for="sub">
-                              <span>Subject</span>
-                           </label>
-                           <div class="siteForm_input">
-                              <select name="" id="sub">
-                                 <option value="あああ">サイトに関して</option>
-                                 <option value="お仕事のご依頼">お仕事のご依頼</option>
-                                 <option value="おすすめのカフェ、コーヒー豆">おすすめのカフェ、コーヒー豆</option>                              
-                              </select>
-                           </div>
-                        </div>
-                         <div class="siteForm_row">
-                           <label  class="siteForm_label" for="message">
-                              <span>Message</span>
-                           </label>
-                           <div class="siteForm_input">
-                              <textarea name="" id="message" cols="30" rows="1"></textarea>
-                           </div>
-                        </div>
-                        <!-- <div class=" siteForm_row-button">
-                           <button class="siteForm_button button button-form"><input type="submit" value="confirm"></button>
-                        </div> -->
-<div class="siteForm_row-button"><input type="button" value="return" class="wpcf7-form-control wpcf7-back siteForm_button button button-form wpcf7c-elm-step2 wpcf7c-btn-back wpcf7c-force-hide"><input type="submit" value="confirm" class="wpcf7-form-control wpcf7-confirm siteForm_button button button-form wpcf7c-elm-step1 wpcf7c-btn-confirm"><input type="submit" value="submit!" class="wpcf7-form-control wpcf7-submit siteForm_button button button-form wpcf7c-elm-step2 wpcf7c-force-hide"><span class="ajax-loader"></span></div>                        
-                     </form>
-                  </div>
-               </div>
-               <footer class="inquiry_footer">
-                  <ul class="mySns">
-                     <li ><a class="mySns_twitter icon-twitter" href=""></a></li>
-                     <li ><a class="mySns_instagram icon-instagram" href=""></a></li>
-                  </ul>
-               </footer>
-            </div>
-         </section>
-         <!-- ///// contact -->
+      <!-- ***** sns -->
+      <section class="sns">
+         <ul class="snsList">
+            <li><a href="https://twitter.com/donatello04" target="_blank" class="icon-twitter"></a></li>
+            <li><a href="https://www.facebook.com/%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BEDonatello-1103021019747652/" target="_blank" class="icon-facebook"></a></li>
+         </ul>
+      </section>
+      <!-- ///// sns -->
 
-         <section class="credit">
-            <div class="credit_top">
-               <figure><img src="<%= $path %>common/img/face.png" width="41" alt=""></figure>
-            </div>
-            <div class="credit_bottom footer_copyright">
-               <div class="copyright wfLight"> COPYRIGHT satohmsys &copy; ALL RIGHTS RESERVED. </div>
-            </div>
-         </section>
+
+      <footer class="siteFooter">
+         <div class="wrap">
+            <header class="siteFooter_ci">
+               <figure class="ci -new"><img src="<%- $path %>common/img/logo.svg" width="200" alt="Donatello"></figure>
+               <figure class="ci -old"><img src="<%- $path %>common/img/logo-old.png" width="50" alt=""></figure>
+            </header>
+            <section>
+               <header>
+                  <h2 class="siteFooter_info">
+                     東京都のシステム開発、SESを行うDonatello※サンプルキーワード
+                  </h2>
+               </header>
+               <div class="siteFooter_address">
+                  <address class="address">
+                     東京都港区白金1-15-29 天翔白金ビル203 <a href="https://goo.gl/maps/wRooUCdp5B82" target="_blank"><i class="icon-address"></i></a>
+                  </address>
+                  <a href="" class="button -inquiry">
+                     <button role="link" >
+                        システム開発、SESのお問い合わせ
+                     </button>
+                     <svg version="1.1" class="button_arrow" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="15px" height="2px" viewBox="0 0 15 2">
+                        <polyline fill="none" stroke="#FFF" stroke-miterlimit="10" points="0,2 15,2 13,0"/>
+                     </svg>
+
+                  </a>
+               </div>
+            </section>
+            <section>
+               <nav class="siteFooter_nav">
+                  <ul class="nav">
+                     <li><a href="<%- $path %>/about/">会社概要</a></li>
+                     <li><a href="<%- $path %>/fields/">事業内容</a></li>
+                     <li><a href="<%- $path %>/works/">実績</a></li>
+                     <li><a href="<%- $path %>/recruit/">採用情報</a></li>
+                     <li><a href="<%- $path %>/inquiry/">お問い合わせ</a></li>
+                  </ul>                  
+               </nav>
+            </section>
+            <footer class="siteFooter_copyright">
+               &copy; Donatello co.ltd, All Rights Reserved.
+            </footer>
+
+         </div>
       </footer>         
+      <div class="backToTop"><i></i></div>

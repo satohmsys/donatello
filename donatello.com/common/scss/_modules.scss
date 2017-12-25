@@ -19,15 +19,43 @@
 {
 	line-height: 1;
 	padding-top: 20px;
+	padding-bottom: 20px;
 	position: fixed;
 	top: 0;
 	right: 0;
 	left: 0;
 	z-index: 10;
+	transition: transition();
+	
+	&:after{
+		content:"";
+		width: 0;
+		height: 2px;
+		margin: auto;
+		position: absolute;
+		right: 0;
+		bottom: 0;left: 0;
+		display: block;
+		transition: transition();
+		transition-delay: 0.35s;		
+		@include background-image( linear-gradient( to right, $blue, $green ) );	
+		
+	 	@include break( tab ){
+	 		display: none;
+	 	}		
+	}
 
 	/////// navigation open (clicked and scroll	
-	@at-root .scrollOverVisual.navOpen & {
-	
+	@at-root &.scrolled  {
+		padding-bottom: 22px;
+		background-color: rgba(#fff, 0.95);
+		
+		&:after{
+			width: 100%;
+		}
+	}
+	@at-root .navOpen &.scrolled  {
+		background-color: transparent;
 	}
 
 	 > .wrap{
@@ -48,12 +76,13 @@
 		 	@include break( tab ){
 		 		display: block;
 		 	}
-
 		}
 	}
 
 	&_logo{
 		width: 200px;
+		margin-top: 0;
+		margin-bottom: 0;
 		line-height: 1;
 		position: relative;
 		text-align: left;
@@ -195,8 +224,8 @@
 			color: inherit;
 			padding-left: 30px;
 			padding-right: 30px;
+			transition: transition();
 			letter-spacing: 0.15em;
-
 		}
 
 		&:not( :last-child ) a{
@@ -223,11 +252,26 @@
 			width: 100%;
 		}
 	}
+
+	/////// navigation open (clicked and scroll	
+	@at-root .scrolled & li a {
+		color: $basefontColor;
+	}
+	@at-root .navOpen .scrolled & li {
+		color: #fff;
+	}	
+}
+
+.nav li a{
+	transition: transition();
+	
+	@include mouseOver(){
+		opacity: 0.75;
+	}
 }
 
 body:after{
 	content: "";
-	
 }
 
 

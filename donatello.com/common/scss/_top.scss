@@ -256,6 +256,34 @@
 				border-top: none;
 			}
 
+			@include mouseOver(){
+				&:before{
+					width: 100%;
+				}
+
+				.siteMap_en{
+					color: transparent;
+					background-size: 100%;
+					background-position: 100% 0;
+				}
+			}
+
+			&:before{
+				content: " ";
+				width: 0%;
+				height: 100%;
+				line-height: 1;
+				position: absolute;
+				top: -1px;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				display: block;
+				transition: transition();
+				border-top: solid 1px $blue;
+				border-bottom: solid 1px $blue;
+			}
+
 			
 			&:after{
 				content: "";
@@ -285,8 +313,14 @@
 		margin-bottom: 10px;
 		letter-spacing: 0.15em;
 		color: $blue;
+		position: relative;
+		overflow: hidden;
 		font-size: $xlarge;
 		font-family: $din_bold;
+		transition: transition();
+		-webkit-background-clip: text;
+		background-position: -100% 0;
+		@include background-image( linear-gradient( to right, $blue, $green ) );	
 		
 		@include break( tab ){
 			font-size: 1.5em;
