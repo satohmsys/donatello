@@ -35,11 +35,20 @@
 	 	flex-direction: row;
 	 	justify-content: space-between;
 	 	align-items: center;
+	 	
+	 	@include break( tab ){
+	 		display: block;
+	 	}
 		
 		.siteHeader_logo,
 		.siteHeader_nav	{
 			display: table-cell;
 			vertical-align: middle;
+			
+		 	@include break( tab ){
+		 		display: block;
+		 	}
+
 		}
 	}
 
@@ -74,10 +83,104 @@
 
 .siteHeader_nav
 {
-	text-align: center;
 	letter-spacing: 0.04em;
 	font-size: 0.9em;
+	
+	 	@include break( tab ){
+	 		position: fixed;
+	 		top: -100%;
+	 		right: 0;
+	 		bottom: 0;
+	 		left: 0;
+		 	pointer-events: none;
+			font-size: 1em;
+			
+			&:after{
+				content: "DEVELOP \A FOR \A THE \A FUTURE";
+				display: block;
+				white-space: pre;
+				position: absolute;
+				top:-100%;
+				opacity: 0;
+				transform: translateY( -50% ) translateX( 10px ); 
+				font-size: 30vw;
+				color: lighten( $blue_deep, 5% );
+				font-family: $din_medium;
+				
+			}
+			li
+			{
+				display: block;
+				opacity: 0;
+				position: relative;
+				z-index: -10;
+				transform: scaleX(1.2) translateX(30px);
+				font-size: 16px;
+				font-weight: bold;
+				
+				&:not( :last-child ){
+					margin-bottom: 30px;
+				}
+				
+				//ナビ開いてない状態
+				a{
+					pointer-events: none;
+				}
+			}
 
+			/////// navigation open (clicked
+			@at-root .navOpen &{
+				top: 0;
+				pointer-events: auto;
+				.nav{
+					position: relative;
+					z-index: 10;
+				}
+				li{
+					opacity: 1;
+					transform: scaleX(1) translateX(0);
+					transition: all 0.3s ease 0s;
+				
+					@for $i from 1 through 7 {
+
+						&:nth-child( #{$i} ){
+							$delay: 0.7 + (0.15 * $i);
+							transition-delay: #{$delay}s;
+						}
+					}	
+
+					//ナビ開いた状態
+					a{
+						pointer-events: auto;
+						z-index: 9;
+					}						
+				}
+
+		 		&:after{
+		 			top: 50%;
+		 			transition-property: opacity, transform;
+		 			transition-duration: 0.4s;
+		 			transition-delay: 0.7s;
+		 			transition-timing-function: ease;
+		 			opacity: 1;
+					transform: translateY( -50% ) translateX( 0px ); 
+
+		 		}				
+				
+			}		 	
+
+	 		.nav{
+	 			
+		 		width: 100%;
+		 		height: 100%;
+		 		display: flex;
+		 		z-index: -1;
+		 		flex-direction: column;
+		 		justify-content: center;
+		 		align-items: flex-end;
+		 		text-align: right;
+	 		}
+	 	}
 
 	li
 	{
@@ -98,6 +201,11 @@
 
 		&:not( :last-child ) a{
 			border-right: solid 1px #ddd;
+			
+		 	@include break( tab ){
+		 		border: none;
+		 	}
+
 		}
 		
 		&:last-child{
@@ -115,236 +223,130 @@
 			width: 100%;
 		}
 	}
+}
 
-
-	//////// media queries 
-	@include break( sp ){
-		font-size: 1em;
-		.wrap{
-		    width: 100%;
-		    height: 100%;
-		    display: flex;
-			max-width: none;
-			padding-top: 0%;
-			padding-right: 0;
-			padding-left: 0;
-		    flex-direction: column;
-		    justify-content: center;
-		    align-items: center;
-		    align-content: center;
-		    position: fixed;
-		    z-index: -10;
-		    top: 0;
-		    left: 0;		
-			float: none;
-		}
-		
-		li
-		{
-			font-size: 1.5em;
-			padding: 20px;
-			display: block;
-			opacity: 0;
-			position: relative;
-			z-index: -10;
-			transform: translateX(10px);
-			
-			//ナビ開いてない状態
-			a{
-				pointer-events: none;
-				z-index: -10;
-			}
-		}
-
-		li:not( .nav_contact ){
-			&:after{
-				display: none;
-			}
-		}		
-
-		.button-nav
-		{
-			padding-right: 0;
-			padding-left: 0;
- 			a{
-				width: auto;
-				padding: 0.5em 1.5em;
-				margin-left: auto;
-				margin-right: auto;
-			}			
-		}
-
-		/////// navigation open (clicked
-		@at-root .navOpen &{
-			.wrap{
-				z-index: 10;
-			}
-			li{
-				opacity: 1;
-				transform: translateX(0px);
-
-				transition: all 0.3s ease 0s;
-			
-				@for $i from 1 through 6 {
-
-					&:nth-child( #{$i} ){
-						$delay: 0.85 + (0.15 * $i);
-						transition-delay: #{$delay}s;
-					}
-				}	
-
-				//ナビ開いた状態
-				a{
-					pointer-events: auto;
-					z-index: 9;
-				}						
-			}
-			
-		}
-
-	} //max 580
-
+body:after{
+	content: "";
 	
 }
 
-////( スマホ用 )開閉アイコン
+
+
+////////////////////
+
+// nav toggle
+
+////////////////////
+
 .navToggle
 {
 	display: none;
 
 	@include break( sp ){
+		position: fixed;
+		z-index: 10;
+		bottom: 2%;
+		right: 2%;
 		display: block;
-	$buttonSize : 50px;
-	$buttonTextColor: #fff;
+		$buttonSize : 50px;
+		$buttonTextColor: #fff;
 	
-	&_hitArea,
-	&:after{
+	&_hitArea{
 		width: $buttonSize;
 		height: $buttonSize;
 		line-height: 1;
-		padding: 5px;
 		box-sizing: border-box;
 		display: block;
-		position: fixed;
-		bottom: 2%;
-		right: 2%;
 		cursor: pointer;
-	}
-
-	&_hitArea{
 		z-index: 100;
 	}
 
-	&:after{
-		content: " ";
-		// will-change: width, height, border-radius;
-		z-index: 8;
-		transition:all 0.3s linear 0s;
-		border-radius: 100%;
-		box-shadow: 0 4px 4px rgba( #000, 0.1), 0 0 10px rgba( #000, 0.3 );
-		background-color: darken( $blue, 35 );		
+	&_oct{
+		opacity: 0.95;
+		fill: #0028ED;
+		stroke-width: 1px;
+		stroke: #fff;
+		stroke-dasharray: 200px;
+		stroke-dashoffset: -200px;
+		transition: all 0.5s linear 0s;
 	}
-	
-	
-	//icon
-	&_icon
-	{
+	@include mouseOver(){
+		.navToggle_oct{
+			opacity: 1 ;
+			stroke-dashoffset: 0px;
+		}
+	}
 
-		height: 20px;
-		top: 0;
-		bottom: 0;
-		
-		//bar
-		&,
-		&:before , 
-		&:after, 		
-		&_lineCenter{
-			width: 70%;
-			line-height: 0;
-			margin: auto;
-			display: block;
-			position: absolute;
-			right: 0;
-			left: 0;			
-		}
-
-		&:before , 
-		&:after, 		
-		&_lineCenter{
-			height: 1px;
-			background-color: $buttonTextColor;		
-			transition: easeInOutCirc(0.3s);		
-		}		
-		
-		&:before , 
-		&:after{
-			content: " "; 
-			transform-origin: -1px;
-		}
-		//top
-		&:before{
-			top: 0;
-		} 
-		//center
-		&_lineCenter{
-			top: 0;
-			bottom: 0;
-		}
-		//bottom
-		&:after{
-			bottom: 0;
-		}		
+	&_hitArea_line{
+		stroke: #fff;
+		fill: #fff;
+		transition: transition(0.5s);
 	}
 
 	/////// navigation open (clicked
 	@at-root .navOpen
 	{
-		overflow: hidden;
+		.navToggle_hitArea_line{
+			&.-lineTop{
+				transform-origin: 50%;
+				transform: translateY(9px) rotate(45deg);
+			}
+			&.-lineButtom{
+				transform-origin: 50%;
+				transform: translateY(-9px) rotate(135deg);
+			}
+
+			&.-lineCenter{
+				opacity: 0;
+			}
+		}
+		.navToggle_oct{
+			opacity: 1 ;
+			stroke-dashoffset: 0px;
+		}		
 	
-		.navToggle
-		{
-			&_hitArea{
-				z-index: 11;
-			}
-
-			&:after{
-				width: 100%;
-				height: 100%;
-				right: 0;
-				bottom: 0;
-				border-radius: 0;
-				box-shadow: none;
-				// @include background-image( linear-gradient( to right, $green, $blue ) );	
-				background-color: darken( $blue, 20 );		
-			}
-			
-			
-			//icon
-			&_icon
-			{
-				
-				//bar
-				//top
-				&:before{
-					transform: rotate( 45deg );
-				} 
-				//center
-				&_lineCenter{
-					width: 200%;
-					opacity: 0;
-				}
-				//bottom
-				&:after{
-					transform: rotate( -45deg );
-				}		
-			}
-		}	
-
 	}		
 	} // min 580
 }
 
 
+
+
+////////////////////
+
+// overlay
+
+////////////////////
+
+body:after{
+	content: " ";
+	width: 0%;
+	height: 100%;
+	margin: auto;
+	display: block;
+	position: fixed;
+	z-index: 8;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	transition: all 1s ease 0s;
+}
+body.navOpen:after{
+	@include break( tab ){
+		width: 100%;	
+		transition-delay: 0.2s;
+	}	
+}
+/* オーバーレイ 1 */
+body:after{
+	transition: transition();
+	background-color: $blue_deep;
+}
+/* オーバーレイ 2 */
+body:before{
+	// @extend %gradation;
+	background-color: lighten( desaturate($blue, 10 ), 40 );
+}
 
 
 ////////////////////
@@ -405,6 +407,7 @@
 	background-color: $gray_light;
 
 	@include break( tab ){
+		font-size: 10px;
 		padding-top: 40px;
 	}
 	
@@ -485,10 +488,17 @@
 				color: inherit;
 				padding-left: 30px;
 				padding-right: 30px;
+				@include break( tab ){
+				}				
+				
+				
 			}
 
 			&:not( :last-child ) a{
 				border-right: solid 1px #ddd;
+				@include break( tab ){
+					border-right: none;
+				}
 			}
 			
 			&:last-child{
@@ -516,15 +526,39 @@
 .button{
 	line-height: 1;
 	font-style: normal;
+	position: relative;
 	display: block;
+	border-radius: 2px;
+	transition: transition();
 	
 	&.-inquiry{
+		@include background-image(linear-gradient( to right, $blue, $green ));
+		
+		@include mouseOver(){
+
+			background-size: 300%;
+			.button_arrow{
+				stroke-dasharray: 270%;
+				stroke-dashoffset: 100%;
+			}
+		}
+		
+		.button_arrow{
+			height: 2px;
+			margin: auto;
+			transition: transition();
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			stroke-width: 1.5px;
+			
+		}
 		
 		>*{
 			padding: 15px;
 			color: #fff;
 		}
-		@include background-image(linear-gradient( to right, $blue, $green ));
 	}
 
 }
@@ -581,33 +615,6 @@
 
 body{
 	// overflow: hidden;
-}
-
-/* オーバーレイ */
-body:after,
-body:before{
-	content: " ";
-	width: 0%;
-	height: 0%;
-	margin: auto;
-	display: block;
-	position: fixed;
-	z-index: 96;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	transition: all 4s ease 0s;
-}
-/* オーバーレイ 1 */
-body:after{
-	transition: all 4s ease 0.25s;
-	background-color: #fafafa;
-}
-/* オーバーレイ 2 */
-body:before{
-	// @extend %gradation;
-	background-color: lighten( desaturate($blue, 10 ), 40 );
 }
 
 
