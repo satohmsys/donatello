@@ -33,14 +33,19 @@ $w.on( 'load scroll resize' , function( e ){
 
 var $slickTarget = $('#topicsWrapper');
 
-$slickTarget.slick({
-	autoplay: true,
-	arrows: false,
-	dots: false,
-	slidesToShow: 1,
-	slidesToMove: 1
-
-});
+if( $slickTarget ){
+	$slickTarget.slick({
+		// autoplay: false,
+		autoplay: true,
+		autoplaySpeed: 3500,
+		arrows: false,
+		dots: false,
+		fade: true,
+		slidesToShow: 1,
+		slidesToMove: 1,
+		speed: 250
+	});	
+}
 
 
 

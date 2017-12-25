@@ -1,8 +1,8 @@
 .index
 {
 
-	@import "../js/slick/slick.scss";
-	@import "../js/slick/slick-theme.scss";
+	// @import "../js/slick/slick.scss";
+	// @import "../js/slick/slick-theme.scss";
 	
 
 .siteHeader{
@@ -30,7 +30,7 @@
 	position: relative;
 	background-color: blue;	
 	
-	&_copy{
+	.wrap{
 		width: 100%;
 		position: absolute;
 		margin-right: auto;
@@ -39,11 +39,27 @@
 		right: 0;
 		left: 0;
 		transform: translateY(-50%);
+		box-sizing: border-box;		
+	}
+	&_copy{
 		color: #fff;
 		
-		.firstRow{
+		.firstRow,
+		.secondRow{
 			margin-right: 0.5em;
+			@include break( sp ){
+				margin-right: 0;
+				display: block;
+			}
+			
 		}
+		.lastRow{
+			@include break( sp ){
+				margin-right: -0.5em;
+				display: block;
+			}
+		}		
+
 		&_en{
 			margin-top: 0;
 			margin-bottom: 50px;
@@ -91,10 +107,10 @@
 	a{
 		color: inherit
 	}
-	// .wrap{
-	// 	white-space: nowrap;
-	// 	text-overflow: ellipsis;
-	// }
+	.wrap{
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
 	
 	.update{
 		line-height: 1;
@@ -118,6 +134,15 @@
 		}
 
 	}	
+
+	.slick-slide{
+		transition: transition();
+		// transform: translateX(10px);
+	}
+	.slick-slide.slick-current{
+		transform: translateX(0);
+	}
+
 }
 
 
@@ -129,6 +154,7 @@
 /////////////////////
 
 .introduction{
+	margin-bottom: 115px;
 	padding-top: 75px;
 	padding-bottom: 75px;
 	text-align: center;
@@ -136,11 +162,24 @@
 	text-shadow: 0 0 10px $gray_secondary;
 	@extend %dullgradation;
 	
+	@include break( tab ){
+		margin-bottom: 50px;
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+
+	
 	&_index{
 		margin-bottom: 40px;
 		font-family: $din_medium;
 		letter-spacing: 0.33em;
 		font-size: $xlarge;
+		
+		@include break( tab ){
+			margin-bottom: 25px;
+			font-size: 1.4em;
+		}
+
 	}
 
 	&_content{
@@ -166,10 +205,19 @@
 	justify-content: space-between;
 	align-items: stretch;
 
+	@include break( tab ){
+		flex-wrap: wrap;
+	}
+	
+
 	li{
 		width: calc( 25% - 45px);
 		line-height: 1;
 		display: block;
+		
+		@include break( tab ){
+			width: 49%;
+		}
 		
 		a{
 			padding-top: 50px;
@@ -183,6 +231,13 @@
 			};
 			color: inherit;
 			
+			@include break( tab ){
+				padding-top: 25px;
+				padding-bottom: 25px;
+				border-top: none;
+			}
+
+			
 			&:after{
 				content: "";
 				width: 30px;
@@ -195,6 +250,12 @@
 				bottom: 0;
 				background: url( ../img/icon-arrow-next.svg) center center no-repeat;
 				background-size: 100% auto;
+				
+				@include break( tab ){
+					width: 25px;
+					right: 10px;
+				}
+
 			}
 		}
 		
