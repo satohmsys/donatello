@@ -1,5 +1,8 @@
 .index
 {
+
+	@import "../js/slick/slick.scss";
+	@import "../js/slick/slick-theme.scss";
 	
 
 .siteHeader{
@@ -14,6 +17,13 @@
 	}
 }
 
+
+//////////////////////
+
+// mainvisual
+
+/////////////////////
+
 .mainvisual{
 	height: 100vh;
 	text-align: center;
@@ -21,26 +31,191 @@
 	background-color: blue;	
 	
 	&_copy{
+		width: 100%;
+		position: absolute;
+		margin-right: auto;
+		margin-left: auto;
+		top: 50%;
+		right: 0;
+		left: 0;
+		transform: translateY(-50%);
 		color: #fff;
 		
 		.firstRow{
 			margin-right: 0.5em;
 		}
-		&.-en{
+		&_en{
 			margin-top: 0;
 			margin-bottom: 50px;
 			font-size: 50px;
 			letter-spacing: 0.261em;
 			font-family: $din_medium;
 		}
-		&.-ja{
+		&_ja{
 			font-weight: 500;
 			letter-spacing: 0.33em;
 			font-size: #{(23 / 14)}em;
 		}
 	}
+
+	&_graphic{
+		width: 100%;
+		height: 100%;
+		margin: auto;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+	}
 }
 
+
+
+//////////////////////
+
+// topics
+
+/////////////////////
+
+.topics
+{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	
+	ul{
+		margin: 0;
+		padding: 0;
+	}
+	
+	a{
+		color: inherit
+	}
+	// .wrap{
+	// 	white-space: nowrap;
+	// 	text-overflow: ellipsis;
+	// }
+	
+	.update{
+		line-height: 1;
+		font-size: $small;
+
+		&_date,
+		&_info
+		{
+			display: inline-block;
+			vertical-align: middle;
+		}
+		&_date{
+			margin-right: 30px;
+			color: $gray_primary;
+			font-family: $din_medium;
+			font-size: 1.1em;
+		}
+
+		&_info{
+			margin-left: 0;
+		}
+
+	}	
+}
+
+
+
+//////////////////////
+
+// intro
+
+/////////////////////
+
+.introduction{
+	padding-top: 75px;
+	padding-bottom: 75px;
+	text-align: center;
+	color: #fff;
+	text-shadow: 0 0 10px $gray_secondary;
+	@extend %dullgradation;
+	
+	&_index{
+		margin-bottom: 40px;
+		font-family: $din_medium;
+		letter-spacing: 0.33em;
+		font-size: $xlarge;
+	}
+
+	&_content{
+		padding-top: 0;
+		padding-bottom: 0;
+		font-feature-settings: "palt";
+		letter-spacing: 0.25em;
+		line-height: 2em;
+	}
+	
+}
+
+
+//////////////////////
+
+// link
+
+/////////////////////
+
+.siteMap{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: stretch;
+
+	li{
+		width: calc( 25% - 45px);
+		line-height: 1;
+		display: block;
+		
+		a{
+			padding-top: 50px;
+			padding-right: 30px;
+			padding-bottom: 50px;
+			position: relative;
+			display: block;
+			border: {
+				top: solid 1px $border;
+				bottom: solid 1px $border;
+			};
+			color: inherit;
+			
+			&:after{
+				content: "";
+				width: 30px;
+				height: 10px;
+				margin: auto;
+				display: block;
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				background: url( ../img/icon-arrow-next.svg) center center no-repeat;
+				background-size: 100% auto;
+			}
+		}
+		
+	}
+
+	&_en{
+		margin-top: 0;
+		margin-bottom: 10px;
+		letter-spacing: 0.15em;
+		color: $blue;
+		font-size: $xlarge;
+		font-family: $din_bold;
+	}
+
+	&_ja{
+		margin-top: 0;
+		margin-bottom: 0;
+		letter-spacing: 0.15em;
+		color: $gray_primary;
+	}
+}
 
 
 }

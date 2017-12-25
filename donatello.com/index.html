@@ -11,6 +11,7 @@
    <meta http-equiv="X-UA-Compatible" content="IE=Edge"> 
    <meta name="viewport" content="width=device-width,user-scalable=yes,initial-scale=1"> 
    <!-- ***** my style -->
+   <link rel="stylesheet" type="text/css" href="common/css/nomalize.css">
    <link rel="stylesheet" type="text/css" href="common/css/style.css">
 
    <!-- ///// my style -->
@@ -1320,39 +1321,50 @@
 </div>
 </header>
 <!-- ///// header  -->
-<div id="pageContent" data-content="index">
+<div id="fetchContent" data-content="index">
 
    <!-- ***** mainvisual -->
    <section class="mainvisual">
       <div class="wrap">
          <div class="mainvisual_copy">
-            <p class="mainvisual_copy -en">
+            <p class="mainvisual_copy_en">
                <span class="firstRow">DEVELOP FOR</span><span class="secondRow">THE FUTURE</span>.
             </p>
-            <h2 class="mainvisual_copy -ja">未来を拓くエンジニアスキル</h2>
+            <h2 class="mainvisual_copy_ja">未来を拓くエンジニアスキル</h2>
          </div>
       </div>
       <canvas class="mainvisual_graphic">
    </section>
    <!-- ///// mainvisual  -->
-   <section class="updatelist">
+   <section class="topics">
       <div class="wrap">
-         <ul class="updates">
-            <li class="update">
+         <div id="topicsWrapper">
+            <div class="update">
                <a href="">
                   <dl>
-                     <dt class="update_date">2017.12.15</dt><dd>アップデート情報</dd>
+                     <dt class="update_date">2017.12.15</dt><dd class="update_info">アップデート情報</dd>
                   </dl>
                </a>
-            </li>
-            <li class="update">
+            </div>
+            <div class="update">
                <a href="">
                   <dl>
-                     <dt class="update_date">2017.12.15</dt><dd>アップデート情報</dd>
+                     <dt class="update_date">2017.12.15</dt><dd class="update_info">アップデート情報</dd>
                   </dl>
                </a>
-            </li>         
-         </ul>
+            </div>         
+         </div>
+      </div>
+   </section>
+   <section class="introduction">
+      <div class="wrap">
+         <header class="introduction_index ef ef-dup">
+            <h3>"DEVELOP FOR THE FURUTE."</h3>
+         </header>
+         <p class="introduction_content ef ef-floatup" data-delay='0.5' >
+            私たち、株式会社Donatelloは、<br>お客様の業務を分析し、受託システム開発・SESを通じ<br>
+            業務効率化・属人的ミスを軽減するための最適なシステムを提案いたします。
+         </p>
       </div>
    </section>
    <!-- ***** BODY START -->
@@ -1417,8 +1429,44 @@
 
 
    <footer class="siteFooter">
-      <div class="wrap"></div>
+      <div class="wrap">
+         <header class="siteFooter_ci">
+            <figure class="ci -new"><img src="common/img/logo.svg" width="200" alt="Donatello"></figure>
+            <figure class="ci -old"><img src="common/img/logo-old.png" width="50" alt=""></figure>
+         </header>
+         <section>
+            <header>
+               <h2 class="siteFooter_info">
+                  東京都のシステム開発、SESを行うDonatello※サンプルキーワード
+               </h2>
+            </header>
+            <div class="siteFooter_address">
+               <address class="address">
+                  東京都港区白金1-15-29 天翔白金ビル203 <a href="" target="_blank"><i class="icon-address"></i></a>
+               </address>
+               <a href="" class="button -inquiry">
+                  <button role="link" >
+                     システム開発、SESのお問い合わせ
+                  </button>
+               </a>
+            </div>
+         </section>
+         <section>
+            <nav class="siteFooter_nav">
+               <ul class="nav">
+                  <li><a href="">会社概要</a></li>
+                  <li><a href="">事業内容</a></li>
+                  <li><a href="">実績</a></li>
+                  <li><a href="">採用情報</a></li>
+                  <li><a href="">お問い合わせ</a></li>
+               </ul>                  
+            </nav>
+         </section>
+         <footer class="siteFooter_copyright">
+            &copy; Donatello co.ltd, All Rights Reserved.
+         </footer>
 
+      </div>
    </footer>         
    <div class="backToTop"><i></i></div>
 
@@ -1430,24 +1478,16 @@
    <!-- *****scripts -->
 
    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>      
-   <script type="text/javascript" src="common/js/greensock-js/src/minified/TweenMax.min.js"></script>
-   <script type="text/javascript" src="common/js/scrollmagic/minified/ScrollMagic.min.js"></script>
-   <script type="text/javascript" src="common/js/scrollmagic/minified/plugins/animation.gsap.min.js"></script>
-   <script type="text/javascript" src="common/js/scrollmagic/minified/plugins/debug.addIndicators.min.js"></script>       
+   <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>     
+  <script type="text/javascript" src="common/js/slick/slick.min.js"></script>
    <script type="text/javascript" src="common/js/pjax/spica.js"></script>
-
    <script type="text/javascript" src="common/js/pjax/localsocket.js"></script>
-
    <script type="text/javascript" src="common/js/pjax/pjax-api.js"></script>
-
    <script type="text/javascript" src="common/js/pjax/config.js"></script>
-
    <script type="text/javascript" src="common/js/common.js"></script>
-
-   <script type="text/javascript" src="common/js/common.js"></script>
-
-   <script type="text/javascript" src="js/index/script.js"></script>
-
 
    <!-- /////scripts -->
 </body>

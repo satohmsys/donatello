@@ -7,7 +7,10 @@
 //////////////////////////////////////////
 
 %gradation{
-	@include background-image( linear-gradient( to right, $blue, $green ) );	
+	@include background-image( linear-gradient( to bottom, $blue, $green ) );	
+}
+%dullgradation{
+	@include background-image( linear-gradient( to bottom, #88fdd3, #285aa3 ) );	
 }
 
 %popspan{
@@ -57,8 +60,8 @@ $mobileFontsize : 0.6;
 $xxxlarge : 4em;
 $xxlarge : 2.8em;
 $xlarge : 2em;
-$large : #{ 21 / 14}em;
-$small : #{ 12 / 14}em;
+$large : #{ (21 / 14)}em;
+$small : #{ (12 / 14)}em;
 $xsmall: 0.5em;
 
 

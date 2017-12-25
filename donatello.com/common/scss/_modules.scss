@@ -92,6 +92,8 @@
 			color: inherit;
 			padding-left: 30px;
 			padding-right: 30px;
+			letter-spacing: 0.15em;
+
 		}
 
 		&:not( :last-child ) a{
@@ -353,6 +355,7 @@
 
 .sns{
 	&List{
+		margin-top: 100px;
 		text-align: center;
 		li{
 			vertical-align: middle;
@@ -378,9 +381,122 @@
 ////////////////////
 
 .siteFooter{
+	margin-top: 45px;
+	padding-top: 50px;
+	padding-bottom: 15px;
+	color: $gray_primary;
+	font-size: $small;
+	letter-spacing: 0.05em;
+	text-align: center;
 	background-color: $gray_light;
+	
+	&_ci{
+		.ci{
+			margin-bottom: 20px;
+			display: inline-block;
+			vertical-align: middle;
+			
+			&.-old{
+				margin-left: 30px;
+			}
+		}
+	}
+
+	&_info{
+		font-weight: 500;
+		margin-bottom: 15px;
+	}
+	
+
+	&_address{
+		margin-bottom: 45px;
+		
+		.address{
+			font-style: normal;
+			margin-bottom: 20px;
+			
+			a{
+				margin-left: 10px;
+				display: inline-block;
+				vertical-align: bottom;
+			}
+		}
+		
+		.button{
+			max-width: 300px;
+			margin-right: auto;
+			margin-left: auto;
+			
+			button{
+				letter-spacing: 0.01em;			
+			}
+		}
+	}
+
+	.icon-address{
+		color: $blue;	
+	}
+
+
+	.nav{
+		margin-bottom: 10px;
+
+		li
+		{
+			line-height: 1;
+			vertical-align: middle;
+			display: inline-block;
+			list-style: none;
+			text-align: center;
+			
+			
+			a{
+				color: inherit;
+				padding-left: 30px;
+				padding-right: 30px;
+			}
+
+			&:not( :last-child ) a{
+				border-right: solid 1px #ddd;
+			}
+			
+			&:last-child{
+				margin-right: 0;
+			}
+		}		
+	}
+
+
+	&_copyright{
+		color: $gray_third;
+	}
+
 }
 
+
+
+////////////////////
+
+// button
+
+////////////////////
+
+
+.button{
+	line-height: 1;
+	font-style: normal;
+	display: block;
+	
+	&.-inquiry{
+		
+		>*{
+			padding: 15px;
+			color: #fff;
+		}
+		@include background-image(linear-gradient( to right, $blue, $green ));
+	}
+
+}
 
 
 ////////////////////
