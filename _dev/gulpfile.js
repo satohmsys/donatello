@@ -17,7 +17,7 @@ var csscomb = require( 'gulp-csscomb' );
 //////////////////////////////////////////////////////
 
 var dir = {
-  top: '../portfolio',
+  top: '../donatello.com',
   below: '/',
   index: 'index.html',
   ejsEdit: ''
@@ -168,7 +168,7 @@ gulp.task('prettify', function() {
 * default tasks
 */
 gulp.task('default' ,['browserSync'], function(){
-  gulp.watch('_ejs/**/*.ejs', ['ejs']);
+  // gulp.watch('_ejs/**/*.ejs', ['ejs']);
   gulp.watch( dir.top + '/**/scss/**/*.scss', ['sassCompileReload']);
   gulp.watch( [dir.top + '/**/*.html',dir.top + '/**/*.php' ] , ['browserSyncReload']);
 });
