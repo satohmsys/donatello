@@ -1,11 +1,6 @@
 @charset "UTF-8";
 @import "compass";
 
-// グリッドシステムsusy
-// @link http://susy.oddbird.net/
-// @link http://susy.oddbird.net/
-//@import "../../../dev/node_modules/susy/sass/susy";
-
 @import "colors";
 @import "variables";
 @import "fonts";
@@ -15,6 +10,7 @@
 @import "settings";
 @import "utilities";
 @import "modules";
+@import "module-pages";
 @import "layouts";
 // @import "typography";
 // @import "main";
