@@ -588,16 +588,16 @@ a img:focus
 }.button.-inquiry > *
 {
     padding: 15px;color: #fff;
-}.button.-toEntry
+}.button.-toEnter
 {
     max-width: 450px;
-}.button.-toEntry > button
+}.button.-toEnter > button
 {font-weight: bold;
 
-    padding-top: 40px;padding-bottom: 40px;letter-spacing: .33em;
+    padding-top: 30px;padding-bottom: 30px;letter-spacing: .33em;
 }@media screen and (max-width: 580px)
 {
-    .button.-toEntry > button
+    .button.-toEnter > button
     {
         padding-top: 25px;padding-bottom: 25px;
     }

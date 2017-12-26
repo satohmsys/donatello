@@ -645,12 +645,12 @@ body:before{
 		}
 	}
 
-	&.-toEntry{
+	&.-toEnter{
 		max-width: 450px;
 		
 		>button{
-			padding-top: 40px;
-			padding-bottom: 40px;
+			padding-top: 30px;
+			padding-bottom: 30px;
 			letter-spacing: 0.33em;
 			// font-size: 1.25em;
 			font-weight: bold;
