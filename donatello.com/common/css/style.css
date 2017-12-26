@@ -233,10 +233,6 @@ a img:focus
     {
         display: block;
     }
-}.siteHeader > .wrap .siteHeader_logo,
-.siteHeader > .wrap .siteHeader_nav
-{
-    display: table-cell;vertical-align: middle;
 }@media screen and (max-width: 780px)
 {
     .siteHeader > .wrap .siteHeader_logo,
@@ -693,7 +689,7 @@ a img:focus
 }.index .siteHeader.scrolled polygon,
 .index .siteHeader.scrolled path
 {
-    fill: #8bffac;
+    fill: #6cbb6b;
 }.index .siteHeader.scrolled li
 {
     color: inherit;

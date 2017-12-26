@@ -71,8 +71,8 @@
 		
 		.siteHeader_logo,
 		.siteHeader_nav	{
-			display: table-cell;
-			vertical-align: middle;
+			// display: table-cell;
+			// vertical-align: middle;
 			
 		 	@include break( tab ){
 		 		display: block;
