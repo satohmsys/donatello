@@ -90,13 +90,18 @@
 		
 		polygon,
 		path{
-			fill: #fff;
+			fill: $coporate_green;
 		}
 		
 		a{
 			color: inherit;
 		}
 
+		 	@include break( tab ){
+		 		text-align: center;
+		 		margin-right: auto;
+		 		margin-left: auto;
+		 	}
 		// @at-root .navOpen &,
 		@at-root .navOpen .scrolled &{ 
 		 	@include break( tab ){			
@@ -587,6 +592,10 @@ body:before{
 	display: block;
 	border-radius: 2px;
 	transition: transition();
+	
+	button{
+		font-family: $fontFamily;
+	}
 	
 	&.-inquiry{
 		@include background-image(linear-gradient( to right, $blue, $green ));
