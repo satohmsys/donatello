@@ -1,0 +1,66 @@
+.works
+{
+
+
+//////////////////////
+
+// section
+
+/////////////////////
+
+.headingArea{
+	margin-bottom: 100px;
+	@include break( tab ){
+		margin-bottom: 60px;
+	}		
+}
+
+.section.-works{
+	text-align: center;
+
+	.section_index{
+		margin-bottom: 40px;
+		font-size: $xlarge;
+		@include break( sp ){
+			margin-bottom: 30px;
+		}
+		&_en{
+			letter-spacing: 0.14em;
+			@include break( sp ){
+				svg{
+					max-width: 100%;
+					height: auto;
+				}
+			}			
+		}
+		&_en:after{
+			display: none;
+		}
+	}
+
+	.section_content{
+		p{
+			letter-spacing: 0.14em;
+			line-height: 2;
+		}
+		@include break( sp ){
+			text-align: left;
+			
+			br{
+				width: 0;
+				display: none;
+			}
+		}
+	}
+
+	.intro{
+		font-weight: 500;
+		margin-bottom: 40px;
+		@include break( sp ){
+			margin-bottom: 20px;
+		}
+		
+	}
+
+}
+}
