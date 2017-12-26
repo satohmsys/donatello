@@ -7,6 +7,8 @@
 	
 
 .siteHeader{
+	padding-top: 40px;
+	padding-bottom: 20px;
 	polygon,
 	path
 	{
@@ -15,6 +17,7 @@
 	}
 
 	&.scrolled {
+		padding-top: 20px;
 		polygon,
 		path
 		{

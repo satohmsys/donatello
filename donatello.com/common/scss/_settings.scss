@@ -32,11 +32,15 @@ html{
 }
 
 body{
-	padding-top: 60px;
+	padding-top: 120px;
 	margin-top: 0;
 	margin-right: auto;
 	margin-bottom: 0;
 	margin-left: auto;
+	
+ 	@include break( tab ){
+ 		padding-top: 60px;
+ 	}		
 }
 
 h1 , h2 , h3 , h4 , h5 , h6{
