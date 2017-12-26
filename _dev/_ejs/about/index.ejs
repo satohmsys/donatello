@@ -5,24 +5,23 @@
 <!--[if !IE]<!-->
 <html lang="ja">
 <!--<![endif]-->
-<% include _inc/function %>   
+<% include('../_inc/_function') %>   
 <%
 $path = '../';
 $active = 'about';
 $css = null ;
 $scripts_global=null;
 $scripts=null;
-
 %>
 <head>
-  <%- include('_inc/_head') %>
+  <%- include($path + '_inc/_head') %>
 </head>
 
 <body class="about">
    <%# $parts.loadingAnim %>   
    
    <!-- ***** header  -->
-   <%- include('_inc/_gnav', {link: false}) %>
+   <%- include( $path + '_inc/_gnav', {link: true}) %>
    <!-- ///// header  -->
 
    <div id="fetchContent" data-content="about">
