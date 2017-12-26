@@ -608,6 +608,7 @@ body:before{
 	position: relative;
 	display: block;
 	border-radius: 2px;
+	text-align: center;
 	transition: transition();
 	
 	button{
@@ -619,7 +620,7 @@ body:before{
 		
 		@include mouseOver(){
 
-			background-size: 300%;
+			background-size: 200%;
 			.button_arrow{
 				stroke-dasharray: 270%;
 				stroke-dashoffset: 100%;
@@ -641,6 +642,23 @@ body:before{
 		>*{
 			padding: 15px;
 			color: #fff;
+		}
+	}
+
+	&.-toEntry{
+		max-width: 450px;
+		
+		>button{
+			padding-top: 40px;
+			padding-bottom: 40px;
+			letter-spacing: 0.33em;
+			// font-size: 1.25em;
+			font-weight: bold;
+			
+			@include break( sp ){
+				padding-top: 25px;
+				padding-bottom: 25px;
+			}
 		}
 	}
 
@@ -702,6 +720,13 @@ body:before{
 		text-align: left;
 		letter-spacing: 0.6em;
 		font-weight: bold;
+		
+		&.styleTable_index{
+			background-color: #F5FDFF;
+			text-align: center;
+			border-top: solid 1px $border;
+		}		
+
 		@include break( tab ){
 			letter-spacing: 0.25em;
 		}		
