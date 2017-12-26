@@ -1,4 +1,4 @@
-// var gulp = require( 'gulp' );
+var gulp = require( 'gulp' );
 
 //////////////////////////////////////////////////////
 var browserSync = require( 'browser-sync' );
@@ -29,7 +29,7 @@ var dir = {
   },
     // template: '_ejs/'+ dir.ejsEdit +'*' + '.ejs',
   ejsDir = {
-    template: ['_ejs/**/'+ dir.ejsEdit +'*.ejs', '_ejs/'+ dir.ejsEdit +'*.ejs', '!'+'_ejs/'+ dir.ejsEdit+'_*.ejs'],
+    template: ['_ejs/**/'+ dir.ejsEdit +'*.ejs', '_ejs/'+ dir.ejsEdit +'*.ejs', '!'+'_ejs/'+ dir.ejsEdit + '/**/_*.ejs'],
     rename: 'index.html'// [ ejs ] .ejs→htmlリネーム
   };
 
@@ -122,8 +122,8 @@ gulp.task("ejs", function(){
     )
     .pipe(ejs())
     .pipe( rename(function(e){
-      // extname: '.html'
-      console.log(e)      
+      e.extname = '.html';
+      // console.log(e)      
     }) )
     .pipe(plumber())
     .pipe(gulp.dest(dir.top + dir.below));
