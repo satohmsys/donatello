@@ -92,6 +92,11 @@ switch( $pageType ){
 		break;
 	case 'about' :
 		break;
+	case 'works' :
+		initForWorks();
+		break;
+	default: 
+		break;		
 }
 
 
@@ -116,6 +121,57 @@ function initForIndex(){
 		});	
 	}
 }
+
+
+/**
+* works
+*/
+
+function initForWorks(){
+	var $slickTarget = $('.worksContents'),
+		$slickAsNav = $('.worksNav .wrap');
+
+	if( $slickTarget ){
+		$slickTarget.slick({
+			asNavFor: '.worksNav .wrap',
+			autoplay: false,
+			arrows: false,
+			dots: false,
+			fade: true,
+			slidesToShow: 1,
+			slidesToMove: 1,
+			speed: 600
+		});	
+		$slickTarget.on( 'beforeChange', function(){
+			var $targetOffsetTop = $slickTarget.offset().top;
+			console.log( $targetOffsetTop )
+			$('body,html').animate({
+				scrollTop: $targetOffsetTop
+			}, 400 , 'swing')
+		});
+	}
+
+	if( $slickAsNav ){
+		$slickAsNav.slick({
+			// autoplay: false,
+			asNavFor: '.worksContents',
+			autoplay: false,
+			arrows: false,
+			dots: false,
+			focusOnSelect: true,
+			slidesToShow: 4,
+	         responsive: [{
+	               breakpoint: 768,
+	               settings: {
+	    //            	rows: 2,
+					// slidesPerRow: 2
+	               }
+	          }]			
+		});	
+	}	
+}
+
+
 
 
 

@@ -26,10 +26,10 @@
 	left: 0;
 	z-index: 10;
 	transition: transition();
-	 	@include break( tab ){
-	 		padding-top: 15px;
-	 		padding-bottom: 15px;
-	 	}		
+ 	@include break( tab ){
+ 		padding-top: 15px;
+ 		padding-bottom: 15px;
+ 	}		
 	
 	&:after{
 		content:"";
@@ -170,7 +170,6 @@
 				font-size: 30vw;
 				color: lighten( $blue_deep, 5% );
 				font-family: $din_medium;
-				
 			}
 			li
 			{
@@ -206,7 +205,6 @@
 					transition: all 0.3s ease 0s;
 				
 					@for $i from 1 through 7 {
-
 						&:nth-child( #{$i} ){
 							$delay: 0.7 + (0.15 * $i);
 							transition-delay: #{$delay}s;
@@ -228,13 +226,11 @@
 		 			transition-timing-function: ease;
 		 			opacity: 1;
 					transform: translateY( -50% ) translateX( 0px ); 
-
 		 		}				
 				
 			}		 	
 
 	 		.nav{
-	 			
 		 		width: 100%;
 		 		height: 100%;
 		 		display: flex;
@@ -291,8 +287,11 @@
 	/////// navigation open (clicked and scroll	
 	@at-root .scrolled & li{
 		color: $basefontColor;
+		@include break( tab ){
+			color: #fff;
+		}		
 	}
-	@at-root .navOpen  .scrolled & li {
+	@at-root .navOpen .scrolled & li {
 		color: #fff;
 	}	
 }
@@ -656,6 +655,7 @@ body:before{
 			font-weight: bold;
 			
 			@include break( sp ){
+				letter-spacing: 0.15em;
 				padding-top: 25px;
 				padding-bottom: 25px;
 			}
@@ -685,6 +685,17 @@ body:before{
 			box-sizing: border-box;
 			color: $gray_primary;
 			letter-spacing: 0.15em;
+		}
+	}
+
+	&.-comingsoon,
+	&.-disabled{
+		border: none;
+		background: none;
+		pointer-events:none;
+		>button{
+			padding: 0;
+			color: $gray_third;
 		}
 	}
 
