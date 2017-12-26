@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--[if lte IE 9]>
+<html lang="ja" class="ie">
+<![endif]-->
+<!--[if !IE]<!-->
+<html lang="ja">
+<!--<![endif]-->
+<% include('../_inc/_function') %>   
+<%
+$path = '../';
+$active = 'inquiry';
+$css = null;
+$scripts_global=null;
+$scripts=null;
+$meta.title = 'INQUIRY お問い合わせ | Donatello 東京のSES、システム開発、エンジニア育成';
+$meta.description = 'ディスクリプション';
+%>
+<head>
+  <%- include($path + '_inc/_head') %>
+</head>
+<body class="inquiry">
+   <%# $parts.loadingAnim %>   
+   <!-- ***** header  -->
+   <%- include( $path + '_inc/_gnav', {isChild: true}) %>
+   <!-- ///// header  -->
+   <div id="fetchContent" data-content="inquiry">
+      <!-- ***** mainvisual -->
+      <%- include( $path + '_inc/_page-headingArea', {copy:{en: 'INQUIRY', ja: 'お問い合わせ'} }) %>
+      <!-- ///// mainvisual  -->    
+      <!-- ***** BODY START -->
+      <main class="main">
+         <!-- *** about -->
+         <section id="supported" class="section -message">
+            <article>
+               <header class="section_index">
+                <h3>
+                  <span class="section_index_en">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="430px" height="30px" text-anchor="middle" viewBox="0 0 430 30">
+                        <linearGradient id="gradation"><stop offset="0" stop-color="#0C3FFF"></stop><stop offset="1" stop-color="#8BFFAC"></stop></linearGradient><text x="215" y="23" fill="url(#gradation)">"DEVELOP FOR THE FUTURE."</text></svg>
+                  </span>                     
+               </h3>
+               </header>
+               <div class="section_content wrap">
+                  <p class="intro">
+                     <strong>私たち、株式会社Donatelloは、<br>
+                        お客様の業務を分析し、受託システム開発、SESを通じ<br>
+                        業務効率化・属人的ミスを軽減するための最適なシステムを提案いたします。</strong>
+                  </p>
+                  <p>
+                     「新規ビジネスにどうしてもシステム開発が必要…でも、発注先に困っている」<br>
+                     「人手が足りなくて、開発スピードが遅い」<br>
+                  「業務の効率化にこんなアイデアがある！けれど、エンジニアが社内にいない…」</p>
+                  <p>このメッセージをご覧の御社のような先進的なテクノロジーや、<br>あなたのイメージする、人々を豊かにするアイディア。<br>プロジェクトが動いている、また、新しいものが産まれる現場に、よくある事態です。</p>
+                  <p>そんなとき、私たちが力になります。</p>
+                  <p>10年以上のシステム開発経験を持つDonatelloが、<br>現場にイノベーションのキーを提供します。     
+                  </p>
+                  <p>
+                     受託開発、エンジニア育成、マネージメント。
+                  </p>
+                  <p>
+                     Donatelloの培ったスキルで、プロジェクトの成功、改善をバックアップいたします。<br>
+                     まずはお気軽にお問い合わせくださいませ。
+
+                  </p>
+
+                  <div class="toEntry">
+                     <%- include( $path + '_inc/_page-enterButton', {text: 'お問合わせはこちら'}) %> 
+                     <aside class="toEntry_attention">
+                        メール画面が開きます。必要事項を記入してご送信下さいませ。<br>
+                        いただいた内容は厳重に管理し、3営業日以内に担当者よりご連絡いたします。
+                     </aside>    
+                  </div>
+               </div>
+            </article>
+         </section>
+         <!-- /// about -->      
+      </main>
+      <!-- //// BODY END -->
+
+      <%- include( $path + '_inc/_footer' ) %>
+      <!-- ***** menu button -->
+      <%- $parts.toggle %>
+      <!-- //// menu button -->
+      <%- include($path + '_inc/_scripts') %>
+   </body>
+
+   </html>

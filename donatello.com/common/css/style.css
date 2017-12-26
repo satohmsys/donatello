@@ -1198,4 +1198,60 @@ a img:focus
     {
         width: 80px;
     }
+}.inquiry .headingArea
+{
+    margin-bottom: 100px;
+}@media screen and (max-width: 780px)
+{
+    .inquiry .headingArea
+    {
+        margin-bottom: 60px;
+    }
+}.inquiry .section.-message
+{
+    text-align: center;
+}.inquiry .section.-message .section_index
+{font-size: 2em;
+
+    margin-bottom: 40px;
+}@media screen and (max-width: 580px)
+{
+    .inquiry .section.-message .section_index
+    {
+        margin-bottom: 30px;
+    }
+}.inquiry .section.-message .section_index_en
+{
+    letter-spacing: .14em;
+}@media screen and (max-width: 580px)
+{
+    .inquiry .section.-message .section_index_en svg
+    {
+        max-width: 100%;height: auto;
+    }
+}.inquiry .section.-message .section_index_en:after
+{
+    display: none;
+}.inquiry .section.-message .section_content p
+{line-height: 2;
+
+    letter-spacing: .14em;
+}@media screen and (max-width: 580px)
+{
+    .inquiry .section.-message .section_content
+    {
+        text-align: left;
+    }.inquiry .section.-message .section_content br
+    {
+        display: none;
+    }
+}.inquiry .section.-message .intro
+{
+    font-weight: 500;margin-bottom: 40px;
+}@media screen and (max-width: 580px)
+{
+    .inquiry .section.-message .intro
+    {
+        margin-bottom: 20px;
+    }
 }
