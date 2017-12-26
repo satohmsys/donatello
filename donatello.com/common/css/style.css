@@ -29,8 +29,8 @@
         font-size: 13px;
     }
 }body
-{
-    margin-top: 0;margin-right: auto;margin-bottom: 0;margin-left: auto;
+{margin-top: 0;margin-right: auto;margin-bottom: 0;margin-left: auto;
+    padding-top: 60px;
 }h1,
 h2,
 h3,
@@ -247,10 +247,17 @@ a img:focus
 }.siteHeader_logo polygon,
 .siteHeader_logo path
 {
-    fill: #fff;
+    fill: #6cbb6b;
 }.siteHeader_logo a
 {
     color: inherit;
+}@media screen and (max-width: 780px)
+{
+    .siteHeader_logo
+    {margin-right: auto;margin-left: auto;
+
+        text-align: center;
+    }
 }@media screen and (max-width: 780px)
 {
     .navOpen .scrolled .siteHeader_logo polygon,
@@ -535,6 +542,9 @@ a img:focus
 }.button
 {font-style: normal;
     line-height: 1;position: relative;display: block;transition: all .3s cubic-bezier(.785, .135, .15, .86) 0s;border-radius: 2px;
+}.button button
+{
+    font-family: 'Noto Sans Japanese','游ゴシック',YuGothic,'ヒラギノ角ゴ ProN W3','Hiragino Kaku Gothic ProN','メイリオ',Meiryo,sans-serif;
 }.button.-inquiry
 {transition: all .5s ease 0s;
 
@@ -682,6 +692,9 @@ a img:focus
 {font-weight: 500;display: block;
 
     margin-top: 20px;letter-spacing: .5em;
+}.index
+{
+    padding-top: 0;
 }.index .siteHeader polygon,
 .index .siteHeader path
 {
@@ -839,11 +852,14 @@ a img:focus
 .index .siteMap li a:focus:before
 {
     width: 100%;
-}.index .siteMap li a:hover .siteMap_en,
-.index .siteMap li a:active .siteMap_en,
-.index .siteMap li a:focus .siteMap_en
+}@supports (-webkit-background-clip: text)
 {
-    color: transparent;background-position: 100% 0;background-size: 100%;
+    .index .siteMap li a:hover .siteMap_en,
+    .index .siteMap li a:active .siteMap_en,
+    .index .siteMap li a:focus .siteMap_en
+    {
+        color: transparent;background-position: 100% 0;background-size: 100%;
+    }
 }.index .siteMap li a:before
 {line-height: 1;position: absolute;top: -1px;right: 0;bottom: 0;left: 0;display: block;width: 0;height: 100%;
 
@@ -862,7 +878,13 @@ a img:focus
 }.index .siteMap_en
 {font-family: 'URW DIN Bold';font-size: 2em;position: relative;overflow: hidden;
 
-    margin-top: 0;margin-bottom: 10px;transition: all .3s cubic-bezier(.785, .135, .15, .86) 0s;letter-spacing: .15em;color: #0c3fff;background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzBjM2ZmZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzhiZmZhYyIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');background-image: linear-gradient(to right, #0c3fff,#8bffac);background-position: -100% 0;-webkit-background-clip: text;background-size: 100%;
+    margin-top: 0;margin-bottom: 10px;transition: all .3s cubic-bezier(.785, .135, .15, .86) 0s;letter-spacing: .15em;color: #0c3fff;
+}@supports (-webkit-background-clip: text)
+{
+    .index .siteMap_en
+    {background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzBjM2ZmZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzhiZmZhYyIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');background-image: linear-gradient(to right, #0c3fff,#8bffac);background-position: -100% 0;
+        -webkit-background-clip: text;background-clip: text;background-size: 100%;
+    }
 }@media screen and (max-width: 780px)
 {
     .index .siteMap_en
@@ -873,7 +895,7 @@ a img:focus
 {
     margin-top: 0;margin-bottom: 0;letter-spacing: .15em;color: #666;
 }.about .section.-philosophy .intro
-{font-size: 1.125em;font-weight: 400;
+{font-weight: 500;
     line-height: 2;text-align: center;letter-spacing: .15em;
 }.about .section.-philosophy .philosophy_chart
 {margin-top: 50px;
@@ -883,12 +905,30 @@ a img:focus
 {font-size: 1.5em;font-weight: 500;
 
     margin-bottom: 40px;text-align: center;letter-spacing: .15em;
+}@media screen and (max-width: 580px)
+{
+    .about .section.-philosophy .philosophy_chart_index
+    {
+        font-size: 1.15em;margin-bottom: 20px;
+    }
+}@media screen and (max-width: 580px)
+{
+    .about .section.-philosophy .philosophy_chart_img
+    {padding-right: 5%;
+        padding-left: 5%;
+    }
 }.about .section.-philosophy .philosophy_list
 {
     text-align: center;
 }.about .section.-philosophy .philosophyList
 {
     display: inline-block;text-align: left;
+}@media screen and (max-width: 580px)
+{
+    .about .section.-philosophy .philosophyList
+    {
+        display: block;
+    }
 }.about .section.-philosophy .philosophyList li
 {
     display: block;
@@ -909,7 +949,23 @@ a img:focus
 {font-family: 'URW DIN Bold';display: inline-block;margin-left: 20px;
 
     content: attr(data-en);letter-spacing: .15em;text-transform: uppercase;color: #aaa;
+}@media screen and (max-width: 580px)
+{
+    .about .section.-philosophy .philosophyList_index
+    {
+        width: 110px;
+    }.about .section.-philosophy .philosophyList_index:after
+    {font-size: small;display: block;
+
+        margin-left: 0;letter-spacing: .1em;
+    }
 }.about .section.-philosophy .philosophyList_content
 {
     padding-left: 40px;
+}@media screen and (max-width: 580px)
+{
+    .about .section.-philosophy .philosophyList_content
+    {
+        padding-left: 1em;
+    }
 }

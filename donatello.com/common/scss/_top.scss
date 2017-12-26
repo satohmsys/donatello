@@ -1,5 +1,6 @@
 .index
 {
+	padding-top: 0;
 
 	// @import "../js/slick/slick.scss";
 	// @import "../js/slick/slick-theme.scss";
@@ -266,9 +267,11 @@
 				}
 
 				.siteMap_en{
-					color: transparent;
-					background-size: 100%;
-					background-position: 100% 0;
+					@supports (-webkit-background-clip: text){
+						color: transparent;
+						background-size: 100%;
+						background-position: 100% 0;
+					}					
 				}
 			}
 
@@ -322,9 +325,13 @@
 		font-size: $xlarge;
 		font-family: $din_bold;
 		transition: transition();
-		-webkit-background-clip: text;
-		background-position: -100% 0;
-		@include background-image( linear-gradient( to right, $blue, $green ) );	
+		@supports (-webkit-background-clip: text){
+			-webkit-background-clip: text;
+			      background-clip: text;		
+			background-position: -100% 0;
+			@include background-image( linear-gradient( to right, $blue, $green ) );	
+			
+		}
 		
 		@include break( tab ){
 			font-size: 1.5em;
