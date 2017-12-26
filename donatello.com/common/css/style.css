@@ -620,6 +620,12 @@ a img:focus
 {font-size: 2em;
 
     padding-top: 100px;padding-bottom: 100px;vertical-align: middle;text-shadow: 0 0 10px #666;
+}@media screen and (max-width: 580px)
+{
+    .headingArea_copy
+    {
+        font-size: 1.5em;
+    }
 }.headingArea_copy_en
 {font-family: 'URW DIN Bold';
 
@@ -642,6 +648,13 @@ a img:focus
 {position: relative;display: block;
 
     padding: 30px 15px;transition: all .5s ease 0s;color: inherit;
+}@media screen and (max-width: 580px)
+{
+    .pageNav a
+    {font-size: .85714em;
+
+        padding: 15px 7px;
+    }
 }.pageNav a:before
 {position: absolute;bottom: -1px;left: 0;display: block;width: 0;height: 1px;
 
@@ -674,6 +687,12 @@ a img:focus
 }.section_index
 {font-size: 1.5em;
     line-height: 1;position: relative;margin-bottom: 60px;text-align: center;
+}@media screen and (max-width: 580px)
+{
+    .section_index
+    {
+        margin-bottom: 30px;
+    }
 }.section_index_en
 {font-family: 'URW DIN Bold';position: relative;display: table;
 
@@ -739,15 +758,14 @@ a img:focus
         margin-right: -.5em;
     }
 }.index .mainvisual_copy_en
-{font-family: 'URW DIN Medium';font-size: 50px;
+{font-family: 'URW DIN Bold';font-size: 50px;
 
     margin-top: 0;margin-bottom: 50px;letter-spacing: .261em;
 }@media screen and (max-width: 580px)
 {
     .index .mainvisual_copy_en
     {font-size: 30px;
-
-        margin-bottom: 20px;
+        line-height: 1.4;margin-bottom: 20px;
     }
 }.index .mainvisual_copy_ja
 {font-size: 1.64286em;

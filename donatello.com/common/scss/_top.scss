@@ -79,9 +79,10 @@
 			margin-bottom: 50px;
 			font-size: 50px;
 			letter-spacing: 0.261em;
-			font-family: $din_medium;
+			font-family: $din_bold;
 			
 			@include break( sp ){
+				line-height: 1.4;
 				margin-bottom: 20px;
 				font-size: 30px;
 			}
