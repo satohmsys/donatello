@@ -1,4 +1,4 @@
-var gulp = require( 'gulp' );
+// var gulp = require( 'gulp' );
 
 //////////////////////////////////////////////////////
 var browserSync = require( 'browser-sync' );
@@ -27,27 +27,11 @@ var dir = {
     scss: 'scss',
     dir: ''
   },
+    // template: '_ejs/'+ dir.ejsEdit +'*' + '.ejs',
   ejsDir = {
-    template: '_ejs/'+ dir.ejsEdit +'*' + '.ejs',//[ ejs ] 更新対象ejsのファイル
+    template: ['_ejs/**/'+ dir.ejsEdit +'*.ejs', '_ejs/'+ dir.ejsEdit +'*.ejs', '!'+'_ejs/'+ dir.ejsEdit+'_*.ejs'],
     rename: 'index.html'// [ ejs ] .ejs→htmlリネーム
-  }
-
-/**
-* php
-*/
-// gulp.task( 'connect-sync', function(){
-//   php.server({
-//     port: 8006,
-//     base: '/recruit/',
-//       bin: '/Applications/MAMP/bin/php/php5.6.27/bin/php',
-//       ini: '/Applications/MAMP/bin/php/php5.6.27/conf/php.ini'    
-//   }, function(){
-//     browserSync({
-//       proxy: 'localhost:8006/recruit/',
-//       baseDir: '/recruit'     
-//     });
-//   });
-// });
+  };
 
 /**
 * browser sync setting
@@ -136,12 +120,13 @@ gulp.task("ejs", function(){
      gulp.src(
       ejsDir.template
     )
-    .pipe(ejs(/*{}, {ext: '.html'}*/))
-    .pipe( rename({
-      extname: '.html'      
+    .pipe(ejs())
+    .pipe( rename(function(e){
+      // extname: '.html'
+      console.log(e)      
     }) )
     .pipe(plumber())
-    .pipe(gulp.dest(dir.top + dir.below + dir.ejsEdit));
+    .pipe(gulp.dest(dir.top + dir.below));
 });
 gulp.task('ejsWatch', ['browserSync'], function(){
   gulp.watch('_ejs/**/*.ejs', ['ejs','browserSyncReload']);
@@ -168,7 +153,7 @@ gulp.task('prettify', function() {
 * default tasks
 */
 gulp.task('default' ,['browserSync'], function(){
-  gulp.watch('_ejs/**/*.ejs', ['ejs']);
+  gulp.watch(ejsDir.template, ['ejs']);
   gulp.watch( dir.top + '/**/scss/**/*.scss', ['sassCompileReload']);
   gulp.watch( [dir.top + '/**/*.html',dir.top + '/**/*.php' ] , ['browserSyncReload']);
 });
