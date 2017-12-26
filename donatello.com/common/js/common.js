@@ -1,3 +1,5 @@
+
+
 /**
 * scrollvalue
 */
@@ -12,11 +14,12 @@ var $w = $(window),
 
 $w.on( 'load scroll resize' , function( e ){
 	
-	if(! $effectTarget.length ) return;
 
 	$scrollVal = $w.scrollTop();
-	$distance = $scrollOffset + $scrollVal;
 	$wW = $w.width();
+
+	if(! $effectTarget.length ) return;
+	$distance = $scrollOffset + $scrollVal;
 
 	$.each( $effectTarget, function( e ){
 		var $self = $( this ),
@@ -76,25 +79,42 @@ $w.on( 'scroll', function( e ){
 });
 
 
+/**
+* page scripts
+*/
+
+var $body = $('body'),
+	$pageType = $body.attr('class');
+
+switch( $pageType ){
+	case 'index' :
+		initForIndex();
+		break;
+	case 'about' :
+		break;
+}
+
 
 /**
 * index
 */
 
-var $slickTarget = $('#topicsWrapper');
+function initForIndex(){
+	var $slickTarget = $('#topicsWrapper');
 
-if( $slickTarget ){
-	$slickTarget.slick({
-		// autoplay: false,
-		autoplay: true,
-		autoplaySpeed: 3500,
-		arrows: false,
-		dots: false,
-		fade: true,
-		slidesToShow: 1,
-		slidesToMove: 1,
-		speed: 250
-	});	
+	if( $slickTarget ){
+		$slickTarget.slick({
+			// autoplay: false,
+			autoplay: true,
+			autoplaySpeed: 3500,
+			arrows: false,
+			dots: false,
+			fade: true,
+			slidesToShow: 1,
+			slidesToMove: 1,
+			speed: 250
+		});	
+	}
 }
 
 
