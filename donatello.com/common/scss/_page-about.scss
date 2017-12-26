@@ -4,9 +4,83 @@
 
 //////////////////////
 
-// mainvisual
+// section
 
 /////////////////////
 
+.section.-philosophy{
+
+	.intro{
+		line-height: 2;
+		letter-spacing: 0.15em;
+		font-size: 1.125em;
+		text-align: center;
+		font-weight: 400;
+	}
+
+
+	.philosophy_chart{
+		text-align: center;
+		margin-top: 50px;
+		
+		&_index{
+			margin-bottom: 40px;
+			letter-spacing: 0.15em;
+			font-weight: 500;
+			font-size: $large;
+			text-align: center;
+		}
+		
+	}
+
+
+	.philosophy_list{
+
+		text-align: center;
+				
+	}
+	.philosophyList{
+		display: inline-block;
+		text-align: left;
+
+		li{
+			display: block;
+		}
+
+		dl{
+			width: 100%;
+			margin-bottom: 20px;
+			display: table;
+			margin-left: 0;
+		}
+		
+		&_index,
+		&_content
+		{
+			vertical-align: top;
+			display: table-cell;
+		}
+
+		&_index{
+			width: 210px;
+			letter-spacing: 0.5em;
+			font-weight: bold;
+			
+			&:after{
+				content: attr(data-en);
+				margin-left: 20px;
+				display: inline-block;
+				letter-spacing: 0.15em;
+				text-transform: uppercase;
+				font-family: $din_bold;
+				color: $gray_secondary;
+			}	
+		}
+		&_content{
+			padding-left: 40px;
+		}
+	}
+	
+}
 
 }

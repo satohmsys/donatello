@@ -117,12 +117,32 @@
 
 ////////////////////
 
+// secrtion
+
+////////////////////
+
+.section{
+	
+	&+ .section{
+		margin-top: 80px;
+	}
+}
+
+.section_content.wrap{
+	max-width: 900px;
+}
+
+
+
+////////////////////
+
 // secrtion index
 
 ////////////////////
 
 .section_index{
 	line-height: 1;
+	margin-bottom: 60px;
 	position: relative;
 	font-size: $large;
 	text-align: center;
@@ -141,6 +161,10 @@
 		-webkit-background-clip: text;
 		@include background-image( linear-gradient( to right, $blue, $green ) );	
 		
+
+		svg text{
+			text-align: center;
+		}
 		span{
 			padding-left: 20px;
 			padding-right: 20px;

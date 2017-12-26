@@ -55,6 +55,7 @@
 		}
 	}
 	@at-root .navOpen &.scrolled  {
+		color: #fff;
 		background-color: transparent;
 	}
 
@@ -86,7 +87,9 @@
 		line-height: 1;
 		position: relative;
 		text-align: left;
-		svg{
+		
+		polygon,
+		path{
 			fill: #fff;
 		}
 		
@@ -94,12 +97,22 @@
 			color: inherit;
 		}
 
+		// @at-root .navOpen &,
+		@at-root .navOpen .scrolled &{ 
+		 	@include break( tab ){			
+				polygon,
+				path{
+					fill: #fff;
+				}
+			}
+		}
 	}
 	
 
 	//////// media queries 
-	@include break( sp ){
-	} //max 580	
+	@include break( tab ){
+		color: #fff;
+	}
 }
 
 
@@ -254,10 +267,10 @@
 	}
 
 	/////// navigation open (clicked and scroll	
-	@at-root .scrolled & li a {
+	@at-root .scrolled & li{
 		color: $basefontColor;
 	}
-	@at-root .navOpen .scrolled & li {
+	@at-root .navOpen  .scrolled & li {
 		color: #fff;
 	}	
 }
@@ -605,6 +618,36 @@ body:before{
 		}
 	}
 
+}
+
+
+
+////////////////////
+
+// table
+
+////////////////////
+
+.styleTable{
+	width: 100%;
+	border-collapse: collapse;
+	
+	th,td{
+		padding-top: 30px;
+		padding-right: 10px;
+		padding-bottom: 30px;
+		
+	}
+	tr{
+		border-bottom: solid 1px $border;
+	}
+	
+	th{
+		text-align: left;
+		letter-spacing: 0.6em;
+		font-weight: bold;
+	}
+	
 }
 
 
