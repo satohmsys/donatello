@@ -563,7 +563,7 @@ a img:focus
     color: #ddd;
 }.button
 {font-style: normal;
-    line-height: 1;position: relative;display: block;transition: all .3s cubic-bezier(.785, .135, .15, .86) 0s;border-radius: 2px;
+    line-height: 1;position: relative;display: block;transition: all .3s cubic-bezier(.785, .135, .15, .86) 0s;text-align: center;border-radius: 2px;
 }.button button
 {
     font-family: 'Noto Sans Japanese','游ゴシック',YuGothic,'ヒラギノ角ゴ ProN W3','Hiragino Kaku Gothic ProN','メイリオ',Meiryo,sans-serif;
@@ -575,7 +575,7 @@ a img:focus
 .button.-inquiry:active,
 .button.-inquiry:focus
 {
-    background-size: 300%;
+    background-size: 200%;
 }.button.-inquiry:hover .button_arrow,
 .button.-inquiry:active .button_arrow,
 .button.-inquiry:focus .button_arrow
@@ -588,6 +588,19 @@ a img:focus
 }.button.-inquiry > *
 {
     padding: 15px;color: #fff;
+}.button.-toEntry
+{
+    max-width: 450px;
+}.button.-toEntry > button
+{font-weight: bold;
+
+    padding-top: 40px;padding-bottom: 40px;letter-spacing: .33em;
+}@media screen and (max-width: 580px)
+{
+    .button.-toEntry > button
+    {
+        padding-top: 25px;padding-bottom: 25px;
+    }
 }.button.-viewCasestudy
 {
     display: inline-block;padding: 1px;transition: all .5s ease 0s;background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzBjM2ZmZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzhiZmZhYyIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');background-image: linear-gradient(to right, #0c3fff,#8bffac);background-size: 100%;
@@ -625,6 +638,9 @@ a img:focus
 {font-weight: bold;
 
     text-align: left;letter-spacing: .6em;
+}.styleTable th.styleTable_index
+{text-align: center;border-top: solid 1px #ccc;
+    background-color: #f5fdff;
 }@media screen and (max-width: 780px)
 {
     .styleTable th
@@ -701,6 +717,12 @@ a img:focus
 {font-weight: 500;
 
     display: table-cell;text-align: center;vertical-align: middle;letter-spacing: .33em;
+}@media screen and (max-width: 580px)
+{
+    .pageNav_anchor
+    {
+        letter-spacing: .25em;
+    }
 }.pageNav_anchor:not(:last-child)
 {
     border-right: solid 1px #ccc;
@@ -738,6 +760,13 @@ a img:focus
 {line-height: 1;position: absolute;top: 0;right: 5px;bottom: 0;
 
     width: 30px;height: 5px;margin-top: auto;margin-bottom: auto;transition: all .3s cubic-bezier(.785, .135, .15, .86) 0s;
+}@media screen and (max-width: 580px)
+{
+    .pageNav .arrow
+    {top: auto;bottom: 5px;
+
+        width: 15px;
+    }
 }.section + .section
 {
     margin-top: 80px;
@@ -771,6 +800,22 @@ a img:focus
 {font-weight: 500;display: block;
 
     margin-top: 20px;letter-spacing: .5em;
+}.toEntry
+{
+    margin-top: 80px;text-align: center;
+}@media screen and (max-width: 580px)
+{
+    .toEntry
+    {
+        margin-top: 55px;
+    }
+}.toEntry .button
+{margin-right: auto;
+    margin-left: auto;
+}.toEntry_attention
+{font-size: .85714em;
+
+    margin-top: 20px;color: #666;
 }.index
 {
     padding-top: 0;
@@ -1130,5 +1175,27 @@ a img:focus
     .business .section.-supported .styleTable th
     {
         width: 100px;
+    }
+}.recruit .section.-recruitingInfo .recruitingInfo_category
+{font-size: 1.225em;font-weight: 700;
+
+    margin-bottom: 30px;text-align: center;letter-spacing: .33em;
+}@media screen and (max-width: 580px)
+{
+    .recruit .section.-recruitingInfo .recruitingInfo_category
+    {
+        margin-bottom: 20px;
+    }
+}.recruit .section.-recruitingInfo .-disabled
+{
+    color: #aaa;
+}.recruit .section.-recruitingInfo .styleTable th
+{
+    width: 100px;
+}@media screen and (max-width: 780px)
+{
+    .recruit .section.-recruitingInfo .styleTable th
+    {
+        width: 80px;
     }
 }
