@@ -6,22 +6,26 @@
 	
 
 .siteHeader{
-	svg polygon,
-	svg path
+	polygon,
+	path
 	{
 		transition: transition();
 		fill: #fff;
 	}
 
 	&.scrolled {
-		svg polygon,
-		svg path
+		polygon,
+		path
 		{
 			fill: $green;
-		}		
+		}	
+
+		li{
+			color: inherit;
+		}	
 	}
 
-	a{
+	li{
 		color: #FFF;
 	}
 }
