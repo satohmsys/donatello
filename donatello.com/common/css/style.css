@@ -588,6 +588,22 @@ a img:focus
 }.button.-inquiry > *
 {
     padding: 15px;color: #fff;
+}.button.-viewCasestudy
+{
+    display: inline-block;padding: 1px;transition: all .5s ease 0s;background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzBjM2ZmZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzhiZmZhYyIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');background-image: linear-gradient(to right, #0c3fff,#8bffac);background-size: 100%;
+}.button.-viewCasestudy:hover,
+.button.-viewCasestudy:active,
+.button.-viewCasestudy:focus
+{
+    background-position: 50%;background-size: 200%;
+}.button.-viewCasestudy:hover > *,
+.button.-viewCasestudy:active > *,
+.button.-viewCasestudy:focus > *
+{
+    color: #3a3a3a;
+}.button.-viewCasestudy > button
+{font-family: 'URW DIN Medium';box-sizing: border-box;
+    width: 100%;padding: 15px 10px;text-align: center;letter-spacing: .15em;color: #666;background-color: #fff;
 }.styleTable
 {
     width: 100%;border-collapse: collapse;
@@ -595,6 +611,13 @@ a img:focus
 .styleTable td
 {
     padding-top: 30px;padding-right: 10px;padding-bottom: 30px;
+}@media screen and (max-width: 780px)
+{
+    .styleTable th,
+    .styleTable td
+    {
+        padding-top: 20px;padding-bottom: 20px;
+    }
 }.styleTable tr
 {
     border-bottom: solid 1px #ccc;
@@ -602,6 +625,15 @@ a img:focus
 {font-weight: bold;
 
     text-align: left;letter-spacing: .6em;
+}@media screen and (max-width: 780px)
+{
+    .styleTable th
+    {
+        letter-spacing: .25em;
+    }
+}.styleTable td
+{
+    letter-spacing: .14em;
 }@media screen and (max-width: 580px)
 {
     .backToTop
@@ -659,6 +691,12 @@ a img:focus
 {line-height: 1;display: table;
 
     width: 100%;margin-bottom: 100px;table-layout: fixed;border-bottom: solid 1px #ccc;
+}@media screen and (max-width: 780px)
+{
+    .pageNav
+    {
+        margin-bottom: 60px;
+    }
 }.pageNav_anchor
 {font-weight: 500;
 
@@ -716,9 +754,9 @@ a img:focus
         margin-bottom: 30px;
     }
 }.section_index_en
-{font-family: 'URW DIN Bold';position: relative;display: table;
+{font-family: 'URW DIN Bold';position: relative;display: block;
 
-    width: 100%;letter-spacing: .33em;color: transparent;background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzBjM2ZmZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzhiZmZhYyIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');background-image: linear-gradient(to right, #0c3fff,#8bffac);-webkit-background-clip: text;background-clip: text;background-size: 100%;
+    width: 100%;letter-spacing: .33em;
 }.section_index_en svg text
 {
     text-align: center;
@@ -1013,5 +1051,84 @@ a img:focus
     .about .section.-philosophy .philosophyList_content
     {
         padding-left: 1em;
+    }
+}.business .headingArea
+{
+    margin-bottom: 100px;
+}@media screen and (max-width: 780px)
+{
+    .business .headingArea
+    {
+        margin-bottom: 60px;
+    }
+}.business .section.-businessGenre .genre
+{
+    display: -webkit-box                                                                                                                                                                ;display: -webkit-flex;display: -ms-flexbox;display:         flex;flex-direction: row;text-align: center;-webkit-flex-wrap: wrap;-ms-flex-wrap: wrap;flex-wrap: wrap;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-webkit-flex-direction: row;-ms-flex-direction: row;-webkit-box-pack: justify;-webkit-justify-content: space-between;-ms-flex-pack: justify;justify-content: space-between;-webkit-box-align: stretch;-webkit-align-items: stretch;-ms-flex-align: stretch;align-items: stretch;
+}@media screen and (max-width: 780px)
+{
+    .business .section.-businessGenre .genre
+    {
+        display: block;
+    }
+}.business .section.-businessGenre .genre_business
+{display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display:         flex;flex-direction: column;
+
+    width: 30%;-webkit-box-orient: vertical;-webkit-box-direction: normal;-webkit-flex-direction: column;-ms-flex-direction: column;
+}@media screen and (max-width: 780px)
+{
+    .business .section.-businessGenre .genre_business
+    {display: block;
+
+        width: auto;padding-right: 5%;padding-left: 5%;
+    }.business .section.-businessGenre .genre_business:not(:last-child)
+    {
+        margin-bottom: 55px;
+    }
+}.business .section.-businessGenre .genre_business_icon
+{
+    margin-bottom: 20px;
+}@media screen and (max-width: 780px)
+{
+    .business .section.-businessGenre .genre_business_icon
+    {
+        margin-bottom: 10px;
+    }
+}.business .section.-businessGenre .genre_business_en
+{font-family: 'URW DIN Bold';font-size: 1.25em;
+    line-height: 1;display: block;margin-bottom: 20px;letter-spacing: .333em;
+}.business .section.-businessGenre .genre_business_ja
+{font-weight: bold;
+
+    margin-bottom: 20px;letter-spacing: .1em;color: #0c3fff;
+}@media screen and (max-width: 780px)
+{
+    .business .section.-businessGenre .genre_business_ja
+    {
+        line-height: 1.7;margin-bottom: 10px;
+    }
+}.business .section.-businessGenre .genre_business_content
+{font-size: .85714em;
+
+    margin-bottom: 30px;text-align: left;
+}@media screen and (max-width: 780px)
+{
+    .business .section.-businessGenre .genre_business_content
+    {
+        font-size: 1em;margin-bottom: 20px;
+    }
+}.business .section.-businessGenre .genre .button
+{
+    width: 250px;margin-top: auto;margin-right: auto;margin-left: auto;
+}.business .section.-supported svg text
+{
+    fill: linear-gradient(to right, #0c3fff,#8bffac);
+}.business .section.-supported .styleTable th
+{
+    width: 200px;
+}@media screen and (max-width: 780px)
+{
+    .business .section.-supported .styleTable th
+    {
+        width: 100px;
     }
 }

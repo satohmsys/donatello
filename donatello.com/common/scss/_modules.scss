@@ -644,6 +644,32 @@ body:before{
 		}
 	}
 
+	&.-viewCasestudy{
+		display: inline-block;
+		padding: 1px;
+		@include background-image( linear-gradient( to right, $blue, $green ) );	
+
+		@include mouseOver(){
+			background-position: 50% ;
+			background-size: 200%;
+			
+			>*{
+				color: $basefontColor;
+			}
+		}
+		
+		>button{
+			width: 100%;
+			padding: 15px 10px;
+			text-align: center;
+			font-family: $din_medium;
+			background-color: #fff;	
+			box-sizing: border-box;
+			color: $gray_primary;
+			letter-spacing: 0.15em;
+		}
+	}
+
 }
 
 
@@ -662,6 +688,10 @@ body:before{
 		padding-top: 30px;
 		padding-right: 10px;
 		padding-bottom: 30px;
+			@include break( tab ){
+				padding-top: 20px;
+				padding-bottom: 20px;
+			}		
 		
 	}
 	tr{
@@ -672,6 +702,12 @@ body:before{
 		text-align: left;
 		letter-spacing: 0.6em;
 		font-weight: bold;
+		@include break( tab ){
+			letter-spacing: 0.25em;
+		}		
+	}
+	td{
+		letter-spacing: 0.14em;
 	}
 	
 }

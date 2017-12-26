@@ -8,102 +8,102 @@
 
 /////////////////////
 
-.section.-philosophy{
+.headingArea{
+	margin-bottom: 100px;
+	@include break( tab ){
+		margin-bottom: 60px;
+	}	
+	
+}
 
-	.intro{
-		line-height: 2;
-		letter-spacing: 0.15em;
-		font-weight: 500;
+.section.-businessGenre{
+
+	.genre{
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: stretch;
 		text-align: center;
-	}
-
-
-	.philosophy_chart{
-		text-align: center;
-		margin-top: 50px;
 		
-		&_index{
-			margin-bottom: 40px;
-			letter-spacing: 0.15em;
-			font-weight: 500;
-			font-size: $large;
-			text-align: center;
+		@include break( tab ){
+			display: block;
 			
-			@include break( sp ){
-				font-size: 1.15em;
-				margin-bottom: 20px;
+		}		
+		
+		&_business{
+			width: percentage(330px / $outerWidth);
+			// display: block;	
+			display: flex;
+			flex-direction: column;
+			
+			@include break( tab ){
+				width: auto;
+				padding-left: 5%;
+				padding-right: 5%;
+				display: block;
+				&:not( :last-child ){
+					margin-bottom: 55px;
+				}
 			}
 		}
 
-		&_img{
-			@include break( sp ){
-				padding-left: 5%;
-				padding-right: 5%;
-			}			
-		}
-		
-	}
-
-
-	.philosophy_list{
-
-		text-align: center;
-				
-	}
-	.philosophyList{
-		display: inline-block;
-		text-align: left;
-		@include break( sp ){
-			display: block;
-		}		
-
-		li{
-			display: block;
-		}
-
-		dl{
-			width: 100%;
+		&_business_icon {
 			margin-bottom: 20px;
-			display: table;
-			margin-left: 0;
-		}
-		
-		&_index,
-		&_content
-		{
-			vertical-align: top;
-			display: table-cell;
+			@include break( tab ){
+				margin-bottom: 10px;
+			}
 		}
 
-		&_index{
-			width: 210px;
-			letter-spacing: 0.5em;
+		&_business_en{
+			line-height: 1;
+			margin-bottom: 20px;
+			display: block;
+			font-size: 1.25em;
+			letter-spacing: 0.333em;
+			font-family: $din_bold;
+		}
+		&_business_ja{
+			margin-bottom: 20px;
+			letter-spacing: 0.1em;
 			font-weight: bold;
-			
-			&:after{
-				content: attr(data-en);
-				margin-left: 20px;
-				display: inline-block;
-				letter-spacing: 0.15em;
-				text-transform: uppercase;
-				font-family: $din_bold;
-				color: $gray_secondary;
-			}	
-			@include break( sp ){
-				width: 110px;
-				
-				&:after{
-					margin-left: 0;
-					display: block;
-					font-size: small;
-					letter-spacing: 0.1em;
-				}
+			color: $blue;
+			@include break( tab ){
+				line-height: 1.7;
+				margin-bottom: 10px;
 			}			
 		}
-		&_content{
-			padding-left: 40px;
-			@include break( sp ){
-				padding-left: 1em;
+
+		&_business_content{
+			margin-bottom: 30px;
+			text-align: left;
+			font-size: $small;
+			@include break( tab ){
+				font-size: 1em;
+				margin-bottom: 20px;
+			}			
+		}
+
+		.button{
+			width: 250px;
+			margin-top: auto;
+			margin-right: auto;
+			margin-left: auto;
+		}
+	}
+}
+
+.section.-supported{
+	svg text{
+		fill: linear-gradient( to right, $blue, $green );
+	}
+
+	.styleTable{
+		th{
+			width: 200px;
+			
+			@include break( tab ){
+				width: 100px;
 			}			
 		}
 	}
