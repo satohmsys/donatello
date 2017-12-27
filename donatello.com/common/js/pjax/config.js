@@ -6,7 +6,7 @@ new window['pjax-api'].Pjax({
     //読み込み箇所を指定
     // area: 'body',
     areas: [
-        '#pageContent'
+        '#fetchContent'
     ],
     link: 'a:not([target])',
     fetch: {
@@ -20,29 +20,14 @@ new window['pjax-api'].Pjax({
         ignore: '[href^="chrome-extension://"], [a href="#contact"]',
         reload: '',
         logger: ''
-    },
-    callbacks:{ // callbackを設定出来る
-        ajax : {  //　
-            success: function(event, setting, data, textStatus, jqXHR){
-                 console.log("ajax.success");
-            }
-        },
-        update : {
-            content: {
-                after : function( event, setting, srcContent, dstContent ) {
-                    console.log(srcContent + ': update.content.after');
-                }
-            }
-        }
-    },
-  
+    }  
 });
 
 
-var $loadCount = 0,
-    $fetchCount = 0,
-    $unloadCount = 0,
-    $readyCount = 0;
+// var $loadCount = 0,
+//     $fetchCount = 0,
+//     $unloadCount = 0,
+//     $readyCount = 0;
 
 
 /**
@@ -52,33 +37,37 @@ var $loadCount = 0,
 
 // 更新要求 ( window )
 window.addEventListener( 'pjax:fetch', function( e ){
-    $fetchCount++;
-    writeDate( e, $fetchCount );    
+    // $fetchCount++;
+    alert( 'fetch' )
+    // writeDate( e, $fetchCount );    
 
     clickedPjaxPoint( 'pjaxLink', 'action')
     classSwitch( 'pjax-fetch', ['pjax-loaded'], true );    
 });
  // 更新直前( window )
 window.addEventListener( 'pjax:unload', function( e ){
-    $unloadCount++;
-    writeDate( e, $unloadCount );
-    classSwitch( 'pjax-unload', false );
+    // $unloadCount++;
+    alert( 'unload' )
+    // writeDate( e, $unloadCount );
+    classSwitch( 'pjax-unload',[], false );
 });
 // img,iframe以外のDOM更新完了( document )
 document.addEventListener( 'pjax:ready', function( e ){
-    $readyCount++;    
-    writeDate( e );
-    classSwitch( 'pjax-ready', $readyCount );    
+    // $readyCount++;    
+    alert( 'ready' )
+
+    // writeDate( e );
+    classSwitch( 'pjax-ready', [], false );    
 });
 // 全更新完了( window )
 window.addEventListener( 'pjax:load', function( e ){
-    $loadCount++;
-    writeDate( e, $loadCount );
+    // $loadCount++;
+    alert( 'load' )
+    // writeDate( e, $loadCount );
 
     ga( 'send', 'pageview', window.location.pathname + window.location.search );    
 
-    $bodyId = document.getElementById( 'container' ).getAttribute( 'data-bodyid' ); 
-    document.body.id = $bodyId; 
+    $bodyId = document.getElementById( 'fetchContent' ).getAttribute( 'data-content' ); 
     
     classSwitch( 'pjax-loaded', [], false );
 });
@@ -94,7 +83,14 @@ window.addEventListener( 'pjax:load', function( e ){
 function classSwitch( addClassName, removeClassName, reset ){
     var $target = document.getElementsByTagName('html').item(0);
 
-    if(reset) $target.classList='';
+    if(reset){ 
+        $target.classList='';
+        // $target.classList.forEach( function(e){ 
+        //     if(! /pjax/.test( e ) ){
+        //         $target.classList.remove( e )            
+        //     }
+        // })        
+    }
 
     if( removeClassName.length ){
         removeClassName.forEach( function( index, e ){
