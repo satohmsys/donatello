@@ -129,7 +129,7 @@ function initForIndex(){
 
 function initForWorks(){
 	var $slickTarget = $('.worksContents'),
-		$slickAsNav = $('.worksNav .wrap')
+		$slickAsNav = $('.worksNav .wrap'),
 		$hash = location.hash.substr( 1, location.hash.length );
 
 	if( $slickAsNav ){
