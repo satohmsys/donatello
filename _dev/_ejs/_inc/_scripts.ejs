@@ -5,27 +5,15 @@
 src="https://code.jquery.com/jquery-3.2.1.min.js"
 integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
 crossorigin="anonymous"></script>
+<script src="https://cdn.polyfill.io/v2/polyfill.js?features=default,WeakMap,WeakSet,Array.prototype.findIndex,Array.prototype.@@iterator"></script>
 <script type="text/javascript" src="<%- $path %>common/js/pjax/spica.js"></script>
-<script type="text/javascript" src="<%- $path %>common/js/pjax/localsocket.js"></script>
 <script type="text/javascript" src="<%- $path %>common/js/pjax/pjax-api.js"></script>
 <script type="text/javascript" src="<%- $path %>common/js/pjax/config.js"></script>
-<%
-if($scripts_global){
-$scripts_global.forEach( function( script ){
-%>
-<script type="text/javascript" src="<%- script %>"></script>
-<%           
-});
-}
-%> 
-<script type="text/javascript" src="<%- $path %>common/js/common.js"></script>
-<%
-if( $scripts ){
-$scripts.forEach( function( script ){
-     %>
-     <script type="text/javascript" src="<%- script %>"></script>
-     <%     
-});
-}      
-%>   
+<% if($scripts_global){  $scripts_global.forEach( function( script ){ %>
+   <script type="text/javascript" src="<%- script %>"></script>
+<% }); }%> 
+<script id="commonScript" type="text/javascript" src="<%- $path %>common/js/common.js"></script>
+<% if( $scripts ){ $scripts.forEach( function( script ){ %>
+ <script type="text/javascript" src="<%- script %>"></script>
+ <% }); } %>   
 <!-- /////scripts -->
