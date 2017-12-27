@@ -23,18 +23,8 @@ $scripts=null;
    <!-- ///// header  -->
    <div id="fetchContent" data-content="about">
       <!-- ***** mainvisual -->
-      <section class="headingArea">
-         <div class="wrap">
-            <div class="headingArea_copy">
-               <p class="headingArea_copy_en">
-                  ABOUT
-               </p>
-               <h2 class="headingArea_copy_ja">会社概要</h2>
-            </div>
-         </div>
-         <canvas class="pattern">
-         </section>
-         <!-- ///// mainvisual  -->
+      <%- include( $path + '_inc/_page-headingArea', {copy:{en: 'ABOUT', ja: '会社概要'} }) %>
+      <!-- ///// mainvisual  -->
          <nav >
             <ul class="pageNav">
                <li class="pageNav_anchor"><a href="#philosophy">企業理念<%- $parts.arrowNext %></a></li>
