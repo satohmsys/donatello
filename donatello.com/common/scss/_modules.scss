@@ -841,6 +841,7 @@ body{
 
 /* 4.全更新完了 */
 .pjax-loaded{
+	display: none;
 }
 .pjax-loaded body:after{
 	width: 100%;

@@ -4,24 +4,26 @@
 */
 new window['pjax-api'].Pjax({
     //読み込み箇所を指定
-    // area: 'body',
-    areas: [
-        '#fetchContent'
-    ],
-    link: 'a:not([target])',
-    fetch: {
-        timeout: 3000,
-        wait: 1000
-    },
-       update: {
-        head: 'base, meta, link',
-        css: true,
-        script: false,
-        ignore: '[href^="chrome-extension://"], [a href="#contact"]',
-        reload: '',
-        logger: ''
-    }  
-});
+    config: {
+        areas: [
+            '#fetchContent'
+        ],
+        link: 'a:not([target])',
+        fetch: {
+            timeout: 3000,
+            wait: 1000
+        },
+        // reload: '#fetchContent',
+        update: {
+            head: 'meta, link',
+            css: true,
+            script: true,
+            ignore: '[href^="chrome-extension://"], [a href^="#"]',
+            // reload: '',
+            // logger: ''
+        }
+    }
+})
 
 
 // var $loadCount = 0,
@@ -38,7 +40,6 @@ new window['pjax-api'].Pjax({
 // 更新要求 ( window )
 window.addEventListener( 'pjax:fetch', function( e ){
     // $fetchCount++;
-    alert( 'fetch' )
     // writeDate( e, $fetchCount );    
 
     clickedPjaxPoint( 'pjaxLink', 'action')
@@ -47,29 +48,32 @@ window.addEventListener( 'pjax:fetch', function( e ){
  // 更新直前( window )
 window.addEventListener( 'pjax:unload', function( e ){
     // $unloadCount++;
-    alert( 'unload' )
     // writeDate( e, $unloadCount );
     classSwitch( 'pjax-unload',[], false );
 });
 // img,iframe以外のDOM更新完了( document )
 document.addEventListener( 'pjax:ready', function( e ){
     // $readyCount++;    
-    alert( 'ready' )
 
     // writeDate( e );
     classSwitch( 'pjax-ready', [], false );    
 });
+// img,iframe以外のDOM更新完了( document )
+document.addEventListener( 'pjax:content', function( e ){
+
+    // writeDate( e );
+    classSwitch( 'pjax-content', [], false );    
+});
 // 全更新完了( window )
 window.addEventListener( 'pjax:load', function( e ){
     // $loadCount++;
-    alert( 'load' )
     // writeDate( e, $loadCount );
-
-    ga( 'send', 'pageview', window.location.pathname + window.location.search );    
-
-    $bodyId = document.getElementById( 'fetchContent' ).getAttribute( 'data-content' ); 
-    
     classSwitch( 'pjax-loaded', [], false );
+
+    // ga( 'send', 'pageview', window.location.pathname + window.location.search );    
+
+    let $pageId = document.getElementById( 'fetchContent' ).getAttribute( 'data-content' ); 
+    
 });
 
 
@@ -84,17 +88,16 @@ function classSwitch( addClassName, removeClassName, reset ){
     var $target = document.getElementsByTagName('html').item(0);
 
     if(reset){ 
-        $target.classList='';
-        // $target.classList.forEach( function(e){ 
-        //     if(! /pjax/.test( e ) ){
-        //         $target.classList.remove( e )            
-        //     }
-        // })        
+        // $target.classList='';
+        $target.classList.forEach( function(e){ 
+            if( /pjax/.test( e ) ){
+                $target.classList.remove( e )            
+            }
+        })        
     }
 
     if( removeClassName.length ){
         removeClassName.forEach( function( index, e ){
-            console.log( index, e );
             $target.classList.remove( e );
         });    
     }
