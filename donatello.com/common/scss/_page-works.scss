@@ -60,7 +60,7 @@
 	
 		&.slick-current{
 			color: $gray_secondary;
-			border-color: $blue;
+			border-color: $blue!important;
 		}		
 		
 		&:after{
@@ -114,10 +114,13 @@
 		padding-top: 90px;
 		padding-bottom: 70px;
 		
+		&.slick-active{
+			outline: none;
+		}
+		
 		@include break( sp ){
 			padding-top: 40px;
 			padding-bottom: 30px;
-		
 		}		
 
 		&_index{
@@ -256,8 +259,7 @@
 			margin-bottom: 30px;
 			
 			@at-root .-works.section .worksContent.-line .work_detail_icon{
-				padding-right: 0;
-				padding-left: 0;
+				padding: 15px 0;
 			}
 			img{
 				display: inline-block;
