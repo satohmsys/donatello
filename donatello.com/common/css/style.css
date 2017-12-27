@@ -379,14 +379,15 @@ a img:focus
 }.siteHeader_nav li:last-child
 {
     margin-right: 0;
+}.siteHeader_nav li.current,
+.siteHeader_nav li.current-menu-item
+{font-weight: 500;
+
+    color: #6cbb6b !important;
 }.siteHeader_nav li.current a,
 .siteHeader_nav li.current-menu-item a
 {
     pointer-events: none;
-}.siteHeader_nav li.current a:before,
-.siteHeader_nav li.current-menu-item a:before
-{
-    width: 100%;
 }.scrolled .siteHeader_nav li
 {
     color: #3a3a3a;

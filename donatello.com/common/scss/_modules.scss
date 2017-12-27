@@ -276,11 +276,10 @@
 	li.current,
 	li.current-menu-item
 	{
+		color: $coporate_green!important;
+		font-weight: 500;
 		a{
 			pointer-events: none;
-		}
-		a:before{
-			width: 100%;
 		}
 	}
 
