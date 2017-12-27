@@ -129,7 +129,8 @@ function initForIndex(){
 
 function initForWorks(){
 	var $slickTarget = $('.worksContents'),
-		$slickAsNav = $('.worksNav .wrap');
+		$slickAsNav = $('.worksNav .wrap')
+		$hash = location.hash.substr( 1, location.hash.length );
 
 	if( $slickAsNav ){
 		$slickAsNav.slick({
@@ -180,6 +181,18 @@ function initForWorks(){
 			});
 		});			
 	}
+
+	if( $hash !== 'undefined' || $hash == '' ){
+		$.each( $slickAsNav.find('.worksNav_tab'), function(){
+			$tab = $(this);
+			$data = $tab.attr('data-tab');
+			if( $data == $hash ){
+				$tab.click();
+				return false;
+			}
+		});
+	}
+
 }
 
 
