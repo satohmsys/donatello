@@ -13,9 +13,9 @@ new window['pjax-api'].Pjax({
             timeout: 3000,
             wait: 1000
         },
-        // reload: '#fetchContent',
+        reload: 'script',
         update: {
-            head: 'meta, link',
+            head: 'meta, link, script',
             css: true,
             script: true,
             ignore: '[href^="chrome-extension://"], [a href^="#"]',
@@ -54,13 +54,11 @@ window.addEventListener( 'pjax:unload', function( e ){
 // img,iframe以外のDOM更新完了( document )
 document.addEventListener( 'pjax:ready', function( e ){
     // $readyCount++;    
-
     // writeDate( e );
     classSwitch( 'pjax-ready', [], false );    
 });
 // img,iframe以外のDOM更新完了( document )
 document.addEventListener( 'pjax:content', function( e ){
-
     // writeDate( e );
     classSwitch( 'pjax-content', [], false );    
 });
@@ -69,11 +67,8 @@ window.addEventListener( 'pjax:load', function( e ){
     // $loadCount++;
     // writeDate( e, $loadCount );
     classSwitch( 'pjax-loaded', [], false );
-
     // ga( 'send', 'pageview', window.location.pathname + window.location.search );    
-
     let $pageId = document.getElementById( 'fetchContent' ).getAttribute( 'data-content' ); 
-    
 });
 
 

@@ -776,6 +776,7 @@ body:before{
 		left: 5%;
 		top: auto;
 		bottom: 10px;
+		display: none;
 	}
 }
 
@@ -813,33 +814,14 @@ body:before{
 
 ////////////////////
 
-body{
-	// overflow: hidden;
-}
-
-
 [class *= "pjax"]:after{
 }
-
 
 /* 1.データ更新要求 */
 .pjax-fetch{
 	// -webkit-animation: moveToRight 1s ease 0s 1 alternate both;
 	// animation: moveToRight 1s ease 0s 1 alternate both;
 }
-.pjax-loaded body:before,
-.pjax-loaded body:after,
-.pjax-fetch body:before,
-.pjax-fetch body:after{
-	width: 6000px;
-	height: 6000px;
-	
-	@include break( sp ){
-		width: 2000px;
-		height: 2000px;		
-	}
-}
-
 
 /* 2.DOM更新直前 */
 .pjax-unload{

@@ -683,7 +683,7 @@ a img:focus
 }@media screen and (max-width: 580px)
 {
     .backToTop
-    {position: fixed;z-index: 2;top: auto;bottom: 10px;left: 5%;
+    {position: fixed;z-index: 2;top: auto;bottom: 10px;left: 5%;display: none;
 
         width: 5px;
     }
@@ -691,21 +691,6 @@ a img:focus
 {overflow: hidden;
 
     width: 100%;height: 100%;
-}.pjax-loaded body:before,
-.pjax-loaded body:after,
-.pjax-fetch body:before,
-.pjax-fetch body:after
-{
-    width: 6000px;height: 6000px;
-}@media screen and (max-width: 580px)
-{
-    .pjax-loaded body:before,
-    .pjax-loaded body:after,
-    .pjax-fetch body:before,
-    .pjax-fetch body:after
-    {
-        width: 2000px;height: 2000px;
-    }
 }.pjax-loaded body:after
 {left: 100%;
 
