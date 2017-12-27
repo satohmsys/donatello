@@ -293,7 +293,7 @@
 		$i:0;
 		@for $i from 1 through 12 {
 			&_detail:nth-child( #{$i} ){
-				$delay: 0.35 + 0.25 * $i;
+				$delay: 0.35 + 0.15 * $i;
 				transition-delay: #{$delay}s;
 			}
 		}
