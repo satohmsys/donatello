@@ -25,42 +25,65 @@
 	
 	.wrap{
 		width: 100%;
-		display: table;
-		table-layout: fixed;
-		border-spacing: 4px 0px;	
+		padding-right: 0;
+		padding-left: 0;
+		
+		@at-root .worksNav .wrap:not( .slick-slider ){
+			display: table;
+			table-layout: fixed;
+			border-spacing: 4px 0px;	
+		}
 		
 		@include break( tab ){
-			display: flex;
-			flex-wrap: wrap;
-			flex-direction: row;
-		}		
-		
+			display: block;
+		}			
 	}
+
+
+	&.-bottom .worksNav_tab{
+		border-top: none;
+		border-bottom: solid 1px $border;
+		&.slick-current{
+		border-bottom-color: $blue;			
+			&:after{
+			}
+		}		
+	}	
 	&_tab{
 		line-height: 1;
+		margin-right: 4px;
 		padding-top: 15px;
 		padding-right: 10px;
 		padding-bottom: 15px;
 		padding-left: 10px;
-		display: table-cell;
-		vertical-align: bottom;
 		position: relative;
+		display: block;
 		box-sizing: border-box;
 		transition : transition();
 		border-top: solid 1px $border;
 		border-right: solid 1px $border;
 		text-align: center;
 		background-color: #fff;
-		
-		@include break( tab ){
-			width: 50%;
-			display: block;
+		@at-root .worksNav .wrap:not( .slick-slider ) .worksNav_tab{
+			display: table-cell;
+			vertical-align: bottom;
 		}
 
-	
+		@include break( sp ){
+			width: 100%!important;
+			display: block;
+			border-right: none;
+		}
+
 		&.slick-current{
 			color: $gray_secondary;
-			border-color: $blue!important;
+			outline: none;
+			border-color: $blue;
+			@include break( sp ){
+				&:after{
+					height: 100%;
+				}		
+			}			
 		}		
 		
 		&:after{
@@ -75,35 +98,59 @@
 			left: 0;
 			transition : transition();		
 			border-top: solid 1px $blue;
-			border-bottom: solid 1px $blue;
-		}
 
+			@include break( sp ){
+				width: 1px;
+				height: 0%;
+				border-top: none;
+				border-right: solid 1px $blue;
+			}			
+		}
 		@include mouseOver(){
 			&:after{
 				width: 100%;
+				@include break( sp ){
+					width: 1px;
+					height: 100%;
+				}						
 			}
 		}
 	}
 
-	&.-bottom .worksNav_tab{
-		border-top: none;
-		border-bottom: solid 1px $border;
-		&.slick-current{			
-			&:after{
-			}
-		}		
-		
-	}
 
 	&_tab_en{
 		margin-bottom: 10px;
 		font-family: $din_medium;
 		font-size: 1.2125em;
 		letter-spacing: 0.33em;
+		@include break( tab ){
+			font-size: $small;
+			letter-spacing: 0.15em;
+		}		
+		@include break( sp ){
+			height: 1em;
+			margin-top: auto;
+			margin-bottom: auto;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 1em;
+			opacity: 0.4;
+			font-size: 1.2125em;
+			letter-spacing: 0.33em;		
+		}		
+		
 	}
 	&_tab_ja{
 		font-size: $small;
 		font-weight: 600;
+		@include break( tab ){
+			font-size: 10px;
+		}		
+		@include break( sp ){
+			font-size: $small;
+			text-align: right;
+		}			
 	}
 }
 
@@ -204,7 +251,7 @@
 			display: block;
 		}
 		
-		@include break( tab ){
+		@include break( sp ){
 			display: block;
 		}	
 
@@ -232,13 +279,13 @@
 			// 	margin-right: 5%;
 			// }
 			
-			@include break( tab ){
+			@include break( sp ){
 				width: auto;
 				padding-left: 5%;
 				padding-right: 5%;
 				display: block;
 				&:not( :last-child ){
-					margin-bottom: 55px;
+					margin-bottom: 45px;
 				}
 			}
 		}

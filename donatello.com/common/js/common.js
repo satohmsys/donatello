@@ -139,14 +139,19 @@ function initForWorks(){
 			arrows: false,
 			dots: false,
 			focusOnSelect: true,
-			slidesToShow: 4,
-	         responsive: [{
-	               breakpoint: 768,
-	               settings: {
+			slidesToShow: 4,		
+	    //      responsive: [{
+	    //            breakpoint: 768,
+	    //            settings: {
+	    //            	adaptiveHeight: true,
+	    //            	centerMode: true,
+	    //            	centerPadding: "20px",
+	    //            	slidesToShow: 2
 	    //            	rows: 2,
+	    //            	slidesToShow: 4,
 					// slidesPerRow: 2
-	               }
-	          }]			
+	    //            }
+	    //       }]			
 		});	
 	}	
 	if( $slickTarget ){
@@ -169,6 +174,8 @@ function initForWorks(){
 		$slickTarget.on( 'afterChange', function(){
 			$.each( $slickAsNav, function(){
 				$slick = $(this).find('.slick-slide');
+				// $(this).slick('slickGoTo', $slickTarget.slick('slickCurrentSlide') );
+				$slickAsNav.slick('slickGoTo', $slickTarget.slick('slickCurrentSlide') );
 				$slick.removeClass('slick-current').eq( $slickTarget.slick('slickCurrentSlide') ).addClass('slick-current');				
 			});
 		});			
