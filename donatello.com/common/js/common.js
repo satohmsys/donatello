@@ -1,5 +1,3 @@
-
-
 /**
 * scrollvalue
 */
@@ -14,7 +12,6 @@ var $w = $(window),
 
 $w.on( 'load scroll resize' , function( e ){
 	
-
 	$scrollVal = $w.scrollTop();
 	$wW = $w.width();
 
@@ -77,6 +74,7 @@ $w.on( 'scroll', function( e ){
 		}, 400 );	
 	}
 });
+
 
 
 /**
@@ -197,7 +195,6 @@ function initForWorks(){
 		$slickTarget.on( 'afterChange', function(){
 			$.each( $slickAsNav, function(){
 				$slick = $(this).find('.slick-slide');
-				// $(this).slick('slickGoTo', $slickTarget.slick('slickCurrentSlide') );
 				$slickAsNav.slick('slickGoTo', $slickTarget.slick('slickCurrentSlide') );
 				$slick.removeClass('slick-current').eq( $slickTarget.slick('slickCurrentSlide') ).addClass('slick-current');				
 			});
