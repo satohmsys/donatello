@@ -319,7 +319,7 @@ body:after{
 {
 	display: none;
 
-	@include break( sp ){
+	@include break( tab ){
 		position: fixed;
 		z-index: 10;
 		bottom: 2%;
@@ -841,7 +841,6 @@ body{
 
 /* 4.全更新完了 */
 .pjax-loaded{
-	display: none;
 }
 .pjax-loaded body:after{
 	width: 100%;

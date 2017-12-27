@@ -414,7 +414,7 @@ a img:focus
 }.navToggle
 {
     display: none;
-}@media screen and (max-width: 580px)
+}@media screen and (max-width: 780px)
 {
     .navToggle
     {
