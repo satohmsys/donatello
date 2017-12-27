@@ -19,97 +19,97 @@ $meta.description = 'ディスクリプション';
  <%- include($path + '_inc/_head') %>
 </head>
 <body class="recruit">
-   <%# $parts.loadingAnim %>   
-   <!-- ***** header  -->
-   <%- include( $path + '_inc/_gnav', {isChild: true}) %>
-   <!-- ///// header  -->
-   <div id="fetchContent" data-content="recruit">
-      <!-- ***** mainvisual -->
-      <%- include( $path + '_inc/_page-headingArea', {copy:{en: 'RECRUITING', ja: '採用情報'} }) %>
-      <!-- ///// mainvisual  -->
-      <nav >
-         <ul class="pageNav">
-            <li class="pageNav_anchor"><a href="#newgraduate">新卒採用<%- $parts.arrowNext %></a></li>
-            <li class="pageNav_anchor"><a href="#career">中途採用<%- $parts.arrowNext %></a></li>               
-            <li class="pageNav_anchor"><a href="#parttimer">アルバイト採用<%- $parts.arrowNext %></a></li>               
-         </ul>
-      </nav>      
-      <!-- ***** BODY START -->
-      <main class="main">
-         <!-- *** about -->
-         <section id="supported" class="section -recruitingInfo">
-            <article>
-               <header class="section_index">
-                 <h3>
-                  <span class="section_index_en">
-                     <span><svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="300px" height="20px" text-anchor="middle" viewBox="0 0 300 20">
-                        <linearGradient id="gradation"><stop offset="0" stop-color="#0C3FFF"></stop><stop offset="1" stop-color="#8BFFAC"></stop></linearGradient>               
-                        <text x="150" y="19" fill="url(#gradation)">RECRUITING INFO</text></svg></span>
-                     </span>
-                     <span class="section_index_ja">
-                       求人内容
-                    </span>
-                 </h3>
-              </header>
-              <div class="section_content wrap">
-               <h4 class="recruitingInfo_category">プログラマ/システムエンジニア</h4>
-               <table class="styleTable">
-                  <tr id="newgraduate">
-                     <th class="styleTable_index" colspan="2">新卒/既卒採用</th>
-                  </tr>
-                  <tr>
-                    <th>応募資格</th>
-                    <td>4年制大学（学士・修士）卒業・修了見込み者<br>高等専門学校卒業見込み者</td>
-                 </tr>
-                 <tr id="career">
-                  <th class="styleTable_index" colspan="2">中途採用</th>
-               </tr>
-               <tr>
-                 <th>応募資格</th>
-                 <td>いずれも職務経験1年以上</td>
-              </tr>
-              <tr>
-                 <th>諸手当</th>
-                 <td>通勤手当（上限有り・応相談）</td>
-              </tr>  
-              <tr>
-                 <th>昇給</th>
-                 <td>年一回</td>
-              </tr>      
-              <tr>
-                 <th>賞与</th>
-                 <td>年二回</td>
-              </tr>        
-              <tr>
-                 <th>勤務時間</th>
-                 <td>9:30～18:30 (出向先により変動の可能性あり)</td>
-              </tr>         
-              <tr>
-                 <th>休日休暇</th>
-                 <td>土曜日、日曜日、祝日、夏期休暇、年末年始、有給休暇、誕生日休暇</td>
-              </tr>  
-              <tr id="parttimer">
-               <th class="styleTable_index -disabled" colspan="2">アルバイト※募集は終了しました。</th>
-            </tr>
-            <tr>
-              <th>業務内容</th>
-              <td>パソコンを使用した入力作業</td>
-           </tr>          
-        </table>
-        <div class="toEntry">
-            <%- include( $path + '_inc/_page-enterButton', {text: 'エントリー'}) %> 
-            <aside class="toEntry_attention">
-               メール画面が開きます。必要事項を記入してご送信下さいませ。<br>
-               いただいた内容は厳重に管理し、3営業日以内に担当者よりご連絡いたします。
-            </aside>    
-        </div>
-     </div>
+ <%# $parts.loadingAnim %>   
+ <!-- ***** header  -->
+ <%- include( $path + '_inc/_gnav', {isChild: true}) %>
+ <!-- ///// header  -->
+ <div id="fetchContent" data-content="recruit">
+  <!-- ***** mainvisual -->
+  <%- include( $path + '_inc/_page-headingArea', {copy:{en: 'RECRUITING', ja: '採用情報'} }) %>
+  <!-- ///// mainvisual  -->
+  <nav >
+   <ul class="pageNav">
+    <li class="pageNav_anchor"><a href="#newgraduate">新卒採用<%- $parts.arrowNext %></a></li>
+    <li class="pageNav_anchor"><a href="#career">中途採用<%- $parts.arrowNext %></a></li>               
+    <li class="pageNav_anchor"><a href="#parttimer">アルバイト採用<%- $parts.arrowNext %></a></li>               
+    </ul>
+  </nav>      
+  <!-- ***** BODY START -->
+  <main class="main">
+   <!-- *** about -->
+   <section id="supported" class="section -recruitingInfo">
+    <article>
+     <header class="section_index">
+       <h3>
+        <span class="section_index_en">
+         <span><svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="300px" height="20px" text-anchor="middle" viewBox="0 0 300 20">
+          <linearGradient id="gradation"><stop offset="0" stop-color="#0C3FFF"></stop><stop offset="1" stop-color="#8BFFAC"></stop></linearGradient>               
+          <text x="150" y="19" fill="url(#gradation)">RECRUITING INFO</text></svg></span>
+        </span>
+        <span class="section_index_ja">
+         求人内容
+       </span>
+     </h3>
+   </header>
+   <div class="section_content wrap">
+     <h4 class="recruitingInfo_category">プログラマ/システムエンジニア</h4>
+     <table class="styleTable">
+      <tr id="newgraduate">
+       <th class="styleTable_index" colspan="2">新卒/既卒採用</th>
+     </tr>
+     <tr>
+      <th>応募資格</th>
+      <td>4年制大学（学士・修士）卒業・修了見込み者<br>高等専門学校卒業見込み者</td>
+    </tr>
+    <tr id="career">
+      <th class="styleTable_index" colspan="2">中途採用</th>
+    </tr>
+    <tr>
+     <th>応募資格</th>
+     <td>いずれも職務経験1年以上</td>
+   </tr>
+   <tr>
+     <th>諸手当</th>
+     <td>通勤手当（上限有り・応相談）</td>
+   </tr>  
+   <tr>
+     <th>昇給</th>
+     <td>年一回</td>
+   </tr>      
+   <tr>
+     <th>賞与</th>
+     <td>年二回</td>
+   </tr>        
+   <tr>
+     <th>勤務時間</th>
+     <td>9:30～18:30 (出向先により変動の可能性あり)</td>
+   </tr>         
+   <tr>
+     <th>休日休暇</th>
+     <td>土曜日、日曜日、祝日、夏期休暇、年末年始、有給休暇、誕生日休暇</td>
+   </tr>  
+   <tr id="parttimer">
+     <th class="styleTable_index -disabled" colspan="2">アルバイト※募集は終了しました。</th>
+   </tr>
+   <tr>
+    <th>業務内容</th>
+    <td>パソコンを使用した入力作業</td>
+  </tr>          
+  </table>
+  <div class="toEntry">
+    <%- include( $path + '_inc/_page-enterButton', {text: 'エントリー'}) %> 
+    <aside class="toEntry_attention">
+     メール画面が開きます。必要事項を記入してご送信下さいませ。<br>
+     いただいた内容は厳重に管理し、3営業日以内に担当者よりご連絡いたします。
+   </aside>    
+  </div>
+  </div>
   </article>
-</section>
-<!-- /// about -->      
-
-</main>
-<!-- //// BODY END -->
+  </section>
+  <!-- /// about -->      
+  </main>
+  <!-- //// BODY END -->
+</div>
 
 <%- include( $path + '_inc/_footer' ) %>
 
