@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<!--[if lte IE 9]>
+<html lang="ja" class="ie">
+<![endif]-->
+<!--[if !IE]<!-->
+<html lang="ja">
+   <!--<![endif]-->
+   <% include _inc/function %>
+   <%
+      $meta.title = 'WORKS'
+   %>
+   <%
+   $path = '';
+   $active = 'works';
+   $css = ['css/_include/style.css'];
+   $scripts_global=null;
+   $scripts=[
+  $path + 'common/js/pjax/spica.js',
+  $path + 'common/js/pjax/localsocket.js',
+  $path + 'common/js/pjax/pjax-api.js',
+  $path + 'common/js/pjax/config.js',   
+   $path + 'common/js/common.js',
+   $path + 'common/js/childpage.js',
+   'js/works/script.js'];
+   %>
+   <head>
+     <%- include($path + '_inc/_header') %>
+   </head>
+
+   <body class="works">
+
+      <%- $parts.loadingAnim %>  
+
+      <!-- ***** header  -->
+        <%- include($path + '_inc/_gnav', {logo: true}) %>
+      <!-- ///// header  -->
+      <div id="pageContent" data-content="index">
+
+
+      <!-- ***** mainvisual -->
+      <section class="pagevisual hasGradation">
+         <div class="wrap">
+
+            <div class="pagevisual_copy">
+               <h2>
+                  <p class="pagevisual_copy_pagename">
+                   WORKS
+                  </p>
+                  <p class="handWrite">   
+                     archive
+                  </p>
+                  
+               </h2>
+            </div>
+
+            <i class="icon icon-mouse"></i>
+
+           <img src="img/works/work-main.png" width="606" class=" pagevisual_img" alt="">
+         </div>
+      </section>
+      <!-- ///// mainvisual  -->
+      
+      <!-- ***** BODY START -->
+      <main class="main topGradation">
+
+        <section class="worksArchive">
+          
+          <article class="work">
+            <a href="single-works.html">
+              <figure class="work_img"><img src="img/works/website1.jpg" alt=""/></figure>
+              <div class="work_info">
+                <h3 class="work_info_type">Website</h3>
+                <ul class="work_info_category">
+                  <li>design</li>
+                  <li>coding</li>
+                  <li>frontend</li>
+                </ul>
+              </div></a>
+          </article>
+
+          <article class="work">
+            <a href="single-works.html">
+              <figure class="work_img"><img src="img/works/icon.jpg" alt=""/></figure>
+              <div class="work_info">
+                <h3 class="work_info_type">Website</h3>
+                <ul class="work_info_category">
+                  <li>design</li>
+                  <li>coding</li>
+                  <li>frontend</li>
+                </ul>
+              </div></a>
+          </article>
+
+          <article class="work">
+            <a href="single-works.html">
+              <figure class="work_img"><img src="img/works/visual.jpg" alt=""/></figure>
+              <div class="work_info">
+                <h3 class="work_info_type">Website</h3>
+                <ul class="work_info_category">
+                  <li>design</li>
+                  <li>coding</li>
+                  <li>frontend</li>
+                </ul>
+              </div></a>
+          </article>
+
+          <article class="work">
+            <a href="single-works.html">
+              <figure class="work_img"><img src="img/works/website1.jpg" alt=""/></figure>
+              <div class="work_info">
+                <h3 class="work_info_type">Website</h3>
+                <ul class="work_info_category">
+                  <li>design</li>
+                  <li>coding</li>
+                  <li>frontend</li>
+                </ul>
+              </div></a>
+          </article>
+
+          <article class="work">
+            <a href="single-works.html">
+              <figure class="work_img"><img src="img/works/icon.jpg" alt=""/></figure>
+              <div class="work_info">
+                <h3 class="work_info_type">Website</h3>
+                <ul class="work_info_category">
+                  <li>design</li>
+                  <li>coding</li>
+                  <li>frontend</li>
+                </ul>
+              </div></a>
+          </article>
+
+          <article class="work">
+            <a href="single-works.html">
+              <figure class="work_img"><img src="img/works/visual.jpg" alt=""/></figure>
+              <div class="work_info">
+                <h3 class="work_info_type">Website</h3>
+                <ul class="work_info_category">
+                  <li>design</li>
+                  <li>coding</li>
+                  <li>frontend</li>
+                </ul>
+              </div></a>
+          </article>          
+
+        </section>
+       
+      </main>
+      <!-- //// BODY END -->
+      </div>
+     
+      <%- include( $path + '_inc/_footer', {hasGradation: true} ) %>
+
+      <%- $parts.backtotop %>
+
+      <%- $parts.fixedsns %>
+
+
+      <!-- ***** menu button -->
+      <%- $parts.toggle %>
+      <!-- //// menu button -->
+
+      
+     <%- include($path + '_inc/_intro') %>
+
+     <%- include($path + '_inc/_scripts') %>
+   </body>
+
+</html>

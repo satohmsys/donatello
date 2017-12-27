@@ -1,0 +1,514 @@
+//////////////////////////////////////////
+
+//module
+
+//include by style.scss
+
+//////////////////////////////////////////
+
+
+
+////////////////////
+
+// header
+
+////////////////////
+
+/////// ヘッダー ラッパー
+.siteHeader
+{
+	line-height: 1;
+	padding-top: 20px;
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 10;
+
+	/////// navigation open (clicked and scroll	
+	@at-root .scrollOverVisual.navOpen & {
+	
+	}
+
+	 > .wrap{
+	 	display: flex;
+	 	flex-direction: row;
+	 	justify-content: space-between;
+	 	align-items: center;
+		
+		.siteHeader_logo,
+		.siteHeader_nav	{
+			display: table-cell;
+			vertical-align: middle;
+		}
+	}
+
+	&_logo{
+		width: 200px;
+		line-height: 1;
+		position: relative;
+		text-align: left;
+		svg{
+			fill: #fff;
+		}
+		
+		a{
+			color: inherit;
+		}
+
+	}
+	
+
+	//////// media queries 
+	@include break( sp ){
+	} //max 580	
+}
+
+
+
+////////////////////
+
+// navigation
+
+////////////////////
+
+.siteHeader_nav
+{
+	text-align: center;
+	letter-spacing: 0.04em;
+	font-size: 0.9em;
+
+
+	li
+	{
+		line-height: 1;
+		vertical-align: middle;
+		display: inline-block;
+		list-style: none;
+		text-align: center;
+		
+		
+		a{
+			color: inherit;
+			padding-left: 30px;
+			padding-right: 30px;
+		}
+
+		&:not( :last-child ) a{
+			border-right: solid 1px #ddd;
+		}
+		
+		&:last-child{
+			margin-right: 0;
+		}
+	}
+
+	li.current,
+	li.current-menu-item
+	{
+		a{
+			pointer-events: none;
+		}
+		a:before{
+			width: 100%;
+		}
+	}
+
+
+	//////// media queries 
+	@include break( sp ){
+		font-size: 1em;
+		.wrap{
+		    width: 100%;
+		    height: 100%;
+		    display: flex;
+			max-width: none;
+			padding-top: 0%;
+			padding-right: 0;
+			padding-left: 0;
+		    flex-direction: column;
+		    justify-content: center;
+		    align-items: center;
+		    align-content: center;
+		    position: fixed;
+		    z-index: -10;
+		    top: 0;
+		    left: 0;		
+			float: none;
+		}
+		
+		li
+		{
+			font-size: 1.5em;
+			padding: 20px;
+			display: block;
+			opacity: 0;
+			position: relative;
+			z-index: -10;
+			transform: translateX(10px);
+			
+			//ナビ開いてない状態
+			a{
+				pointer-events: none;
+				z-index: -10;
+			}
+		}
+
+		li:not( .nav_contact ){
+			&:after{
+				display: none;
+			}
+		}		
+
+		.button-nav
+		{
+			padding-right: 0;
+			padding-left: 0;
+ 			a{
+				width: auto;
+				padding: 0.5em 1.5em;
+				margin-left: auto;
+				margin-right: auto;
+			}			
+		}
+
+		/////// navigation open (clicked
+		@at-root .navOpen &{
+			.wrap{
+				z-index: 10;
+			}
+			li{
+				opacity: 1;
+				transform: translateX(0px);
+
+				transition: all 0.3s ease 0s;
+			
+				@for $i from 1 through 6 {
+
+					&:nth-child( #{$i} ){
+						$delay: 0.85 + (0.15 * $i);
+						transition-delay: #{$delay}s;
+					}
+				}	
+
+				//ナビ開いた状態
+				a{
+					pointer-events: auto;
+					z-index: 9;
+				}						
+			}
+			
+		}
+
+	} //max 580
+
+	
+}
+
+////( スマホ用 )開閉アイコン
+.navToggle
+{
+	display: none;
+
+	@include break( sp ){
+		display: block;
+	$buttonSize : 50px;
+	$buttonTextColor: #fff;
+	
+	&_hitArea,
+	&:after{
+		width: $buttonSize;
+		height: $buttonSize;
+		line-height: 1;
+		padding: 5px;
+		box-sizing: border-box;
+		display: block;
+		position: fixed;
+		bottom: 2%;
+		right: 2%;
+		cursor: pointer;
+	}
+
+	&_hitArea{
+		z-index: 100;
+	}
+
+	&:after{
+		content: " ";
+		// will-change: width, height, border-radius;
+		z-index: 8;
+		transition:all 0.3s linear 0s;
+		border-radius: 100%;
+		box-shadow: 0 4px 4px rgba( #000, 0.1), 0 0 10px rgba( #000, 0.3 );
+		background-color: darken( $blue, 35 );		
+	}
+	
+	
+	//icon
+	&_icon
+	{
+
+		height: 20px;
+		top: 0;
+		bottom: 0;
+		
+		//bar
+		&,
+		&:before , 
+		&:after, 		
+		&_lineCenter{
+			width: 70%;
+			line-height: 0;
+			margin: auto;
+			display: block;
+			position: absolute;
+			right: 0;
+			left: 0;			
+		}
+
+		&:before , 
+		&:after, 		
+		&_lineCenter{
+			height: 1px;
+			background-color: $buttonTextColor;		
+			transition: easeInOutCirc(0.3s);		
+		}		
+		
+		&:before , 
+		&:after{
+			content: " "; 
+			transform-origin: -1px;
+		}
+		//top
+		&:before{
+			top: 0;
+		} 
+		//center
+		&_lineCenter{
+			top: 0;
+			bottom: 0;
+		}
+		//bottom
+		&:after{
+			bottom: 0;
+		}		
+	}
+
+	/////// navigation open (clicked
+	@at-root .navOpen
+	{
+		overflow: hidden;
+	
+		.navToggle
+		{
+			&_hitArea{
+				z-index: 11;
+			}
+
+			&:after{
+				width: 100%;
+				height: 100%;
+				right: 0;
+				bottom: 0;
+				border-radius: 0;
+				box-shadow: none;
+				// @include background-image( linear-gradient( to right, $green, $blue ) );	
+				background-color: darken( $blue, 20 );		
+			}
+			
+			
+			//icon
+			&_icon
+			{
+				
+				//bar
+				//top
+				&:before{
+					transform: rotate( 45deg );
+				} 
+				//center
+				&_lineCenter{
+					width: 200%;
+					opacity: 0;
+				}
+				//bottom
+				&:after{
+					transform: rotate( -45deg );
+				}		
+			}
+		}	
+
+	}		
+	} // min 580
+}
+
+
+
+
+////////////////////
+
+// sns
+
+////////////////////
+
+.sns{
+	&List{
+		text-align: center;
+		li{
+			vertical-align: middle;
+			display: inline-block;
+			
+			&:first-child{
+				margin-right: 40px;
+			}
+		}
+		a{
+			color: $gray_primary;
+			display: block;
+		}
+	}	
+}
+
+
+
+////////////////////
+
+// footer
+
+////////////////////
+
+.siteFooter{
+	background-color: $gray_light;
+}
+
+
+
+////////////////////
+
+// back to top
+
+////////////////////
+
+.backToTop{
+	
+
+	@include break( sp ){
+		bottom: 70px;
+		right: 6px;
+	}
+}
+
+
+
+
+////////////////////
+
+// loadingAnim
+
+////////////////////
+
+
+
+
+
+////////////////////
+
+// intro
+
+////////////////////
+
+.loading{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+
+
+
+////////////////////
+
+// pjax
+
+////////////////////
+
+body{
+	// overflow: hidden;
+}
+
+/* オーバーレイ */
+body:after,
+body:before{
+	content: " ";
+	width: 0%;
+	height: 0%;
+	margin: auto;
+	display: block;
+	position: fixed;
+	z-index: 96;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	transition: all 4s ease 0s;
+}
+/* オーバーレイ 1 */
+body:after{
+	transition: all 4s ease 0.25s;
+	background-color: #fafafa;
+}
+/* オーバーレイ 2 */
+body:before{
+	// @extend %gradation;
+	background-color: lighten( desaturate($blue, 10 ), 40 );
+}
+
+
+[class *= "pjax"]:after{
+}
+
+
+/* 1.データ更新要求 */
+.pjax-fetch{
+	// -webkit-animation: moveToRight 1s ease 0s 1 alternate both;
+	// animation: moveToRight 1s ease 0s 1 alternate both;
+}
+.pjax-loaded body:before,
+.pjax-loaded body:after,
+.pjax-fetch body:before,
+.pjax-fetch body:after{
+	width: 6000px;
+	height: 6000px;
+	
+	@include break( sp ){
+		width: 2000px;
+		height: 2000px;		
+	}
+}
+
+
+/* 2.DOM更新直前 */
+.pjax-unload{
+}
+.pjax-unload:after{
+}
+
+
+/* 3.DOM更新完了 */
+.pjax-ready{
+}
+.pjax-ready:after{
+}
+
+
+/* 4.全更新完了 */
+.pjax-loaded{
+}
+.pjax-loaded body:after{
+	width: 100%;
+	left: 100%;
+}
+.pjax-loaded body:before{
+	width: 100%;
+	left: 100%;
+}
