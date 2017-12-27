@@ -433,6 +433,12 @@ body:before{
 ////////////////////
 
 .sns{
+	position: relative;
+	@include break( sp ){
+		position: static;
+	}
+	
+
 	&List{
 		margin-top: 100px;
 		text-align: center;
@@ -755,11 +761,21 @@ body:before{
 ////////////////////
 
 .backToTop{
-	
+	width: 5px;
+	margin-top: auto;
+	margin-bottom: auto;
+	position: absolute;
+	right: 5%;
+	top: 0;
+	bottom: 0px;
 
 	@include break( sp ){
-		bottom: 70px;
-		right: 6px;
+		width: 5px;
+		position: fixed;
+		z-index: 2;
+		left: 5%;
+		top: auto;
+		bottom: 10px;
 	}
 }
 

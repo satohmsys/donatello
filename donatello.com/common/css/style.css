@@ -464,6 +464,15 @@ a img:focus
 }body:before
 {
     background-color: #dae1fd;
+}.sns
+{
+    position: relative;
+}@media screen and (max-width: 580px)
+{
+    .sns
+    {
+        position: static;
+    }
 }.snsList
 {
     margin-top: 100px;text-align: center;
@@ -667,11 +676,16 @@ a img:focus
 }.styleTable td
 {
     letter-spacing: .14em;
+}.backToTop
+{position: absolute;top: 0;right: 5%;bottom: 0;
+
+    width: 5px;margin-top: auto;margin-bottom: auto;
 }@media screen and (max-width: 580px)
 {
     .backToTop
-    {right: 6px;
-        bottom: 70px;
+    {position: fixed;z-index: 2;top: auto;bottom: 10px;left: 5%;
+
+        width: 5px;
     }
 }.loading
 {overflow: hidden;

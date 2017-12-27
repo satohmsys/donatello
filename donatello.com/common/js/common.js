@@ -80,6 +80,28 @@ $w.on( 'scroll', function( e ){
 
 
 /**
+* back to top
+*/
+
+var $backtotop = $('.backToTop');
+
+$w.on( 'scroll load resize', function( e ){
+	if( 500 < $scrollVal ){
+		$backtotop.fadeIn( 'fast' )
+	} else {
+		$backtotop.fadeOut( 'fast' )
+	}
+})
+
+$backtotop.on('click', function(){
+	$('body,html').stop(true,true).animate({
+		scrollTop: 0,
+	}, 500, 'swing');
+})
+
+
+
+/**
 * page scripts
 */
 
