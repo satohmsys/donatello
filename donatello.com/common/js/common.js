@@ -75,14 +75,56 @@ $w.on( 'scroll', function( e ){
 	}
 });
 
+
+
+/**
+* canvas 
+*/
 let $cP = $('canvas.pattern');
 
 if( $cP ){
-	let $ctx = $cP.getContext('2d'),
-		$polygon = '<path fill="#6CBB6B" d="M59.766,5.138l4.139,2.39v4.778l-4.139,2.39l-4.139-2.39V7.527L59.766,5.138 M59.766,1.433 c-0.387,0-0.773,0.084-1.067,0.254l-5.526,3.19c-0.588,0.339-1.068,1.171-1.068,1.849v6.382c0,0.678,0.48,1.51,1.068,1.849 l5.526,3.19c0.294,0.17,0.681,0.254,1.067,0.254s0.774-0.084,1.067-0.254l5.525-3.19c0.588-0.339,1.068-1.171,1.068-1.849 V6.726c0-0.678-0.48-1.51-1.068-1.849l-5.525-3.19C60.54,1.517,60.152,1.433,59.766,1.433L59.766,1.433z"/>';
-		;
+	
+	let $img = new Image();
+	
+	$img.src = '/common/img/hexagonal.svg?' + new Date().getTime();
 
-	console.log( $ctx );
+	$img.addEventListener('load', function(){
+		$.each( $cP, function( e ){
+		
+		let $canvas = $(this)[0];
+
+		let $imgSize = 50,
+			$ctx = $canvas.getContext('2d'),
+			$imgArea = 70,
+			$cw = $wW,
+			$ch = $canvas.height,
+			$dxStart = $dyStart = $imgSize / -2,
+			$margin = ($imgArea - $imgSize) / 2,
+			$patternTimesX = $wW / $imgSize * 2,
+			$patternTimesY = $ch / $imgSize * 2;
+
+		$ctx.scale( 2,2 );
+		$canvas.width = $wW;
+		$canvas.height = $(this).parent().outerHeight();
+
+		for( var i=1;i<=$patternTimesY;i++){
+			var $dy = i==1 ? $dyStart : $dyStart + ( ($imgSize + $margin) * (i - 1) );
+			
+			for( var j=1;j<=$patternTimesX;j++){
+				var $dx = j==1 ? $dxStart : $dxStart + ( ($imgSize + $margin) * (j - 1) );
+				$ctx.drawImage( $img, $dx, $dy, $imgSize, $imgSize );
+			}
+		}
+	});
+});
+
+
+
+	// ctx.fill( path2d );
+	// ctx.globalCompositeOperation = 'source-over';
+	// ctx.save();
+
+
 }
 
 

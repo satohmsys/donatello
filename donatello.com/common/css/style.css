@@ -717,8 +717,11 @@ a img:focus
 }.headingArea
 {
     position: relative;text-align: center;color: #fff;
+}.headingArea canvas
+{
+    position: absolute;z-index: 0;top: 0;right: 0;bottom: 0;left: 0;opacity: .15;mix-blend-mode: overlay;
 }.headingArea_copy
-{font-size: 2em;
+{font-size: 2em;position: relative;z-index: 1;
 
     padding-top: 100px;padding-bottom: 100px;vertical-align: middle;text-shadow: 0 0 10px #666;
 }@media screen and (max-width: 580px)
@@ -955,8 +958,13 @@ a img:focus
 {
     -webkit-transform: translateX(0)                                ;-ms-transform: translateX(0);transform: translateX(0);
 }.index .introduction
-{
+{position: relative;
+
     margin-bottom: 115px;padding-top: 75px;padding-bottom: 75px;text-align: center;color: #fff;text-shadow: 0 0 10px #aaa;
+}.index .introduction canvas
+{position: absolute;z-index: 0;top: 0;right: 0;bottom: 0;left: 0;
+
+    overflow: hidden;opacity: .15;mix-blend-mode: overlay;
 }@media screen and (max-width: 780px)
 {
     .index .introduction
@@ -964,7 +972,7 @@ a img:focus
         margin-bottom: 50px;padding-top: 55px;padding-bottom: 55px;
     }
 }.index .introduction_index
-{font-family: 'URW DIN Medium';font-size: 2em;
+{font-family: 'URW DIN Medium';font-size: 2em;position: relative;z-index: 1;
 
     margin-bottom: 40px;letter-spacing: .33em;
 }@media screen and (max-width: 780px)
@@ -975,7 +983,7 @@ a img:focus
         letter-spacing: .2em;
     }
 }.index .introduction_content
-{line-height: 2em;
+{line-height: 2em;position: relative;z-index: 1;
 
     padding-top: 0;padding-bottom: 0;letter-spacing: .25em;-webkit-font-feature-settings: 'palt';font-feature-settings: 'palt';
 }.index .siteMap

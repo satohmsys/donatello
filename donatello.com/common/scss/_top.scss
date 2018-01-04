@@ -184,10 +184,25 @@
 	margin-bottom: 115px;
 	padding-top: 75px;
 	padding-bottom: 75px;
+	position: relative;
 	text-align: center;
 	color: #fff;
 	text-shadow: 0 0 10px $gray_secondary;
 	@extend %dullgradation;
+	
+	canvas{
+		overflow: hidden;
+		// width: 100%;
+		// height: auto;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 0;
+		opacity: 0.15;
+		mix-blend-mode: overlay;
+	}
 	
 	@include break( tab ){
 		margin-bottom: 50px;
@@ -198,6 +213,8 @@
 	
 	&_index{
 		margin-bottom: 40px;
+		position: relative;
+		z-index: 1;
 		font-family: $din_medium;
 		letter-spacing: 0.33em;
 		font-size: $xlarge;
@@ -213,6 +230,8 @@
 	&_content{
 		padding-top: 0;
 		padding-bottom: 0;
+		position: relative;
+		z-index: 1;
 		font-feature-settings: "palt";
 		letter-spacing: 0.25em;
 		line-height: 2em;
