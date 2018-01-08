@@ -54,12 +54,13 @@ $toggle.on( 'click', function( e ){
 
 
 /**
-* fixed header 
+* scroll fade objects setting (fixed header and backtotop
 */
 var $timer = true,
-	$siteHeader = $('.siteHeader');
+	$siteHeader = $('.siteHeader'),
+	$backtotop = $('.backToTop');
 
-$w.on( 'scroll', function( e ){
+$w.on( 'scroll load resize', function( e ){
 
 	if( $timer ){
 		$timer = false;
@@ -69,6 +70,13 @@ $w.on( 'scroll', function( e ){
 			} else {
 				$siteHeader.removeClass( 'scrolled' );
 			}
+			
+			if( 500 < $scrollVal ){
+				$backtotop.fadeIn( 'fast' )
+			} else {
+				$backtotop.fadeOut( 'fast' )
+			}
+
 			$timer = true;
 			return $timer;
 		}, 400 );	
@@ -80,7 +88,8 @@ $w.on( 'scroll', function( e ){
 /**
 * canvas 
 */
-let $cP = $('canvas.pattern');
+let $cP = $('canvas.pattern'),
+	$mainvisual = $('#city');
 
 if( $cP ){
 	
@@ -117,15 +126,60 @@ if( $cP ){
 		}
 	});
 });
-
-
-
 	// ctx.fill( path2d );
 	// ctx.globalCompositeOperation = 'source-over';
 	// ctx.save();
-
-
 }
+// if( $mainvisual ){
+// 	let $ctx = $mainvisual[0].getContext('2d'),
+// 		$canvas_width = $wW,
+// 		$canvas_height = $wH,
+// 		// $srcs = {
+// 		// 	cityFront: './common/img/mainvisual-city-front.svg', 
+// 		// 	cityBack: './common/img/mainvisual-city-behind.svg', 
+// 		// 	cloud1: './common/img/mainvisual-cloud1.svg',
+// 		// 	cloud2: './common/img/mainvisual-cloud2.svg',
+// 		// 	cloud3: './common/img/mainvisual-cloud3.svg'
+// 		// },
+// 		$srcs = [
+// 			'./common/img/mainvisual-city-front.svg', 
+// 			'./common/img/mainvisual-city-behind.svg', 
+// 			'./common/img/mainvisual-cloud-1.svg',
+// 			'./common/img/mainvisual-cloud-2.svg',
+// 			'./common/img/mainvisual-cloud-3.svg'
+// 		],		
+// 		$images = new Array(),
+// 		$length = $srcs.length,
+// 		$count = 0,
+// 		$i = 0;
+
+
+// 		canvasReset();
+// 		loadImg();
+
+// 		function canvasReset(){
+// 			$ctx.clearRect( 0,0,$canvas_width, $canvas_height );
+// 		}
+
+// 		function loadImg(){
+// 			for( var i=0; i<$length; i++){
+// 				$images[i] = new Image();
+// 				$images[i].onload = handleLoad;
+// 				$images[i].src = $srcs[i];
+// 			}
+
+// 			function handleLoad(){
+// 				console.log( $count )
+// 				if( ++$count == $length ) draw();
+// 			}
+// 		}
+
+
+// 		function draw(){
+// 			console.log( $images)
+// 			$ctx.drawImage( $images[0], 0, 0, 1449, 476 );
+// 		}
+// }
 
 
 
@@ -177,8 +231,106 @@ switch( $pageType ){
 */
 
 function initForIndex(){
-	var $slickTarget = $('#topicsWrapper');
 
+	///////// main visual
+	var $buildings = $('.building'),
+		$building_front = $('.building_front'),
+		$building_behind = $('.building_behind'),
+		$clouds = $('cloud'),
+		// $cloud1 = $('.cloud_1'),
+		// $cloud2 = $('.cloud_2'),
+		// $cloud3 = $('.cloud_3'),
+		$airplane = $('.airplane'),
+		$area = $('#city'),
+		$areaW = $area.outerWidth(),
+		$areaH = $area.outerHeight(),
+		$scrollVal = 0,
+		$count= 1;
+
+		makeRandomCloud();
+		cloudMove();
+
+
+	$w.on( 'scroll', function(){
+		$scrollVal = $w.scrollTop();
+
+		var $posX = $scrollVal / $wW * 4;
+
+		$building_front.css({
+			'transform': 'translateX(' + $posX + '%)'
+		})
+		$building_behind.css({
+			'transform': 'translateX(-' + $posX + '%)'
+		})
+	});
+
+	$airplane.on( 'animationend', function(){
+		$airplane.toggleClass('RtoL');
+	});
+
+
+	function cloudMove(){
+		var $target = $('.cloud'),
+			$moveVal = 0.25,
+			$move = ($count++) * $moveVal, 
+			$randNum = Math.floor(Math.random() * 3 + 1),
+			$moveVal = $move;
+
+		$target.css({
+			'transform': 'translateX(' + $move + 'px)'
+		});
+	
+		requestAnimationFrame( cloudMove );
+		
+		if( $areaW * 1.1 < $move ){
+			$move = 0;
+			$count = 0;
+			cloneCloud( $target );
+		}
+	}
+
+	function makeRandomCloud(){
+		var $target = $('.cloud');
+		$target.find('i').each( function(){
+			$(this).removeClass();
+		});
+
+		var $clouds = $target.find('i').clone();
+		$target.append( $clouds );	
+
+		//research 	
+		$newClouds = $target.find('i');
+
+		$target.find('i').each( function(){
+			var	$target = $(this),
+				$randomNum = Math.floor( Math.random() * 3 + 1 ),
+				$cls = 'cloud_'+$randomNum,
+				$posX = Math.floor( Math.random() * 100 + 1 ),
+				$posY = Math.floor( Math.random() * 90 + 5 ),
+				$zindex = Math.floor( Math.random() * 5 + 1 );
+
+			$target.addClass( $cls ).css({
+				'bottom': $posY + '%',
+				'right': $posX + '%',
+				'z-index': $zindex
+			});
+		});
+	}
+
+	function cloneCloud( $target ){
+		var $cloud = $target.clone()
+		
+		$cloud.attr({'style': ''});
+		$target.remove();
+		$area.append( $cloud ).find('.clouds').css({
+			'translateX' : '-100%'
+		});
+	}
+
+
+
+
+	var $slickTarget = $('#topicsWrapper');
 	if( $slickTarget ){
 		$slickTarget.slick({
 			// autoplay: false,
@@ -263,8 +415,24 @@ function initForWorks(){
 			}
 		});
 	}
-
 }
+
+
+/**
+* loading
+*/
+
+var $loadingAnim = $('#loadingAnim');
+
+$w.on( 'load', function(){
+	setTimeout( function(){
+		$('body').addClass( 'isLoaded' );
+		$loadingAnim.on( 'transitionend', function(){
+			$('body').addClass( 'loadingAnimEnd' );
+				// $loadingAnim.remove();
+		});
+	}, 500 )
+})
 
 
 

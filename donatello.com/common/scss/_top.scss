@@ -45,14 +45,19 @@
 	height: 100vh;
 	text-align: center;
 	position: relative;
+	overflow: hidden;
 	background-color: blue;	
+	@include background-image( linear-gradient( to bottom, $blue, $green ) );	
+	
 	
 	.wrap{
 		width: 100%;
+		overflow: hidden;
 		position: absolute;
+		z-index: 8;
 		margin-right: auto;
 		margin-left: auto;
-		top: 50%;
+		top: 25%;
 		right: 0;
 		left: 0;
 		transform: translateY(-50%);
@@ -79,7 +84,7 @@
 
 		&_en{
 			margin-top: 0;
-			margin-bottom: 50px;
+			margin-bottom: 20px;
 			font-size: 50px;
 			letter-spacing: 0.261em;
 			font-family: $din_bold;
@@ -111,6 +116,135 @@
 		bottom: 0;
 		left: 0;
 	}
+
+	%parentStyle{
+		width:100%;
+		display: block;
+		position: absolute;
+	}
+	%beforeStyle{
+		content: " ";
+		height: 0;
+		overflow: hidden;
+		display: block;
+		background-size: 100% auto;
+		background-repeat: no-repeat;
+		background-position: left top;
+	}
+
+	.airplane{
+		max-width: 180px;
+		@extend %parentStyle;
+		z-index: 6;
+		right: 100%;
+		bottom: 50%;
+		animation: floatLR 10s linear 10s 1 both;
+		will-change: right;	
+		&.RtoL{
+			animation-name: floatRL;
+			transform: rotateY( 180deg );
+		}
+		&:before{
+			padding-top: percentage( 47/180 );
+			background-image: url(../img/mainvisual-jet.svg);
+			@extend %beforeStyle;
+		}		
+	}
+	.cloud{
+		height: 100%;
+		@extend %parentStyle;
+		top: 60px;
+		right: 0;
+		left: 0;	
+		will-change: transform;	
+		
+
+		&_1{
+			max-width: 142px;
+			@extend %parentStyle;
+			z-index: 4;
+			right: 0;
+			bottom: 50%;
+
+			&:before{
+				padding-top: percentage( 44/142 );
+				background-image: url(../img/mainvisual-cloud-1.svg);
+				@extend %beforeStyle;
+			}			
+		}
+		&_2{
+			max-width: 133px;			
+			@extend %parentStyle;
+			z-index: 2;
+			right: 95%;
+			bottom: 35%;
+
+			&:before{
+				padding-top: percentage( 45/133 );
+				background-image: url(../img/mainvisual-cloud-2.svg);
+				@extend %beforeStyle;
+			}			
+		}
+		&_3{
+			max-width: 174px;
+
+			@extend %parentStyle;
+			right: 70%;
+			bottom: 70%;
+
+			&:before{
+				padding-top: percentage( 61/174 );
+				background-image: url(../img/mainvisual-cloud-3.svg);
+				@extend %beforeStyle;
+			}			
+		}				
+	}	
+	
+	.building{
+		@extend %parentStyle;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		
+		&_front,
+		&_behind{
+			will-change: transform;	
+		}
+
+		
+		&_front{
+			@extend %parentStyle;
+			// max-width: 1449px;
+			right: 0;
+			bottom: 0;
+			z-index: 3;
+			&:before{
+				padding-top: percentage( 476/1449 );
+				background-image: url(../img/mainvisual-city-front.svg);
+				@extend %beforeStyle;
+				@include break( 786, height, max ){
+					padding-top: percentage( 376/1449 );
+				}
+			}	
+		}
+
+		&_behind{
+			@extend %parentStyle;
+			// max-width: 1449px;
+			right: percentage( 35/1366 );
+			bottom: 0;
+			z-index: 1;
+			&:before{
+				padding-top: percentage( 285/1449 );
+				background-image: url(../img/mainvisual-city-behind.svg);
+				@extend %beforeStyle;
+				@include break( 786, height, max ){
+					padding-top: percentage( 185/1449 );
+				}				
+			}	
+		}
+
+	}	
 }
 
 
