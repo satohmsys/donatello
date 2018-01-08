@@ -254,7 +254,8 @@ function initForIndex(){
 	$w.on( 'scroll', function(){
 		$scrollVal = $w.scrollTop();
 
-		var $posX = $scrollVal / $wW * 8;
+		var $p = $wW < 768 ? 4 : 8
+		var $posX = $scrollVal / $wW * $p;
 
 		$building_front.css({
 			'transform': 'translateX(' + $posX + '%)'

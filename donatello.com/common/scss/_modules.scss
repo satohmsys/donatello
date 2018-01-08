@@ -887,56 +887,43 @@ body:before{
 
 ////////////////////
 
-body{
-	// overflow: hidden;
+html:before{
+	content: " ";
+	width: 0;
+	height: 100%;
+	display: block;
+	position: fixed;
+	z-index: 100;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	transition: transition( 0.45s );
+	background-color: $blue;
 }
-
-
-[class *= "pjax"]:after{
-}
-
 
 /* 1.データ更新要求 */
 .pjax-fetch{
+	&:before{
+		width: 100%;
+	}
 	// -webkit-animation: moveToRight 1s ease 0s 1 alternate both;
 	// animation: moveToRight 1s ease 0s 1 alternate both;
 }
-.pjax-loaded body:before,
-.pjax-loaded body:after,
-.pjax-fetch body:before,
-.pjax-fetch body:after{
-	width: 6000px;
-	height: 6000px;
-	
-	@include break( sp ){
-		width: 2000px;
-		height: 2000px;		
-	}
-}
-
 
 /* 2.DOM更新直前 */
-.pjax-unload{
+.pjax-unload:before{
+	background-color: lighten( $blue, 20% );
 }
-.pjax-unload:after{
-}
-
 
 /* 3.DOM更新完了 */
-.pjax-ready{
-}
 .pjax-ready:after{
+	background-color: lighten( $blue, 30% );
 }
-
 
 /* 4.全更新完了 */
-.pjax-loaded{
+.pjax-loaded:before{
+	width: 0;
+	right: 0;
+	left: auto;
 }
-.pjax-loaded body:after{
-	width: 100%;
-	left: 100%;
-}
-.pjax-loaded body:before{
-	width: 100%;
-	left: 100%;
-}
+

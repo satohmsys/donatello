@@ -755,29 +755,23 @@ a img:focus
 {overflow: hidden;
 
     width: 100%;height: 100%;
-}.pjax-loaded body:before,
-.pjax-loaded body:after,
-.pjax-fetch body:before,
-.pjax-fetch body:after
-{
-    width: 6000px;height: 6000px;
-}@media screen and (max-width: 580px)
-{
-    .pjax-loaded body:before,
-    .pjax-loaded body:after,
-    .pjax-fetch body:before,
-    .pjax-fetch body:after
-    {
-        width: 2000px;height: 2000px;
-    }
-}.pjax-loaded body:after
-{left: 100%;
+}html:before
+{position: fixed;z-index: 100;top: 0;bottom: 0;left: 0;display: block;width: 0;height: 100%;
 
+    content: ' ';transition: all .45s cubic-bezier(.785, .135, .15, .86) 0s;background-color: #0c3fff;
+}.pjax-fetch:before
+{
     width: 100%;
-}.pjax-loaded body:before
-{left: 100%;
+}.pjax-unload:before
+{
+    background-color: #7290ff;
+}.pjax-ready:after
+{
+    background-color: #a5b8ff;
+}.pjax-loaded:before
+{right: 0;left: auto;
 
-    width: 100%;
+    width: 0;
 }.headingArea
 {
     position: relative;text-align: center;color: #fff;
