@@ -19,7 +19,7 @@ $meta.description = 'ディスクリプション';
  <%- include($path + '_inc/_head') %>
 </head>
 <body class="business">
-   <%# $parts.loadingAnim %>   
+   <%- $parts.loadingAnim %>   
    <!-- ***** header  -->
    <%- include( $path + '_inc/_gnav', {isChild: true}) %>
    <!-- ///// header  -->
@@ -317,17 +317,12 @@ $meta.description = 'ディスクリプション';
 </article>
 </section>
 <!-- /// about -->      
-
 </main>
 <!-- //// BODY END -->
-
 <%- include( $path + '_inc/_footer' ) %>
-
 <!-- ***** menu button -->
 <%- $parts.toggle %>
 <!-- //// menu button -->
-
 <%- include($path + '_inc/_scripts') %>
 </body>
-
 </html>
