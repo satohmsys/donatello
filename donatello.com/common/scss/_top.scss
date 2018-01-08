@@ -9,6 +9,11 @@
 .siteHeader{
 	padding-top: 40px;
 	padding-bottom: 20px;
+	
+	@include break( sp ){
+		padding-top: 25px;
+	}
+	
 	polygon,
 	path
 	{
@@ -48,7 +53,11 @@
 	overflow: hidden;
 	background-color: blue;	
 	@include background-image( linear-gradient( to bottom, $blue, $green ) );	
-	
+			
+	@include break( sp ){
+		height: calc( 100vh - 60px );
+	}	
+
 	
 	.wrap{
 		width: 100%;
@@ -61,11 +70,15 @@
 		right: 0;
 		left: 0;
 		transform: translateY(-50%);
-		box-sizing: border-box;		
+		box-sizing: border-box;	
+		
+		@include break( sp ){
+			top: 27vh;
+		}	
 	}
 	&_copy{
 		color: #fff;
-		
+
 		.firstRow,
 		.secondRow{
 			margin-right: 0.5em;
@@ -101,6 +114,7 @@
 			font-size: #{(23 / 14)}em;
 			@include break( sp ){
 				font-size: 15px;
+				font-weight: 800;
 			}
 			
 		}
@@ -138,8 +152,12 @@
 		z-index: 6;
 		right: 100%;
 		bottom: 50%;
-		animation: floatLR 10s linear 10s 1 both;
+		animation: floatLR 14s linear 10s 1 both;
 		will-change: right;	
+		
+		@include break( sp ){
+			width: 120px;
+		}
 		&.RtoL{
 			animation-name: floatRL;
 			transform: rotateY( 180deg );
@@ -165,6 +183,10 @@
 			z-index: 4;
 			right: 0;
 			bottom: 50%;
+			
+			@include break( sp ){
+				width: 102px;
+			}
 
 			&:before{
 				padding-top: percentage( 44/142 );
@@ -178,6 +200,10 @@
 			z-index: 2;
 			right: 95%;
 			bottom: 35%;
+			
+			@include break( sp ){
+				width: 93px;
+			}
 
 			&:before{
 				padding-top: percentage( 45/133 );
@@ -187,10 +213,13 @@
 		}
 		&_3{
 			max-width: 174px;
-
 			@extend %parentStyle;
 			right: 70%;
 			bottom: 70%;
+			
+			@include break( sp ){
+				width: 134px;
+			}
 
 			&:before{
 				padding-top: percentage( 61/174 );
@@ -208,7 +237,13 @@
 		
 		&_front,
 		&_behind{
+			width: 1449px;
+			bottom: 0;
 			will-change: transform;	
+			
+			@include break( sp ){
+				width: 1080px;
+			}			
 		}
 
 		
@@ -216,15 +251,25 @@
 			@extend %parentStyle;
 			// max-width: 1449px;
 			right: 0;
-			bottom: 0;
 			z-index: 3;
+			@include break( sp ){
+				right: -20%;
+			}					
+			
 			&:before{
 				padding-top: percentage( 476/1449 );
 				background-image: url(../img/mainvisual-city-front.svg);
 				@extend %beforeStyle;
+				
 				@include break( 786, height, max ){
 					padding-top: percentage( 376/1449 );
 				}
+
+				@include break( sp ){
+
+					// padding-top: 50%;
+					// background-size: auto 100%;
+				}					
 			}	
 		}
 
@@ -232,19 +277,58 @@
 			@extend %parentStyle;
 			// max-width: 1449px;
 			right: percentage( 35/1366 );
-			bottom: 0;
 			z-index: 1;
+			@include break( sp ){
+				right: -16%;
+			}			
 			&:before{
 				padding-top: percentage( 285/1449 );
 				background-image: url(../img/mainvisual-city-behind.svg);
 				@extend %beforeStyle;
 				@include break( 786, height, max ){
 					padding-top: percentage( 185/1449 );
-				}				
+				}	
+				@include break( sp ){
+					// padding-top: 30%;
+					// background-size: auto 100%;
+				}
 			}	
 		}
 
 	}	
+}
+
+&.isLoaded{
+	.mainvisual_copy_en{
+		.firstRow,
+		.secondRow,
+		.lastRow{
+			transform: rotateX( 90deg );
+			display: inline-block;
+			@include break( sp ){
+				display: block;
+				margin-bottom: 4px;
+			}
+		}	
+	}
+
+	&.loadingAnimEnd{
+		.mainvisual_copy_en{
+			.firstRow,
+			.secondRow,
+			.lastRow{
+				transform: rotateX( 0deg );
+				transition: transition();
+				transition-delay: 1.5s;				
+			}
+			.secondRow{
+				transition-delay: 1.65s;
+			}
+			.lastRow{
+				transition-delay: 1.8s;
+			}
+		}		
+	}
 }
 
 

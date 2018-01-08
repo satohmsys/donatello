@@ -802,22 +802,36 @@ body:before{
 	bottom: 0;
 	left: 0;
 	transition: transition(0.5s);
-	transition-delay: 2s;	
+	transition-delay: 1s;	
 	background-color: $blue;
 	overflow: hidden;
 	
 	svg{
-		width: 110px;
+		width: 100px;
 		height: 100px;
 		fill: none;
-		stroke: #fff;
-		stroke-width: 2px;	
-		transition: transition();
-	    transform: rotate(-30deg);			
+		transition: transition();		
+	}
+
+	text{
+		line-height: 1;
+		letter-spacing: 0.015em;
+		height: 1em;
+		overflow: hidden;
+		font-family: $din_medium;
+		position: relative;
+		text-align: center;
+		transition: transition();	
+		fill: #fff;
+		stroke: 1px;
 	}
 	
 	.loadingAnim_path{
 		display: block;
+		stroke: #fff;
+		stroke-width: 1px;
+		transition: transition();
+		stroke-dashoffset: 290px;
 	}
 
 	.loadingAnim_circle{
@@ -832,11 +846,15 @@ body:before{
 		height: 0;
 		background-color: lighten( $blue, 50% );
 		
+		text{
+			transform: rotateY(90deg);
+		}		
+		
 		.loadingAnim_circle{
 			opacity: 0;
 		}
-		svg{
-			stroke-dasharray: -800px;
+		.loadingAnim_path{
+			stroke-dasharray: 290px;
 		}
 	}
 }

@@ -254,20 +254,19 @@ function initForIndex(){
 	$w.on( 'scroll', function(){
 		$scrollVal = $w.scrollTop();
 
-		var $posX = $scrollVal / $wW * 4;
+		var $posX = $scrollVal / $wW * 8;
 
 		$building_front.css({
 			'transform': 'translateX(' + $posX + '%)'
 		})
 		$building_behind.css({
-			'transform': 'translateX(-' + $posX + '%)'
+			'transform': 'translateX(' + $posX*0.5 + '%)'
 		})
 	});
 
 	$airplane.on( 'animationend', function(){
 		$airplane.toggleClass('RtoL');
 	});
-
 
 	function cloudMove(){
 		var $target = $('.cloud'),
@@ -282,7 +281,7 @@ function initForIndex(){
 	
 		requestAnimationFrame( cloudMove );
 		
-		if( $areaW * 1.1 < $move ){
+		if( $areaW * 1.35 < $move ){
 			$move = 0;
 			$count = 0;
 			cloneCloud( $target );
