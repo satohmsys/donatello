@@ -57,7 +57,6 @@
 	@include break( sp ){
 		height: calc( 100vh - 60px );
 	}	
-
 	
 	.wrap{
 		width: 100%;
@@ -237,9 +236,14 @@
 		
 		&_front,
 		&_behind{
-			width: 1449px;
+			width: 100%;
 			bottom: 0;
 			will-change: transform;	
+			
+			@include break( pc ){
+				width: 1449px;
+				
+			}
 			
 			@include break( sp ){
 				width: 1080px;
@@ -410,8 +414,8 @@
 	
 	canvas{
 		overflow: hidden;
-		// width: 100%;
-		// height: auto;
+		max-width: 100%;
+		height: auto;
 		position: absolute;
 		top: 0;
 		right: 0;

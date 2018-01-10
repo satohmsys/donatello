@@ -363,27 +363,6 @@ a img:focus
     {transition: all .3s ease 0s;-webkit-transform: scaleX(1) translateX(0);-ms-transform: scaleX(1) translateX(0);transform: scaleX(1) translateX(0);
 
         opacity: 1;
-    }.navOpen .siteHeader_nav li:nth-child(1)
-    {
-        transition-delay: .85s;
-    }.navOpen .siteHeader_nav li:nth-child(2)
-    {
-        transition-delay: 1s;
-    }.navOpen .siteHeader_nav li:nth-child(3)
-    {
-        transition-delay: 1.15s;
-    }.navOpen .siteHeader_nav li:nth-child(4)
-    {
-        transition-delay: 1.3s;
-    }.navOpen .siteHeader_nav li:nth-child(5)
-    {
-        transition-delay: 1.45s;
-    }.navOpen .siteHeader_nav li:nth-child(6)
-    {
-        transition-delay: 1.6s;
-    }.navOpen .siteHeader_nav li:nth-child(7)
-    {
-        transition-delay: 1.75s;
     }.navOpen .siteHeader_nav li a
     {z-index: 9;
 
@@ -776,8 +755,9 @@ a img:focus
 {
     position: relative;text-align: center;color: #fff;
 }.headingArea canvas
-{
-    position: absolute;z-index: 0;top: 0;right: 0;bottom: 0;left: 0;opacity: .15;mix-blend-mode: overlay;
+{position: absolute;z-index: 0;top: 0;right: 0;bottom: 0;left: 0;
+
+    max-width: 100%;height: auto;opacity: .15;mix-blend-mode: overlay;
 }.headingArea_copy
 {font-size: 2em;position: relative;z-index: 1;
 
@@ -1087,7 +1067,14 @@ a img:focus
 .index .mainvisual .building_behind
 {bottom: 0;
 
-    width: 1449px;will-change: transform;
+    width: 100%;will-change: transform;
+}@media screen and (max-width: 1200px)
+{
+    .index .mainvisual .building_front,
+    .index .mainvisual .building_behind
+    {
+        width: 1449px;
+    }
 }@media screen and (max-width: 580px)
 {
     .index .mainvisual .building_front,
@@ -1195,7 +1182,7 @@ a img:focus
 }.index .introduction canvas
 {position: absolute;z-index: 0;top: 0;right: 0;bottom: 0;left: 0;
 
-    overflow: hidden;opacity: .15;mix-blend-mode: overlay;
+    overflow: hidden;max-width: 100%;height: auto;opacity: .15;mix-blend-mode: overlay;
 }@media screen and (max-width: 780px)
 {
     .index .introduction
@@ -1587,7 +1574,8 @@ a img:focus
 }@media screen and (max-width: 580px)
 {
     .works .worksNav_tab:after
-    {
+    {left: -1px;
+
         width: 1px;height: 0;border-top: none;border-right: solid 1px #0c3fff;
     }
 }.works .worksNav_tab:hover:after,
