@@ -761,7 +761,7 @@ a img:focus
 }.headingArea_copy
 {font-size: 2em;position: relative;z-index: 1;
 
-    padding-top: 100px;padding-bottom: 100px;vertical-align: middle;text-shadow: 0 0 10px #666;
+    padding-top: 100px;padding-bottom: 100px;vertical-align: middle;text-shadow: 0 0 10px rgba(0,0,0,.3);
 }@media screen and (max-width: 580px)
 {
     .headingArea_copy
@@ -1118,31 +1118,29 @@ a img:focus
     {
         padding-top: 12.76743%;
     }
-}.index.isLoaded .mainvisual_copy_en .firstRow,
-.index.isLoaded .mainvisual_copy_en .secondRow,
-.index.isLoaded .mainvisual_copy_en .lastRow
-{display: inline-block;
-
-    -webkit-transform: rotateX(90deg)                                    ;transform: rotateX(90deg);
-}@media screen and (max-width: 580px)
+}.index.isLoaded .mainvisual_copy_en span
 {
-    .index.isLoaded .mainvisual_copy_en .firstRow,
-    .index.isLoaded .mainvisual_copy_en .secondRow,
-    .index.isLoaded .mainvisual_copy_en .lastRow
+    display: inline-block;
+}@media screen and (max-width: 780px)
+{
+    .index.isLoaded .mainvisual_copy_en span
     {
         display: block;margin-bottom: 4px;
     }
-}.index.isLoaded.loadingAnimEnd .mainvisual_copy_en .firstRow,
-.index.isLoaded.loadingAnimEnd .mainvisual_copy_en .secondRow,
-.index.isLoaded.loadingAnimEnd .mainvisual_copy_en .lastRow
-{transition: all .3s cubic-bezier(.785, .135, .15, .86) 0s;transition-delay: 1.5s;
-    -webkit-transform: rotateX(0deg);transform: rotateX(0deg);
-}.index.isLoaded.loadingAnimEnd .mainvisual_copy_en .secondRow
+}.index.isLoaded .mainvisual_copy_en span,
+.index.isLoaded .mainvisual_copy_ja
 {
-    transition-delay: 1.65s;
-}.index.isLoaded.loadingAnimEnd .mainvisual_copy_en .lastRow
+    -webkit-transform: rotateX(90deg)                        ;transform: rotateX(90deg);
+}.index.isLoaded.loadingAnimEnd .mainvisual_copy_en span,
+.index.isLoaded.loadingAnimEnd .mainvisual_copy_ja
+{transition: all .3s cubic-bezier(.785, .135, .15, .86) 0s;
+    -webkit-transform: rotateX(0deg)                                    ;transform: rotateX(0deg);
+}.index.isLoaded.loadingAnimEnd .mainvisual_copy_en span
 {
-    transition-delay: 1.8s;
+    transition-delay: 1.35s;
+}.index.isLoaded.loadingAnimEnd .mainvisual_copy_ja
+{
+    transition-delay: 1.55s;
 }.index .topics
 {
     padding-top: 10px;padding-bottom: 10px;

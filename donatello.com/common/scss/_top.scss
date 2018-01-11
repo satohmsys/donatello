@@ -303,37 +303,34 @@
 }
 
 &.isLoaded{
-	.mainvisual_copy_en{
-		.firstRow,
-		.secondRow,
-		.lastRow{
-			transform: rotateX( 90deg );
-			display: inline-block;
-			@include break( sp ){
-				display: block;
-				margin-bottom: 4px;
-			}
-		}	
+	.mainvisual_copy_en span{
+		display: inline-block;
+		@include break( tab ){
+			display: block;
+			margin-bottom: 4px;
+		}
+	}
+	.mainvisual_copy_en span,
+	.mainvisual_copy_ja{
+			transform: rotateX( 90deg );	
 	}
 
 	&.loadingAnimEnd{
-		.mainvisual_copy_en{
-			.firstRow,
-			.secondRow,
-			.lastRow{
-				transform: rotateX( 0deg );
-				transition: transition();
-				transition-delay: 1.5s;				
-			}
-			.secondRow{
-				transition-delay: 1.65s;
-			}
-			.lastRow{
-				transition-delay: 1.8s;
-			}
+		.mainvisual_copy_en span,
+		.mainvisual_copy_ja{
+			transform: rotateX( 0deg );
+			transition: transition();
 		}		
+		.mainvisual_copy_en span{
+			transition-delay: 1.35s;
+		}
+		.mainvisual_copy_ja{
+			transition-delay: 1.55s;			
+		}
+
 	}
 }
+
 
 
 
