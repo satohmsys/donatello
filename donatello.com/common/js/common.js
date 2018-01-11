@@ -32,6 +32,25 @@ $w.on( 'load scroll resize' , function( e ){
 
 
 
+
+/**
+* loading
+*/
+
+var $loadingAnim = $('#loadingAnim');
+
+$w.on( 'load', function(){
+	setTimeout( function(){
+		$('body').addClass( 'isLoaded' );
+		$loadingAnim.on( 'transitionend', function(){
+			$('body').addClass( 'loadingAnimEnd' );
+				// $loadingAnim.remove();
+		});
+	}, 250 )
+});
+
+
+
 /**
 * navtoggle
 */
@@ -416,23 +435,6 @@ function initForWorks(){
 		});
 	}
 }
-
-
-/**
-* loading
-*/
-
-var $loadingAnim = $('#loadingAnim');
-
-$w.on( 'load', function(){
-	setTimeout( function(){
-		$('body').addClass( 'isLoaded' );
-		$loadingAnim.on( 'transitionend', function(){
-			$('body').addClass( 'loadingAnimEnd' );
-				// $loadingAnim.remove();
-		});
-	}, 500 )
-})
 
 
 
