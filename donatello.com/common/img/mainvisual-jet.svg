@@ -3,190 +3,385 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="レイヤー_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
 	 y="0px" width="180px" height="47px" viewBox="0 0 180 47" enable-background="new 0 0 180 47" xml:space="preserve">
-<g>
-	<defs>
-		<path id="SVGID_1_" d="M177.585,35.133c0.823-0.739,0.796-2.034-0.041-2.759c-3.755-3.247-14.938-11.204-34.385-11.207
-			c-24.435-0.004-74.275-1.373-95.692-0.014c-19.124,1.214-36.851,5.021-40.428,5.821c-0.383,0.086-0.654,0.426-0.654,0.82
+<g id="jet_1_">
+	<g id="body_1_">
+		<g display="none">
+			<defs>
+				<path id="SVGID_1_" d="M177.278,35.283c0.823-0.739,0.796-2.034-0.041-2.759c-3.755-3.247-14.938-11.204-34.385-11.207
+					c-24.435-0.004-74.275-1.373-95.692-0.014c-19.124,1.214-36.851,5.021-40.428,5.822c-0.383,0.086-0.654,0.426-0.654,0.819
+					l-0.001,0.145c0.001,0.636,0.336,1.226,0.886,1.546c3.802,2.213,20.164,10.357,54.99,10.361
+					c40.302,0.006,93.806,1.477,102.507,0.453C171.081,39.672,175.131,37.213,177.278,35.283"/>
+			</defs>
+			<clipPath id="SVGID_2_" display="inline">
+				<use xlink:href="#SVGID_1_"  overflow="visible"/>
+			</clipPath>
+			<g display="inline" clip-path="url(#SVGID_2_)">
+				<g>
+					<defs>
+						<rect id="SVGID_3_" x="-124.5" y="-302" width="1366" height="768"/>
+					</defs>
+					<clipPath id="SVGID_4_">
+						<use xlink:href="#SVGID_3_"  overflow="visible"/>
+					</clipPath>
+					<path clip-path="url(#SVGID_4_)" fill="#8BFFAC" d="M-124.5,466h1366H-124.5z"/>
+					<rect x="-124.5" y="462" clip-path="url(#SVGID_4_)" fill="#8BFFAC" width="1366" height="4"/>
+					<rect x="-124.5" y="458" clip-path="url(#SVGID_4_)" fill="#8AFEAC" width="1366" height="4"/>
+					<rect x="-124.5" y="454" clip-path="url(#SVGID_4_)" fill="#8AFDAD" width="1366" height="4"/>
+					<rect x="-124.5" y="450" clip-path="url(#SVGID_4_)" fill="#89FCAD" width="1366" height="4"/>
+					<rect x="-124.5" y="446" clip-path="url(#SVGID_4_)" fill="#88FBAE" width="1366" height="4"/>
+					<rect x="-124.5" y="442" clip-path="url(#SVGID_4_)" fill="#88FAAE" width="1366" height="4"/>
+					<rect x="-124.5" y="438" clip-path="url(#SVGID_4_)" fill="#87F9AF" width="1366" height="4"/>
+					<rect x="-124.5" y="434" clip-path="url(#SVGID_4_)" fill="#86F8AF" width="1366" height="4"/>
+					<rect x="-124.5" y="430" clip-path="url(#SVGID_4_)" fill="#86F7AF" width="1366" height="4"/>
+					<rect x="-124.5" y="426" clip-path="url(#SVGID_4_)" fill="#85F6B0" width="1366" height="4"/>
+					<rect x="-124.5" y="422" clip-path="url(#SVGID_4_)" fill="#84F5B0" width="1366" height="4"/>
+					<rect x="-124.5" y="418" clip-path="url(#SVGID_4_)" fill="#84F4B1" width="1366" height="4"/>
+					<rect x="-124.5" y="414" clip-path="url(#SVGID_4_)" fill="#83F3B1" width="1366" height="4"/>
+					<rect x="-124.5" y="410" clip-path="url(#SVGID_4_)" fill="#82F2B2" width="1366" height="4"/>
+					<rect x="-124.5" y="406" clip-path="url(#SVGID_4_)" fill="#82F1B2" width="1366" height="4"/>
+					<rect x="-124.5" y="402" clip-path="url(#SVGID_4_)" fill="#81F0B3" width="1366" height="4"/>
+					<rect x="-124.5" y="398" clip-path="url(#SVGID_4_)" fill="#80EFB3" width="1366" height="4"/>
+					<rect x="-124.5" y="394" clip-path="url(#SVGID_4_)" fill="#80EEB3" width="1366" height="4"/>
+					<rect x="-124.5" y="390" clip-path="url(#SVGID_4_)" fill="#7FEDB4" width="1366" height="4"/>
+					<rect x="-124.5" y="386" clip-path="url(#SVGID_4_)" fill="#7EECB4" width="1366" height="4"/>
+					<rect x="-124.5" y="382" clip-path="url(#SVGID_4_)" fill="#7EEBB5" width="1366" height="4"/>
+					<rect x="-124.5" y="378" clip-path="url(#SVGID_4_)" fill="#7DEAB5" width="1366" height="4"/>
+					<rect x="-124.5" y="374" clip-path="url(#SVGID_4_)" fill="#7CE9B6" width="1366" height="4"/>
+					<rect x="-124.5" y="370" clip-path="url(#SVGID_4_)" fill="#7CE8B6" width="1366" height="4"/>
+					<rect x="-124.5" y="366" clip-path="url(#SVGID_4_)" fill="#7BE7B6" width="1366" height="4"/>
+					<rect x="-124.5" y="362" clip-path="url(#SVGID_4_)" fill="#7AE6B7" width="1366" height="4"/>
+					<rect x="-124.5" y="358" clip-path="url(#SVGID_4_)" fill="#7AE5B7" width="1366" height="4"/>
+					<rect x="-124.5" y="354" clip-path="url(#SVGID_4_)" fill="#79E4B8" width="1366" height="4"/>
+					<rect x="-124.5" y="350" clip-path="url(#SVGID_4_)" fill="#78E3B8" width="1366" height="4"/>
+					<rect x="-124.5" y="346" clip-path="url(#SVGID_4_)" fill="#78E2B9" width="1366" height="4"/>
+					<rect x="-124.5" y="342" clip-path="url(#SVGID_4_)" fill="#77E1B9" width="1366" height="4"/>
+					<rect x="-124.5" y="338" clip-path="url(#SVGID_4_)" fill="#76E0B9" width="1366" height="4"/>
+					<rect x="-124.5" y="334" clip-path="url(#SVGID_4_)" fill="#76DFBA" width="1366" height="4"/>
+					<rect x="-124.5" y="330" clip-path="url(#SVGID_4_)" fill="#75DEBA" width="1366" height="4"/>
+					<rect x="-124.5" y="326" clip-path="url(#SVGID_4_)" fill="#74DDBB" width="1366" height="4"/>
+					<rect x="-124.5" y="322" clip-path="url(#SVGID_4_)" fill="#74DCBB" width="1366" height="4"/>
+					<rect x="-124.5" y="318" clip-path="url(#SVGID_4_)" fill="#73DBBC" width="1366" height="4"/>
+					<rect x="-124.5" y="314" clip-path="url(#SVGID_4_)" fill="#72DABC" width="1366" height="4"/>
+					<rect x="-124.5" y="310" clip-path="url(#SVGID_4_)" fill="#72D9BD" width="1366" height="4"/>
+					<rect x="-124.5" y="306" clip-path="url(#SVGID_4_)" fill="#71D8BD" width="1366" height="4"/>
+					<rect x="-124.5" y="302" clip-path="url(#SVGID_4_)" fill="#70D7BD" width="1366" height="4"/>
+					<rect x="-124.5" y="298" clip-path="url(#SVGID_4_)" fill="#70D6BE" width="1366" height="4"/>
+					<rect x="-124.5" y="294" clip-path="url(#SVGID_4_)" fill="#6FD5BE" width="1366" height="4"/>
+					<rect x="-124.5" y="290" clip-path="url(#SVGID_4_)" fill="#6ED4BF" width="1366" height="4"/>
+					<rect x="-124.5" y="286" clip-path="url(#SVGID_4_)" fill="#6ED3BF" width="1366" height="4"/>
+					<rect x="-124.5" y="282" clip-path="url(#SVGID_4_)" fill="#6DD2C0" width="1366" height="4"/>
+					<rect x="-124.5" y="278" clip-path="url(#SVGID_4_)" fill="#6CD1C0" width="1366" height="4"/>
+					<rect x="-124.5" y="274" clip-path="url(#SVGID_4_)" fill="#6CD0C0" width="1366" height="4"/>
+					<rect x="-124.5" y="270" clip-path="url(#SVGID_4_)" fill="#6BCFC1" width="1366" height="4"/>
+					<rect x="-124.5" y="266" clip-path="url(#SVGID_4_)" fill="#6ACEC1" width="1366" height="4"/>
+					<rect x="-124.5" y="262" clip-path="url(#SVGID_4_)" fill="#6ACDC2" width="1366" height="4"/>
+					<rect x="-124.5" y="258" clip-path="url(#SVGID_4_)" fill="#69CCC2" width="1366" height="4"/>
+					<rect x="-124.5" y="254" clip-path="url(#SVGID_4_)" fill="#68CBC3" width="1366" height="4"/>
+					<rect x="-124.5" y="250" clip-path="url(#SVGID_4_)" fill="#68CAC3" width="1366" height="4"/>
+					<rect x="-124.5" y="246" clip-path="url(#SVGID_4_)" fill="#67C9C3" width="1366" height="4"/>
+					<rect x="-124.5" y="242" clip-path="url(#SVGID_4_)" fill="#66C8C4" width="1366" height="4"/>
+					<rect x="-124.5" y="238" clip-path="url(#SVGID_4_)" fill="#66C7C4" width="1366" height="4"/>
+					<rect x="-124.5" y="234" clip-path="url(#SVGID_4_)" fill="#65C6C5" width="1366" height="4"/>
+					<rect x="-124.5" y="230" clip-path="url(#SVGID_4_)" fill="#64C5C5" width="1366" height="4"/>
+					<rect x="-124.5" y="226" clip-path="url(#SVGID_4_)" fill="#64C4C6" width="1366" height="4"/>
+					<rect x="-124.5" y="222" clip-path="url(#SVGID_4_)" fill="#63C3C6" width="1366" height="4"/>
+					<rect x="-124.5" y="218" clip-path="url(#SVGID_4_)" fill="#62C2C7" width="1366" height="4"/>
+					<rect x="-124.5" y="214" clip-path="url(#SVGID_4_)" fill="#62C1C7" width="1366" height="4"/>
+					<rect x="-124.5" y="210" clip-path="url(#SVGID_4_)" fill="#61C0C7" width="1366" height="4"/>
+					<rect x="-124.5" y="206" clip-path="url(#SVGID_4_)" fill="#60BFC8" width="1366" height="4"/>
+					<rect x="-124.5" y="202" clip-path="url(#SVGID_4_)" fill="#60BEC8" width="1366" height="4"/>
+					<rect x="-124.5" y="198" clip-path="url(#SVGID_4_)" fill="#5FBDC9" width="1366" height="4"/>
+					<rect x="-124.5" y="194" clip-path="url(#SVGID_4_)" fill="#5EBCC9" width="1366" height="4"/>
+					<rect x="-124.5" y="190" clip-path="url(#SVGID_4_)" fill="#5EBBCA" width="1366" height="4"/>
+					<rect x="-124.5" y="186" clip-path="url(#SVGID_4_)" fill="#5DBACA" width="1366" height="4"/>
+					<rect x="-124.5" y="182" clip-path="url(#SVGID_4_)" fill="#5CB9CA" width="1366" height="4"/>
+					<rect x="-124.5" y="178" clip-path="url(#SVGID_4_)" fill="#5CB8CB" width="1366" height="4"/>
+					<rect x="-124.5" y="174" clip-path="url(#SVGID_4_)" fill="#5BB7CB" width="1366" height="4"/>
+					<rect x="-124.5" y="170" clip-path="url(#SVGID_4_)" fill="#5AB6CC" width="1366" height="4"/>
+					<rect x="-124.5" y="166" clip-path="url(#SVGID_4_)" fill="#5AB5CC" width="1366" height="4"/>
+					<rect x="-124.5" y="162" clip-path="url(#SVGID_4_)" fill="#59B4CD" width="1366" height="4"/>
+					<rect x="-124.5" y="158" clip-path="url(#SVGID_4_)" fill="#58B3CD" width="1366" height="4"/>
+					<rect x="-124.5" y="154" clip-path="url(#SVGID_4_)" fill="#58B2CD" width="1366" height="4"/>
+					<rect x="-124.5" y="150" clip-path="url(#SVGID_4_)" fill="#57B1CE" width="1366" height="4"/>
+					<rect x="-124.5" y="146" clip-path="url(#SVGID_4_)" fill="#56B0CE" width="1366" height="4"/>
+					<rect x="-124.5" y="142" clip-path="url(#SVGID_4_)" fill="#56AFCF" width="1366" height="4"/>
+					<rect x="-124.5" y="138" clip-path="url(#SVGID_4_)" fill="#55AECF" width="1366" height="4"/>
+					<rect x="-124.5" y="134" clip-path="url(#SVGID_4_)" fill="#54ADD0" width="1366" height="4"/>
+					<rect x="-124.5" y="130" clip-path="url(#SVGID_4_)" fill="#54ACD0" width="1366" height="4"/>
+					<rect x="-124.5" y="126" clip-path="url(#SVGID_4_)" fill="#53ABD1" width="1366" height="4"/>
+					<rect x="-124.5" y="122" clip-path="url(#SVGID_4_)" fill="#52AAD1" width="1366" height="4"/>
+					<rect x="-124.5" y="118" clip-path="url(#SVGID_4_)" fill="#52A9D1" width="1366" height="4"/>
+					<rect x="-124.5" y="114" clip-path="url(#SVGID_4_)" fill="#51A8D2" width="1366" height="4"/>
+					<rect x="-124.5" y="110" clip-path="url(#SVGID_4_)" fill="#50A7D2" width="1366" height="4"/>
+					<rect x="-124.5" y="106" clip-path="url(#SVGID_4_)" fill="#50A6D3" width="1366" height="4"/>
+					<rect x="-124.5" y="102" clip-path="url(#SVGID_4_)" fill="#4FA5D3" width="1366" height="4"/>
+					<rect x="-124.5" y="98" clip-path="url(#SVGID_4_)" fill="#4EA4D4" width="1366" height="4"/>
+					<rect x="-124.5" y="94" clip-path="url(#SVGID_4_)" fill="#4EA3D4" width="1366" height="4"/>
+					<rect x="-124.5" y="90" clip-path="url(#SVGID_4_)" fill="#4DA2D4" width="1366" height="4"/>
+					<rect x="-124.5" y="86" clip-path="url(#SVGID_4_)" fill="#4CA1D5" width="1366" height="4"/>
+					<rect x="-124.5" y="82" clip-path="url(#SVGID_4_)" fill="#4CA0D5" width="1366" height="4"/>
+					<rect x="-124.5" y="78" clip-path="url(#SVGID_4_)" fill="#4B9ED6" width="1366" height="4"/>
+					<rect x="-124.5" y="74" clip-path="url(#SVGID_4_)" fill="#4B9DD6" width="1366" height="4"/>
+					<rect x="-124.5" y="70" clip-path="url(#SVGID_4_)" fill="#4A9CD7" width="1366" height="4"/>
+					<rect x="-124.5" y="66" clip-path="url(#SVGID_4_)" fill="#499BD7" width="1366" height="4"/>
+					<rect x="-124.5" y="62" clip-path="url(#SVGID_4_)" fill="#499AD7" width="1366" height="4"/>
+					<rect x="-124.5" y="58" clip-path="url(#SVGID_4_)" fill="#4899D8" width="1366" height="4"/>
+					<rect x="-124.5" y="54" clip-path="url(#SVGID_4_)" fill="#4798D8" width="1366" height="4"/>
+					<rect x="-124.5" y="50" clip-path="url(#SVGID_4_)" fill="#4797D9" width="1366" height="4"/>
+					<rect x="-124.5" y="46" clip-path="url(#SVGID_4_)" fill="#4696D9" width="1366" height="4"/>
+					<rect x="-124.5" y="42" clip-path="url(#SVGID_4_)" fill="#4595DA" width="1366" height="4"/>
+					<rect x="-124.5" y="38" clip-path="url(#SVGID_4_)" fill="#4594DA" width="1366" height="4"/>
+					<rect x="-124.5" y="34" clip-path="url(#SVGID_4_)" fill="#4493DA" width="1366" height="4"/>
+					<rect x="-124.5" y="30" clip-path="url(#SVGID_4_)" fill="#4392DB" width="1366" height="4"/>
+					<rect x="-124.5" y="26" clip-path="url(#SVGID_4_)" fill="#4391DB" width="1366" height="4"/>
+					<rect x="-124.5" y="22" clip-path="url(#SVGID_4_)" fill="#4290DC" width="1366" height="4"/>
+					<rect x="-124.5" y="18" clip-path="url(#SVGID_4_)" fill="#418FDC" width="1366" height="4"/>
+					<rect x="-124.5" y="14" clip-path="url(#SVGID_4_)" fill="#418EDD" width="1366" height="4"/>
+					<rect x="-124.5" y="10" clip-path="url(#SVGID_4_)" fill="#408DDD" width="1366" height="4"/>
+					<rect x="-124.5" y="6" clip-path="url(#SVGID_4_)" fill="#3F8CDE" width="1366" height="4"/>
+					<rect x="-124.5" y="2" clip-path="url(#SVGID_4_)" fill="#3F8BDE" width="1366" height="4"/>
+					<rect x="-124.5" y="-2" clip-path="url(#SVGID_4_)" fill="#3E8ADE" width="1366" height="4"/>
+					<rect x="-124.5" y="-6" clip-path="url(#SVGID_4_)" fill="#3D89DF" width="1366" height="4"/>
+					<rect x="-124.5" y="-10" clip-path="url(#SVGID_4_)" fill="#3D88DF" width="1366" height="4"/>
+					<rect x="-124.5" y="-14" clip-path="url(#SVGID_4_)" fill="#3C87E0" width="1366" height="4"/>
+					<rect x="-124.5" y="-18" clip-path="url(#SVGID_4_)" fill="#3B86E0" width="1366" height="4"/>
+					<rect x="-124.5" y="-22" clip-path="url(#SVGID_4_)" fill="#3B85E1" width="1366" height="4"/>
+					<rect x="-124.5" y="-26" clip-path="url(#SVGID_4_)" fill="#3A84E1" width="1366" height="4"/>
+					<rect x="-124.5" y="-30" clip-path="url(#SVGID_4_)" fill="#3983E1" width="1366" height="4"/>
+					<rect x="-124.5" y="-34" clip-path="url(#SVGID_4_)" fill="#3982E2" width="1366" height="4"/>
+					<rect x="-124.5" y="-38" clip-path="url(#SVGID_4_)" fill="#3881E2" width="1366" height="4"/>
+					<rect x="-124.5" y="-42" clip-path="url(#SVGID_4_)" fill="#3780E3" width="1366" height="4"/>
+					<rect x="-124.5" y="-46" clip-path="url(#SVGID_4_)" fill="#377FE3" width="1366" height="4"/>
+					<rect x="-124.5" y="-50" clip-path="url(#SVGID_4_)" fill="#367EE4" width="1366" height="4"/>
+					<rect x="-124.5" y="-54" clip-path="url(#SVGID_4_)" fill="#357DE4" width="1366" height="4"/>
+					<rect x="-124.5" y="-58" clip-path="url(#SVGID_4_)" fill="#357CE4" width="1366" height="4"/>
+					<rect x="-124.5" y="-62" clip-path="url(#SVGID_4_)" fill="#347BE5" width="1366" height="4"/>
+					<rect x="-124.5" y="-66" clip-path="url(#SVGID_4_)" fill="#337AE5" width="1366" height="4"/>
+					<rect x="-124.5" y="-70" clip-path="url(#SVGID_4_)" fill="#3379E6" width="1366" height="4"/>
+					<rect x="-124.5" y="-74" clip-path="url(#SVGID_4_)" fill="#3278E6" width="1366" height="4"/>
+					<rect x="-124.5" y="-78" clip-path="url(#SVGID_4_)" fill="#3177E7" width="1366" height="4"/>
+					<rect x="-124.5" y="-82" clip-path="url(#SVGID_4_)" fill="#3176E7" width="1366" height="4"/>
+					<rect x="-124.5" y="-86" clip-path="url(#SVGID_4_)" fill="#3075E8" width="1366" height="4"/>
+					<rect x="-124.5" y="-90" clip-path="url(#SVGID_4_)" fill="#2F74E8" width="1366" height="4"/>
+					<rect x="-124.5" y="-94" clip-path="url(#SVGID_4_)" fill="#2F73E8" width="1366" height="4"/>
+					<rect x="-124.5" y="-98" clip-path="url(#SVGID_4_)" fill="#2E72E9" width="1366" height="4"/>
+					<rect x="-124.5" y="-102" clip-path="url(#SVGID_4_)" fill="#2D71E9" width="1366" height="4"/>
+					<rect x="-124.5" y="-106" clip-path="url(#SVGID_4_)" fill="#2D70EA" width="1366" height="4"/>
+					<rect x="-124.5" y="-110" clip-path="url(#SVGID_4_)" fill="#2C6FEA" width="1366" height="4"/>
+					<rect x="-124.5" y="-114" clip-path="url(#SVGID_4_)" fill="#2B6EEB" width="1366" height="4"/>
+					<rect x="-124.5" y="-118" clip-path="url(#SVGID_4_)" fill="#2B6DEB" width="1366" height="4"/>
+					<rect x="-124.5" y="-122" clip-path="url(#SVGID_4_)" fill="#2A6CEB" width="1366" height="4"/>
+					<rect x="-124.5" y="-126" clip-path="url(#SVGID_4_)" fill="#296BEC" width="1366" height="4"/>
+					<rect x="-124.5" y="-130" clip-path="url(#SVGID_4_)" fill="#296AEC" width="1366" height="4"/>
+					<rect x="-124.5" y="-134" clip-path="url(#SVGID_4_)" fill="#2869ED" width="1366" height="4"/>
+					<rect x="-124.5" y="-138" clip-path="url(#SVGID_4_)" fill="#2768ED" width="1366" height="4"/>
+					<rect x="-124.5" y="-142" clip-path="url(#SVGID_4_)" fill="#2767EE" width="1366" height="4"/>
+					<rect x="-124.5" y="-146" clip-path="url(#SVGID_4_)" fill="#2666EE" width="1366" height="4"/>
+					<rect x="-124.5" y="-150" clip-path="url(#SVGID_4_)" fill="#2565EE" width="1366" height="4"/>
+					<rect x="-124.5" y="-154" clip-path="url(#SVGID_4_)" fill="#2564EF" width="1366" height="4"/>
+					<rect x="-124.5" y="-158" clip-path="url(#SVGID_4_)" fill="#2463EF" width="1366" height="4"/>
+					<rect x="-124.5" y="-162" clip-path="url(#SVGID_4_)" fill="#2362F0" width="1366" height="4"/>
+					<rect x="-124.5" y="-166" clip-path="url(#SVGID_4_)" fill="#2361F0" width="1366" height="4"/>
+					<rect x="-124.5" y="-170" clip-path="url(#SVGID_4_)" fill="#2260F1" width="1366" height="4"/>
+					<rect x="-124.5" y="-174" clip-path="url(#SVGID_4_)" fill="#215FF1" width="1366" height="4"/>
+					<rect x="-124.5" y="-178" clip-path="url(#SVGID_4_)" fill="#215EF2" width="1366" height="4"/>
+					<rect x="-124.5" y="-182" clip-path="url(#SVGID_4_)" fill="#205DF2" width="1366" height="4"/>
+					<rect x="-124.5" y="-186" clip-path="url(#SVGID_4_)" fill="#1F5CF2" width="1366" height="4"/>
+					<rect x="-124.5" y="-190" clip-path="url(#SVGID_4_)" fill="#1F5BF3" width="1366" height="4"/>
+					<rect x="-124.5" y="-194" clip-path="url(#SVGID_4_)" fill="#1E5AF3" width="1366" height="4"/>
+					<rect x="-124.5" y="-198" clip-path="url(#SVGID_4_)" fill="#1D59F4" width="1366" height="4"/>
+					<rect x="-124.5" y="-202" clip-path="url(#SVGID_4_)" fill="#1D58F4" width="1366" height="4"/>
+					<rect x="-124.5" y="-206" clip-path="url(#SVGID_4_)" fill="#1C57F5" width="1366" height="4"/>
+					<rect x="-124.5" y="-210" clip-path="url(#SVGID_4_)" fill="#1B56F5" width="1366" height="4"/>
+					<rect x="-124.5" y="-214" clip-path="url(#SVGID_4_)" fill="#1B55F5" width="1366" height="4"/>
+					<rect x="-124.5" y="-218" clip-path="url(#SVGID_4_)" fill="#1A54F6" width="1366" height="4"/>
+					<rect x="-124.5" y="-222" clip-path="url(#SVGID_4_)" fill="#1953F6" width="1366" height="4"/>
+					<rect x="-124.5" y="-226" clip-path="url(#SVGID_4_)" fill="#1952F7" width="1366" height="4"/>
+					<rect x="-124.5" y="-230" clip-path="url(#SVGID_4_)" fill="#1851F7" width="1366" height="4"/>
+					<rect x="-124.5" y="-234" clip-path="url(#SVGID_4_)" fill="#1750F8" width="1366" height="4"/>
+					<rect x="-124.5" y="-238" clip-path="url(#SVGID_4_)" fill="#174FF8" width="1366" height="4"/>
+					<rect x="-124.5" y="-242" clip-path="url(#SVGID_4_)" fill="#164EF8" width="1366" height="4"/>
+					<rect x="-124.5" y="-246" clip-path="url(#SVGID_4_)" fill="#154DF9" width="1366" height="4"/>
+					<rect x="-124.5" y="-250" clip-path="url(#SVGID_4_)" fill="#154CF9" width="1366" height="4"/>
+					<rect x="-124.5" y="-254" clip-path="url(#SVGID_4_)" fill="#144BFA" width="1366" height="4"/>
+					<rect x="-124.5" y="-258" clip-path="url(#SVGID_4_)" fill="#134AFA" width="1366" height="4"/>
+					<rect x="-124.5" y="-262" clip-path="url(#SVGID_4_)" fill="#1349FB" width="1366" height="4"/>
+					<rect x="-124.5" y="-266" clip-path="url(#SVGID_4_)" fill="#1248FB" width="1366" height="4"/>
+					<rect x="-124.5" y="-270" clip-path="url(#SVGID_4_)" fill="#1147FC" width="1366" height="4"/>
+					<rect x="-124.5" y="-274" clip-path="url(#SVGID_4_)" fill="#1146FC" width="1366" height="4"/>
+					<rect x="-124.5" y="-278" clip-path="url(#SVGID_4_)" fill="#1045FC" width="1366" height="4"/>
+					<rect x="-124.5" y="-282" clip-path="url(#SVGID_4_)" fill="#0F44FD" width="1366" height="4"/>
+					<rect x="-124.5" y="-286" clip-path="url(#SVGID_4_)" fill="#0F43FD" width="1366" height="4"/>
+					<rect x="-124.5" y="-290" clip-path="url(#SVGID_4_)" fill="#0E42FE" width="1366" height="4"/>
+					<rect x="-124.5" y="-294" clip-path="url(#SVGID_4_)" fill="#0D41FE" width="1366" height="4"/>
+					<rect x="-124.5" y="-298" clip-path="url(#SVGID_4_)" fill="#0D40FF" width="1366" height="4"/>
+					<rect x="-124.5" y="-302" clip-path="url(#SVGID_4_)" fill="#0C3FFF" width="1366" height="4"/>
+					<rect x="-124.5" y="-302" clip-path="url(#SVGID_4_)" fill="#0C3FFF" width="1366" height="0"/>
+				</g>
+			</g>
+		</g>
+		<path fill="#005FCC" d="M177.278,35.283c0.823-0.739,0.796-2.034-0.041-2.759c-3.755-3.247-14.938-11.204-34.385-11.207
+			c-24.435-0.004-74.275-1.373-95.692-0.014c-19.124,1.214-36.851,5.021-40.428,5.822c-0.383,0.086-0.654,0.426-0.654,0.819
 			l-0.001,0.145c0.001,0.636,0.336,1.226,0.886,1.546c3.802,2.213,20.164,10.357,54.99,10.361
-			c40.302,0.006,93.806,1.477,102.507,0.453C171.388,39.521,175.438,37.063,177.585,35.133"/>
-	</defs>
-	<clipPath id="SVGID_2_">
-		<use xlink:href="#SVGID_1_"  overflow="visible"/>
-	</clipPath>
-	<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="558.8066" y1="465.8496" x2="558.8066" y2="-302.1499">
-		<stop  offset="0" style="stop-color:#8BFFAC"/>
-		<stop  offset="1" style="stop-color:#0C3FFF"/>
-	</linearGradient>
-	<rect x="-124.193" y="-302.15" clip-path="url(#SVGID_2_)" fill="url(#SVGID_3_)" width="1366" height="768"/>
-</g>
-<g id="jet">
-	<g id="body">
-		<path fill="#3FA9F5" d="M177.585,35.133c0.823-0.739,0.796-2.034-0.041-2.759c-3.755-3.247-14.938-11.204-34.385-11.207
-			c-24.435-0.004-74.275-1.373-95.692-0.014c-19.124,1.214-36.851,5.021-40.428,5.821c-0.383,0.086-0.654,0.426-0.654,0.82
-			l-0.001,0.145c0.001,0.636,0.336,1.226,0.886,1.546c3.802,2.213,20.164,10.357,54.99,10.361
-			c40.302,0.006,93.806,1.477,102.507,0.453C171.388,39.521,175.438,37.063,177.585,35.133"/>
+			c40.302,0.006,93.806,1.477,102.507,0.453C171.081,39.672,175.131,37.213,177.278,35.283"/>
 		<g>
 			<defs>
-				<path id="SVGID_4_" d="M177.585,35.133c0.823-0.739,0.796-2.034-0.041-2.759c-3.755-3.247-14.938-11.204-34.385-11.207
-					c-24.435-0.004-74.275-1.373-95.692-0.014c-19.124,1.214-36.851,5.021-40.428,5.821c-0.383,0.086-0.654,0.426-0.654,0.82
+				<path id="SVGID_5_" d="M177.278,35.283c0.823-0.739,0.796-2.034-0.041-2.759c-3.755-3.247-14.938-11.204-34.385-11.207
+					c-24.435-0.004-74.275-1.373-95.692-0.014c-19.124,1.214-36.851,5.021-40.428,5.822c-0.383,0.086-0.654,0.426-0.654,0.819
 					l-0.001,0.145c0.001,0.636,0.336,1.226,0.886,1.546c3.802,2.213,20.164,10.357,54.99,10.361
-					c40.302,0.006,93.806,1.477,102.507,0.453C171.388,39.521,175.438,37.063,177.585,35.133"/>
+					c40.302,0.006,93.806,1.477,102.507,0.453C171.081,39.672,175.131,37.213,177.278,35.283"/>
 			</defs>
-			<clipPath id="SVGID_5_">
-				<use xlink:href="#SVGID_4_"  overflow="visible"/>
+			<clipPath id="SVGID_6_">
+				<use xlink:href="#SVGID_5_"  overflow="visible"/>
 			</clipPath>
-			<linearGradient id="SVGID_6_" gradientUnits="userSpaceOnUse" x1="6.437" y1="45.7197" x2="208.6055" y2="45.7197">
+			<linearGradient id="SVGID_7_" gradientUnits="userSpaceOnUse" x1="6.1304" y1="45.8701" x2="208.2988" y2="45.8701">
 				<stop  offset="0" style="stop-color:#84F2A3"/>
 				<stop  offset="1" style="stop-color:#0C3FFF"/>
 			</linearGradient>
-			<path clip-path="url(#SVGID_5_)" fill="url(#SVGID_6_)" d="M207.943,52.913c0.941-0.763,0.865-2.15-0.145-2.956
+			<path clip-path="url(#SVGID_6_)" fill="url(#SVGID_7_)" d="M207.637,53.063c0.941-0.763,0.865-2.15-0.145-2.956
 				c-4.526-3.607-17.948-12.516-40.81-13.193c-28.724-0.854-87.361-4.051-112.49-3.339c-22.438,0.636-43.145,4.096-47.321,4.829
 				c-0.447,0.079-0.754,0.434-0.74,0.854l0.004,0.155c0.023,0.682,0.437,1.323,1.095,1.686c4.547,2.502,24.063,11.79,65.004,13.006
-				C119.916,55.36,182.861,58.793,193.056,58C200.811,57.396,205.485,54.905,207.943,52.913"/>
+				c47.376,1.405,110.321,4.838,120.516,4.045C200.504,57.547,205.179,55.056,207.637,53.063"/>
 		</g>
-		<linearGradient id="SVGID_7_" gradientUnits="userSpaceOnUse" x1="8.7979" y1="24.8892" x2="173.2793" y2="24.8892">
-			<stop  offset="0" style="stop-color:#8BFFAC"/>
-			<stop  offset="1" style="stop-color:#0C3FFF"/>
-		</linearGradient>
-		<path fill="url(#SVGID_7_)" d="M47.466,23.052c21.417-1.36,71.259,0.01,95.692,0.014c13.56,0.002,23.854,3.153,30.121,6.161
-			c-5.647-3.603-15.569-8.057-30.12-8.06c-24.435-0.003-74.275-1.373-95.692-0.014c-16.943,1.076-32.788,4.186-38.669,5.438
-			C17.187,25.536,32.997,23.97,47.466,23.052"/>
 	</g>
-	<g id="wing-rightback">
-		<g id="shadow">
+	<path fill="#003B80" d="M47.159,23.202c21.417-1.36,71.259,0.01,95.692,0.014c13.56,0.002,23.854,3.153,30.121,6.161
+		c-5.647-3.603-15.569-8.057-30.12-8.06c-24.435-0.003-74.275-1.373-95.692-0.014c-16.943,1.076-32.788,4.185-38.669,5.439
+		C16.88,25.687,32.69,24.12,47.159,23.202"/>
+	<g id="wing-rightback_1_">
+		<g id="shadow_1_">
 			<defs>
 				
-					<rect id="SVGID_8_" x="10.656" y="22.647" transform="matrix(-0.9575 -0.2885 0.2885 -0.9575 36.3649 63.211)" width="24.372" height="12.557"/>
+					<rect id="SVGID_8_" x="10.349" y="22.797" transform="matrix(-0.9575 -0.2885 0.2885 -0.9575 35.7213 63.4169)" width="24.372" height="12.557"/>
 			</defs>
 			<clipPath id="SVGID_9_">
 				<use xlink:href="#SVGID_8_"  overflow="visible"/>
 			</clipPath>
-			<path clip-path="url(#SVGID_9_)" fill="#12D8FF" d="M36.319,26.43L14.71,26.734l-5.131,3.969
-				c2.293,1.111,5.877,2.609,10.928,4.07L36.319,26.43z"/>
+			<path clip-path="url(#SVGID_9_)" fill="#12D8FF" d="M36.013,26.58l-21.609,0.305l-5.131,3.969
+				c2.293,1.111,5.877,2.609,10.928,4.07L36.013,26.58z"/>
 		</g>
-		<linearGradient id="SVGID_10_" gradientUnits="userSpaceOnUse" x1="2.1509" y1="26.2856" x2="36.3193" y2="26.2856">
+		<linearGradient id="SVGID_10_" gradientUnits="userSpaceOnUse" x1="1.8442" y1="26.4365" x2="36.0127" y2="26.4365">
 			<stop  offset="0" style="stop-color:#8BFFAC"/>
 			<stop  offset="1" style="stop-color:#0C3FFF"/>
 		</linearGradient>
-		<path fill="url(#SVGID_10_)" d="M34.081,26.992l2.239-0.562c0,0-3.553-0.849-11.146-0.85c-7.594-0.001-23.023,0.845-23.023,0.845
-			L34.081,26.992z"/>
-		<path fill="#D7E7EB" d="M36.319,26.43c0,0-3.066,1.974-11.535,1.973c-7.369-0.002-19.049-0.979-21.96-1.234
-			c-0.383-0.034-0.674-0.354-0.674-0.737l0-0.007L36.319,26.43z"/>
+		<path fill="url(#SVGID_10_)" d="M33.774,27.143l2.239-0.563c0,0-3.553-0.85-11.146-0.85c-7.594-0.002-23.023,0.845-23.023,0.845
+			L33.774,27.143z"/>
+		<path fill="#D7E7EB" d="M36.013,26.58c0,0-3.066,1.974-11.535,1.973c-7.369-0.002-19.049-0.979-21.96-1.233
+			c-0.383-0.034-0.674-0.354-0.674-0.737l0-0.007L36.013,26.58z"/>
 		<g>
 			<defs>
 				
-					<rect id="SVGID_11_" x="2.8" y="21.489" transform="matrix(-0.9575 -0.2885 0.2885 -0.9575 29.8035 57.7584)" width="32.718" height="10.388"/>
+					<rect id="SVGID_11_" x="2.493" y="21.639" transform="matrix(-0.9575 -0.2885 0.2885 -0.9575 29.1598 57.9643)" width="32.718" height="10.388"/>
 			</defs>
 			<clipPath id="SVGID_12_">
 				<use xlink:href="#SVGID_11_"  overflow="visible"/>
 			</clipPath>
-			<linearGradient id="SVGID_13_" gradientUnits="userSpaceOnUse" x1="2.1504" y1="27.4141" x2="36.3193" y2="27.4141">
+			<linearGradient id="SVGID_13_" gradientUnits="userSpaceOnUse" x1="1.8438" y1="27.5645" x2="36.0127" y2="27.5645">
 				<stop  offset="0" style="stop-color:#8BFFAC"/>
 				<stop  offset="1" style="stop-color:#0C3FFF"/>
 			</linearGradient>
-			<path clip-path="url(#SVGID_12_)" fill="url(#SVGID_13_)" d="M36.319,26.43c0,0-3.066,1.974-11.535,1.973
-				c-7.369-0.002-19.049-0.979-21.96-1.234c-0.383-0.034-0.674-0.354-0.674-0.737l0-0.007L36.319,26.43z"/>
+			<path clip-path="url(#SVGID_12_)" fill="url(#SVGID_13_)" d="M36.013,26.58c0,0-3.066,1.974-11.535,1.973
+				c-7.369-0.002-19.049-0.979-21.96-1.233c-0.383-0.034-0.674-0.354-0.674-0.737l0-0.007L36.013,26.58z"/>
 		</g>
 	</g>
-	<g id="backwing">
-		<linearGradient id="SVGID_14_" gradientUnits="userSpaceOnUse" x1="18.231" y1="26.4258" x2="18.231" y2="0.5005">
+	<g id="backwing_1_">
+		<linearGradient id="SVGID_14_" gradientUnits="userSpaceOnUse" x1="17.9243" y1="26.5762" x2="17.9243" y2="0.6514">
 			<stop  offset="0" style="stop-color:#8BFFAC"/>
 			<stop  offset="1" style="stop-color:#0C3FFF"/>
 		</linearGradient>
-		<path fill="url(#SVGID_14_)" d="M34.649,22.334L34.649,22.334c0,0-16.287-12.389-23.685-21.833L1.813,0.5l7.768,25.925
-			C14.258,25.447,23.623,23.641,34.649,22.334"/>
-		<path fill="#FFFFFF" d="M27.658,16.717l-22.368-4.61l1.135,3.787l22.767,2.095C28.702,17.585,28.189,17.161,27.658,16.717"/>
-		<polygon fill="#FFFFFF" points="4.154,8.312 4.751,10.305 19.501,13.684 		"/>
+		<path fill="url(#SVGID_14_)" d="M34.342,22.484L34.342,22.484c0,0-16.287-12.389-23.685-21.833L1.507,0.651l7.768,25.925
+			C13.951,25.598,23.316,23.792,34.342,22.484"/>
+		<path fill="#FFFFFF" d="M27.352,16.867l-22.368-4.61l1.135,3.787l22.767,2.095C28.396,17.736,27.883,17.311,27.352,16.867"/>
+		<polygon fill="#FFFFFF" points="3.848,8.462 4.444,10.456 19.195,13.834 		"/>
 	</g>
-	<linearGradient id="cockpit_1_" gradientUnits="userSpaceOnUse" x1="157.1436" y1="28.3496" x2="173.7656" y2="28.3496">
+	<linearGradient id="cockpit_2_" gradientUnits="userSpaceOnUse" x1="156.8369" y1="28.5" x2="173.459" y2="28.5">
 		<stop  offset="0" style="stop-color:#8BFFAC"/>
 		<stop  offset="1" style="stop-color:#0C3FFF"/>
 	</linearGradient>
-	<polygon id="cockpit" fill="url(#cockpit_1_)" points="173.766,29.85 160.01,29.85 157.144,26.85 168.57,26.85 	"/>
-	<g id="window">
-		<linearGradient id="SVGID_15_" gradientUnits="userSpaceOnUse" x1="144.8066" y1="27.8496" x2="148.8066" y2="27.8496">
+	<polygon id="cockpit_1_" fill="url(#cockpit_2_)" points="173.459,30 159.703,30 156.837,27 168.264,27 	"/>
+	<g id="window_1_">
+		<linearGradient id="SVGID_15_" gradientUnits="userSpaceOnUse" x1="144.5" y1="28" x2="148.5" y2="28">
 			<stop  offset="0" style="stop-color:#8BFFAC"/>
 			<stop  offset="1" style="stop-color:#0C3FFF"/>
 		</linearGradient>
-		<rect x="144.807" y="24.85" fill="url(#SVGID_15_)" width="4" height="6"/>
-		<linearGradient id="SVGID_16_" gradientUnits="userSpaceOnUse" x1="136.8066" y1="28.3496" x2="139.8066" y2="28.3496">
+		<rect x="144.5" y="25" fill="url(#SVGID_15_)" width="4" height="6"/>
+		<linearGradient id="SVGID_16_" gradientUnits="userSpaceOnUse" x1="136.5" y1="28.5" x2="139.5" y2="28.5">
 			<stop  offset="0" style="stop-color:#8BFFAC"/>
 			<stop  offset="1" style="stop-color:#0C3FFF"/>
 		</linearGradient>
-		<rect x="136.807" y="26.85" fill="url(#SVGID_16_)" width="3" height="3"/>
-		<linearGradient id="SVGID_17_" gradientUnits="userSpaceOnUse" x1="128.8066" y1="28.3496" x2="131.8066" y2="28.3496">
+		<rect x="136.5" y="27" fill="url(#SVGID_16_)" width="3" height="3"/>
+		<linearGradient id="SVGID_17_" gradientUnits="userSpaceOnUse" x1="128.5" y1="28.5" x2="131.5" y2="28.5">
 			<stop  offset="0" style="stop-color:#8BFFAC"/>
 			<stop  offset="1" style="stop-color:#0C3FFF"/>
 		</linearGradient>
-		<rect x="128.807" y="26.85" fill="url(#SVGID_17_)" width="3" height="3"/>
-		<linearGradient id="SVGID_18_" gradientUnits="userSpaceOnUse" x1="119.8066" y1="28.3496" x2="122.8066" y2="28.3496">
+		<rect x="128.5" y="27" fill="url(#SVGID_17_)" width="3" height="3"/>
+		<linearGradient id="SVGID_18_" gradientUnits="userSpaceOnUse" x1="119.5" y1="28.5" x2="122.5" y2="28.5">
 			<stop  offset="0" style="stop-color:#8BFFAC"/>
 			<stop  offset="1" style="stop-color:#0C3FFF"/>
 		</linearGradient>
-		<rect x="119.807" y="26.85" fill="url(#SVGID_18_)" width="3" height="3"/>
-		<linearGradient id="SVGID_19_" gradientUnits="userSpaceOnUse" x1="111.8066" y1="28.3496" x2="114.8066" y2="28.3496">
+		<rect x="119.5" y="27" fill="url(#SVGID_18_)" width="3" height="3"/>
+		<linearGradient id="SVGID_19_" gradientUnits="userSpaceOnUse" x1="111.5" y1="28.5" x2="114.5" y2="28.5">
 			<stop  offset="0" style="stop-color:#8BFFAC"/>
 			<stop  offset="1" style="stop-color:#0C3FFF"/>
 		</linearGradient>
-		<rect x="111.807" y="26.85" fill="url(#SVGID_19_)" width="3" height="3"/>
-		<linearGradient id="SVGID_20_" gradientUnits="userSpaceOnUse" x1="94.8066" y1="28.3496" x2="97.8066" y2="28.3496">
+		<rect x="111.5" y="27" fill="url(#SVGID_19_)" width="3" height="3"/>
+		<linearGradient id="SVGID_20_" gradientUnits="userSpaceOnUse" x1="94.5" y1="28.5" x2="97.5" y2="28.5">
 			<stop  offset="0" style="stop-color:#8BFFAC"/>
 			<stop  offset="1" style="stop-color:#0C3FFF"/>
 		</linearGradient>
-		<rect x="94.807" y="26.85" fill="url(#SVGID_20_)" width="3" height="3"/>
-		<linearGradient id="SVGID_21_" gradientUnits="userSpaceOnUse" x1="85.8066" y1="28.3496" x2="88.8066" y2="28.3496">
+		<rect x="94.5" y="27" fill="url(#SVGID_20_)" width="3" height="3"/>
+		<linearGradient id="SVGID_21_" gradientUnits="userSpaceOnUse" x1="85.5" y1="28.5" x2="88.5" y2="28.5">
 			<stop  offset="0" style="stop-color:#8BFFAC"/>
 			<stop  offset="1" style="stop-color:#0C3FFF"/>
 		</linearGradient>
-		<rect x="85.807" y="26.85" fill="url(#SVGID_21_)" width="3" height="3"/>
-		<linearGradient id="SVGID_22_" gradientUnits="userSpaceOnUse" x1="77.8066" y1="28.3496" x2="80.8066" y2="28.3496">
+		<rect x="85.5" y="27" fill="url(#SVGID_21_)" width="3" height="3"/>
+		<linearGradient id="SVGID_22_" gradientUnits="userSpaceOnUse" x1="77.5" y1="28.5" x2="80.5" y2="28.5">
 			<stop  offset="0" style="stop-color:#8BFFAC"/>
 			<stop  offset="1" style="stop-color:#0C3FFF"/>
 		</linearGradient>
-		<rect x="77.807" y="26.85" fill="url(#SVGID_22_)" width="3" height="3"/>
-		<linearGradient id="SVGID_23_" gradientUnits="userSpaceOnUse" x1="68.8066" y1="28.3496" x2="71.8066" y2="28.3496">
+		<rect x="77.5" y="27" fill="url(#SVGID_22_)" width="3" height="3"/>
+		<linearGradient id="SVGID_23_" gradientUnits="userSpaceOnUse" x1="68.5" y1="28.5" x2="71.5" y2="28.5">
 			<stop  offset="0" style="stop-color:#8BFFAC"/>
 			<stop  offset="1" style="stop-color:#0C3FFF"/>
 		</linearGradient>
-		<rect x="68.807" y="26.85" fill="url(#SVGID_23_)" width="3" height="3"/>
-		<linearGradient id="SVGID_24_" gradientUnits="userSpaceOnUse" x1="51.8066" y1="28.3496" x2="54.8066" y2="28.3496">
+		<rect x="68.5" y="27" fill="url(#SVGID_23_)" width="3" height="3"/>
+		<linearGradient id="SVGID_24_" gradientUnits="userSpaceOnUse" x1="51.5" y1="28.5" x2="54.5" y2="28.5">
 			<stop  offset="0" style="stop-color:#8BFFAC"/>
 			<stop  offset="1" style="stop-color:#0C3FFF"/>
 		</linearGradient>
-		<rect x="51.807" y="26.85" fill="url(#SVGID_24_)" width="3" height="3"/>
-		<linearGradient id="SVGID_25_" gradientUnits="userSpaceOnUse" x1="43.8066" y1="28.3496" x2="46.8066" y2="28.3496">
+		<rect x="51.5" y="27" fill="url(#SVGID_24_)" width="3" height="3"/>
+		<linearGradient id="SVGID_25_" gradientUnits="userSpaceOnUse" x1="43.5" y1="28.5" x2="46.5" y2="28.5">
 			<stop  offset="0" style="stop-color:#8BFFAC"/>
 			<stop  offset="1" style="stop-color:#0C3FFF"/>
 		</linearGradient>
-		<rect x="43.807" y="26.85" fill="url(#SVGID_25_)" width="3" height="3"/>
-		<linearGradient id="SVGID_26_" gradientUnits="userSpaceOnUse" x1="102.8066" y1="27.8496" x2="106.8066" y2="27.8496">
+		<rect x="43.5" y="27" fill="url(#SVGID_25_)" width="3" height="3"/>
+		<linearGradient id="SVGID_26_" gradientUnits="userSpaceOnUse" x1="102.5" y1="28" x2="106.5" y2="28">
 			<stop  offset="0" style="stop-color:#8BFFAC"/>
 			<stop  offset="1" style="stop-color:#0C3FFF"/>
 		</linearGradient>
-		<rect x="102.807" y="24.85" fill="url(#SVGID_26_)" width="4" height="6"/>
-		<linearGradient id="SVGID_27_" gradientUnits="userSpaceOnUse" x1="59.8066" y1="27.8496" x2="63.8066" y2="27.8496">
+		<rect x="102.5" y="25" fill="url(#SVGID_26_)" width="4" height="6"/>
+		<linearGradient id="SVGID_27_" gradientUnits="userSpaceOnUse" x1="59.5" y1="28" x2="63.5" y2="28">
 			<stop  offset="0" style="stop-color:#8BFFAC"/>
 			<stop  offset="1" style="stop-color:#0C3FFF"/>
 		</linearGradient>
-		<rect x="59.807" y="24.85" fill="url(#SVGID_27_)" width="4" height="6"/>
+		<rect x="59.5" y="25" fill="url(#SVGID_27_)" width="4" height="6"/>
 	</g>
-	<g id="wing">
-		<linearGradient id="SVGID_28_" gradientUnits="userSpaceOnUse" x1="53.1895" y1="39.6396" x2="133.1006" y2="39.6396">
+	<g id="wing_1_">
+		<linearGradient id="SVGID_28_" gradientUnits="userSpaceOnUse" x1="52.8828" y1="39.79" x2="132.7939" y2="39.79">
 			<stop  offset="0" style="stop-color:#8BFFAC"/>
 			<stop  offset="1" style="stop-color:#0C3FFF"/>
 		</linearGradient>
-		<polygon fill="url(#SVGID_28_)" points="133.101,35.008 71.179,33.297 53.189,45.982 79.108,45.938 		"/>
-		<polygon fill="#0A3CC6" points="127.941,34.865 66.021,32.724 48.03,45.982 73.949,45.938 		"/>
-		<linearGradient id="SVGID_29_" gradientUnits="userSpaceOnUse" x1="46.5186" y1="43.8486" x2="77.5859" y2="43.8486">
+		<polygon fill="url(#SVGID_28_)" points="132.794,35.158 70.873,33.447 52.883,46.133 78.801,46.088 		"/>
+		<polygon fill="#0A3CC6" points="127.635,35.016 65.714,32.874 47.724,46.133 73.643,46.088 		"/>
+		<linearGradient id="SVGID_29_" gradientUnits="userSpaceOnUse" x1="46.2119" y1="43.999" x2="77.2793" y2="43.999">
 			<stop  offset="0" style="stop-color:#8BFFAC"/>
 			<stop  offset="1" style="stop-color:#0C3FFF"/>
 		</linearGradient>
-		<polygon fill="url(#SVGID_29_)" points="77.586,45.141 70.773,41.85 46.519,41.85 73.949,45.848 		"/>
-		<linearGradient id="SVGID_30_" gradientUnits="userSpaceOnUse" x1="60.2339" y1="45.877" x2="60.2339" y2="41.8496">
+		<polygon fill="url(#SVGID_29_)" points="77.279,45.291 70.467,42 46.212,42 73.643,45.998 		"/>
+		<linearGradient id="SVGID_30_" gradientUnits="userSpaceOnUse" x1="59.9272" y1="46.0273" x2="59.9272" y2="42">
 			<stop  offset="0" style="stop-color:#8BFFAC"/>
 			<stop  offset="1" style="stop-color:#0C3FFF"/>
 		</linearGradient>
-		<polygon fill="url(#SVGID_30_)" points="73.949,45.877 70.773,41.85 46.519,41.85 48.134,45.789 		"/>
+		<polygon fill="url(#SVGID_30_)" points="73.643,46.027 70.467,42 46.212,42 47.827,45.939 		"/>
 	</g>
 </g>
 </svg>
