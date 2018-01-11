@@ -348,21 +348,54 @@ function initForIndex(){
 
 
 
+	$.ajax({
+		url: '/common/js/updates.json',
+	}).done(function( data ){
+		var $data = data,
+			$topicsArea = $( '#topicsWrapper' );
 
-	var $slickTarget = $('#topicsWrapper');
-	if( $slickTarget ){
-		$slickTarget.slick({
-			// autoplay: false,
-			autoplay: true,
-			autoplaySpeed: 3500,
-			arrows: false,
-			dots: false,
-			fade: true,
-			slidesToShow: 1,
-			slidesToMove: 1,
-			speed: 250
-		});	
-	}
+		$.each( $data, function( $index, $topic ){
+			var $wrapperDiv = $('<div class="update" />'),
+				$parentHTML = $('<dl />'),
+				$dateHTML,
+				$textHTML,
+				$appendHTML;
+
+			$dateHTML = '<dt class="update_date">' + $topic.date + '</dt>';
+			$textHTML = '<dd class="update_info">' + $topic.text + '</dd>';
+			$parentHTML.html($dateHTML + $textHTML);
+
+			if( $topic.url ){
+				var $linkHTML = $('<a href="' + $topic.url + '"></a>');
+
+				$appendHTML = $linkHTML.append( $parentHTML );;
+			} else {
+				$appendHTML = $parentHTML;
+			}
+
+			$topicsArea.append( $appendHTML[0] );
+		});
+
+
+		var $slickTarget = $('#topicsWrapper');
+		if( $slickTarget ){
+			$slickTarget.slick({
+				// autoplay: false,
+				autoplay: true,
+				autoplaySpeed: 5000,
+				arrows: false,
+				dots: false,
+				fade: true,
+				slidesToShow: 1,
+				slidesToMove: 1,
+				speed: 400
+			});	
+		}
+	}).fail( function( error ){
+		$topicsArea.html('<<div class="update"><dt class="update_date">ERROR! Please reload own browser. To see Donatello company\'s news.</dt></div>')
+		// console.error( error );
+	});
+
 }
 
 
