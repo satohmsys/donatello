@@ -13,6 +13,7 @@ var ejs = require( 'gulp-ejs' ); //EJS
 var rename = require( 'gulp-rename' );
 // var prettify = require( 'gulp-prettify' );
 var csscomb = require( 'gulp-csscomb' );
+var cssmin = require('gulp-cssnano');
 // var php = require( 'gulp-connect-php' );
 //////////////////////////////////////////////////////
 
@@ -77,7 +78,13 @@ gulp.task('sass' , function(){
       path.dirname = path.dirname.replace( sassDir.scss, sassDir.css); // scss→cssに 
       console.log('COMPILE→ ', path);
     })) 
-  .pipe(gulp.dest( dir.top ));
+  .pipe(gulp.dest( dir.top ))
+.pipe( cssmin() )
+  .pipe( rename( function( path ){
+    path.dirname = path.dirname.replace( sassDir.scss, sassDir.css );
+    path.basename += '.min'; 
+  }))
+  .pipe(gulp.dest( dir.top ));  
 
 });
 gulp.task('sassCompileReload' , ['sass'] , function(){

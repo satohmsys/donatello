@@ -14,6 +14,7 @@
 		padding-top: 25px;
 	}
 	
+	svg,
 	polygon,
 	path
 	{
@@ -405,14 +406,15 @@
 	padding-bottom: 75px;
 	position: relative;
 	text-align: center;
+	overflow: hidden;
 	color: #fff;
 	text-shadow: 0 0 10px rgba(#000,0.3);
 	@extend %dullgradation;
 	
 	canvas{
 		overflow: hidden;
-		max-width: 100%;
-		height: auto;
+		// max-width: 100%;
+		// height: auto;
 		position: absolute;
 		top: 0;
 		right: 0;
