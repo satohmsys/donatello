@@ -8,7 +8,7 @@ new window['pjax-api'].Pjax({
         areas: [
             '#fetchContent'
         ],
-        link: 'a:not([target])',
+        link: 'a[href]',
         fetch: {
             timeout: 3000,
             wait: 1000
@@ -23,7 +23,7 @@ new window['pjax-api'].Pjax({
             // logger: ''
         }
     }
-})
+});
 
 
 // var $loadCount = 0,
