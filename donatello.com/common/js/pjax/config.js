@@ -8,7 +8,10 @@ new window['pjax-api'].Pjax({
         areas: [
             '#fetchContent'
         ],
-        link: 'a[href]',
+        link: 'a',
+        filter: function( e ){
+            return el.matches(':not([target])');            
+        },
         fetch: {
             timeout: 3000,
             wait: 1000
