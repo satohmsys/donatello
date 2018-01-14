@@ -727,7 +727,7 @@ a img:focus
     transition: all .3s cubic-bezier(.785, .135, .15, .86) 0s;fill: #8bffac;
 }.isLoaded #loadingAnim
 {
-    top: -10%;height: 0;background-color: #fff;
+    left: -10%;width: 0;
 }.isLoaded #loadingAnim text
 {
     -webkit-transform: rotateY(90deg)                        ;transform: rotateY(90deg);

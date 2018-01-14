@@ -849,9 +849,8 @@ body:before{
 
 .isLoaded{
 	#loadingAnim{
-		top: -10%;
-		height: 0;
-		background-color: lighten( $blue, 50% );
+		left: -10%;
+		width: 0;
 		
 		text{
 			transform: rotateY(90deg);
