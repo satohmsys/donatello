@@ -266,14 +266,14 @@ function initForIndex(){
 		$scrollVal = 0,
 		$count= 1;
 
-		makeRandomCloud();
-		cloudMove();
+	makeRandomCloud();
+	cloudMove();
 
 
 	$w.on( 'scroll', function(){
 		$scrollVal = $w.scrollTop();
 
-		var $p = $wW < 768 ? 4 : 8
+		var $p = $wW < 768 ? 4 : 8;
 		var $posX = $scrollVal / $wW * $p;
 
 		$building_front.css({
@@ -288,8 +288,16 @@ function initForIndex(){
 		$airplane.toggleClass('RtoL');
 	});
 
+	        //  .cloudWrapper{
+         //    width: 100%;
+         //    height: 100%;
+         //    position: absolute;
+         //    top: 0;
+         //    left: 0;
+         // }
+
 	function cloudMove(){
-		var $target = $('.cloud'),
+		var $target = $('.cloudWrapper'),
 			$moveVal = 0.25,
 			$move = ($count++) * $moveVal, 
 			$randNum = Math.floor(Math.random() * 3 + 1),
@@ -309,18 +317,23 @@ function initForIndex(){
 	}
 
 	function makeRandomCloud(){
-		var $target = $('.cloud');
-		$target.find('i').each( function(){
+		var $target = $('.cloud'),
+			$clouds = $target.find('i'),
+			$cloudWrapper = $('<div class="cloudWrapper"></div>');
+
+		$.each($clouds, function(){
 			$(this).removeClass();
 		});
+		for( var i=0; i<3; i++ ){
+			$clone = $target.clone();
+			$clone.css({
+				'width': '100%',
+				'right': 100*i*0.95 + '%',
+				'left': 'auto'
+			});
+		}
 
-		var $clouds = $target.find('i').clone();
-		$target.append( $clouds );	
-
-		//research 	
-		$newClouds = $target.find('i');
-
-		$target.find('i').each( function(){
+		$cloudWrapper.find('i').each( function(){
 			var	$target = $(this),
 				$randomNum = Math.floor( Math.random() * 3 + 1 ),
 				$cls = 'cloud_'+$randomNum,
@@ -334,6 +347,8 @@ function initForIndex(){
 				'z-index': $zindex
 			});
 		});
+
+		$cloudWrapper.appendTo( '#city' );
 	}
 
 	function cloneCloud( $target ){
