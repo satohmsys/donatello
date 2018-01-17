@@ -350,7 +350,7 @@ a img:focus
     }.siteHeader_nav:after
     {font-family: 'URW DIN Medium';font-size: 30vw;position: absolute;top: -100%;display: block;
 
-        content: 'DEVELOP \A FOR \A THE \A FUTURE';-webkit-transform: translateY(-50%) translateX(10px);-ms-transform: translateY(-50%) translateX(10px);transform: translateY(-50%) translateX(10px);white-space: pre;opacity: 0;color: #0831ff;
+        content: 'DEVELOP \A FOR \A THE \A FUTURE';-webkit-transform: translateY(-50%) translateX(30px);-ms-transform: translateY(-50%) translateX(30px);transform: translateY(-50%) translateX(30px);white-space: pre;opacity: 0;color: #0831ff;
     }.siteHeader_nav li
     {font-size: 16px;font-weight: bold;position: relative;z-index: -10;
 
@@ -368,7 +368,7 @@ a img:focus
     {
         position: relative;z-index: 10;
     }.navOpen .siteHeader_nav li
-    {transition: all .3s ease .85s;-webkit-transform: scaleX(1) translateX(0);-ms-transform: scaleX(1) translateX(0);transform: scaleX(1) translateX(0);
+    {transition: all .3s ease .7s;-webkit-transform: scaleX(1) translateX(0);-ms-transform: scaleX(1) translateX(0);transform: scaleX(1) translateX(0);
 
         opacity: 1;
     }.navOpen .siteHeader_nav li a
@@ -377,7 +377,7 @@ a img:focus
         pointer-events: auto;
     }.navOpen .siteHeader_nav:after
     {
-        top: 50%;transition-delay: .7s;transition-timing-function: ease;transition-duration: .4s;transition-property: opacity, -webkit-transform;transition-property: opacity, transform;transition-property: opacity, transform, -webkit-transform;-webkit-transform: translateY(-50%) translateX(0px);-ms-transform: translateY(-50%) translateX(0px);transform: translateY(-50%) translateX(0px);opacity: 1;
+        top: 50%;transition-delay: .5s;transition-timing-function: ease;transition-duration: .3s;transition-property: opacity, -webkit-transform;transition-property: opacity, transform;transition-property: opacity, transform, -webkit-transform;-webkit-transform: translateY(-50%) translateX(0px);-ms-transform: translateY(-50%) translateX(0px);transform: translateY(-50%) translateX(0px);opacity: 1;
     }.siteHeader_nav .nav
     {z-index: -1;display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display:         flex;flex-direction: column;
 
@@ -1031,6 +1031,10 @@ a img:focus
 }.index .mainvisual .airplane:before
 {
     padding-top: 26.11111%;background-image: url(../img/mainvisual-jet.svg);
+}.index .mainvisual .cloudWrapper
+{position: absolute;top: 0;left: 0;
+
+    width: 100%;height: 100%;
 }.index .mainvisual .cloud
 {top: 60px;right: 0;left: 0;
 
