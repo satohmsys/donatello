@@ -291,7 +291,7 @@ function initForIndex(){
 
 	function cloudMove(){
 		var $target = $('.cloudWrapper'),
-			$moveVal = 0.25,
+			$moveVal = 0.2,
 			$move = ($count++) * $moveVal, 
 			$randNum = Math.floor(Math.random() * 3 + 1),
 			$moveVal = $move;
