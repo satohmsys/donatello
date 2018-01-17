@@ -354,7 +354,7 @@ a img:focus
     }.siteHeader_nav li
     {font-size: 16px;font-weight: bold;position: relative;z-index: -10;
 
-        display: block;-webkit-transform: scaleX(1.2) translateX(30px);-ms-transform: scaleX(1.2) translateX(30px);transform: scaleX(1.2) translateX(30px);opacity: 0;
+        display: block;-webkit-transform: scaleX(1.2) translateX(20px);-ms-transform: scaleX(1.2) translateX(20px);transform: scaleX(1.2) translateX(20px);opacity: 0;
     }.siteHeader_nav li:not(:last-child)
     {
         margin-bottom: 30px;
