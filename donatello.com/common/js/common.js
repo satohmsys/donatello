@@ -264,6 +264,7 @@ function initForIndex(){
 		$areaW = $area.outerWidth(),
 		$areaH = $area.outerHeight(),
 		$scrollVal = 0,
+		$multiple = 3,
 		$count= 1;
 
 	makeRandomCloud();
@@ -288,14 +289,6 @@ function initForIndex(){
 		$airplane.toggleClass('RtoL');
 	});
 
-	        //  .cloudWrapper{
-         //    width: 100%;
-         //    height: 100%;
-         //    position: absolute;
-         //    top: 0;
-         //    left: 0;
-         // }
-
 	function cloudMove(){
 		var $target = $('.cloudWrapper'),
 			$moveVal = 0.25,
@@ -309,7 +302,7 @@ function initForIndex(){
 	
 		requestAnimationFrame( cloudMove );
 		
-		if( $areaW * 1.35 < $move ){
+		if( $areaW * $multiple < $move ){
 			$move = 0;
 			$count = 0;
 			cloneCloud( $target );
@@ -324,16 +317,17 @@ function initForIndex(){
 		$.each($clouds, function(){
 			$(this).removeClass();
 		});
-		for( var i=0; i<3; i++ ){
+		for( var i=0; i<$multiple; i++ ){
 			$clone = $target.clone();
 			$clone.css({
 				'width': '100%',
 				'right': 100*i*0.95 + '%',
 				'left': 'auto'
 			});
+			$cloudWrapper.append( $clone );
 		}
 
-		$cloudWrapper.find('i').each( function(){
+		$.each( $cloudWrapper.find('i'), function(){
 			var	$target = $(this),
 				$randomNum = Math.floor( Math.random() * 3 + 1 ),
 				$cls = 'cloud_'+$randomNum,
@@ -356,8 +350,8 @@ function initForIndex(){
 		
 		$cloud.attr({'style': ''});
 		$target.remove();
-		$area.append( $cloud ).find('.clouds').css({
-			'translateX' : '-100%'
+		$area.append( $cloud ).find( $target ).css({
+			'right' : '105%'
 		});
 	}
 
