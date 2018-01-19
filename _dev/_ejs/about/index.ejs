@@ -16,12 +16,12 @@ $scripts=null;
 <head>
   <%- include($path + '_inc/_head') %>
 </head>
-<body class="about">
+<body id="barba-wrapper" class="about">
    <%- $parts.loadingAnim %>   
    <!-- ***** header  -->
    <%- include( $path + '_inc/_gnav', {isChild: true}) %>
    <!-- ///// header  -->
-   <div id="fetchContent" data-content="about">
+   <div id="fetchContent" class="barba-container" data-content="about">
       <!-- ***** mainvisual -->
       <section class="headingArea">
          <div class="wrap">

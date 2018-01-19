@@ -228,20 +228,22 @@ $backtotop.on('click', function(){
 * page scripts
 */
 
-var $body = $('body'),
-	$pageType = $body.attr('class');
+var $switch = function (){
+	var $body = $('body'),
+		$pageType = $body.attr('class');
 
-switch( $pageType ){
-	case 'index' :
-		initForIndex();
-		break;
-	case 'about' :
-		break;
-	case 'works' :
-		initForWorks();
-		break;
-	default: 
-		break;		
+	switch( $pageType ){
+		case 'index' :
+			initForIndex();
+			break;
+		case 'about' :
+			break;
+		case 'works' :
+			initForWorks();
+			break;
+		default: 
+			break;		
+	}
 }
 
 
@@ -478,6 +480,43 @@ function initForWorks(){
 	}
 }
 
+
+
+Barba.Pjax.start();
+
+Barba.Dispatcher.on('transitionCompleted' , function() {
+});
+
+Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, container, newPageRawHTML) {
+    var head = document.head;
+    var newPageRawHead = newPageRawHTML.match(/<head[^>]*>([\s\S.]*)<\/head>/i)[0];
+    var newPageHead = document.createElement('head');
+    newPageHead.innerHTML = newPageRawHead;
+ 
+
+	$switch;
+
+    var removeHeadTags = [ 
+        "meta[name='keywords']"
+        ,"meta[name='description']"
+        ,"meta[property^='og']"
+        ,"meta[name^='twitter']"
+        ,"meta[itemprop]"
+        ,"link[itemprop]"
+        ,"link[rel='prev']"
+        ,"link[rel='next']"
+        ,"link[rel='canonical']"
+    ].join(',');
+    var headTags = head.querySelectorAll(removeHeadTags)
+    for(var i = 0; i < headTags.length; i++ ){
+        head.removeChild(headTags[i]);
+    }
+    var newHeadTags = newPageHead.querySelectorAll(removeHeadTags)
+ 
+    for(var i = 0; i < newHeadTags.length; i++ ){
+        head.appendChild(newHeadTags[i]);
+    }
+});
 
 
 

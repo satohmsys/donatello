@@ -18,12 +18,12 @@ $meta.description = 'ディスクリプション';
 <head>
   <%- include($path + '_inc/_head') %>
 </head>
-<body class="inquiry">
+<body id="barba-wrapper" class="inquiry">
    <%- $parts.loadingAnim %>   
    <!-- ***** header  -->
    <%- include( $path + '_inc/_gnav', {isChild: true}) %>
    <!-- ///// header  -->
-   <div id="fetchContent" data-content="inquiry">
+   <div id="fetchContent" class="barba-container" data-content="inquiry">
       <!-- ***** mainvisual -->
       <%- include( $path + '_inc/_page-headingArea', {copy:{en: 'INQUIRY', ja: 'お問い合わせ'} }) %>
       <!-- ///// mainvisual  -->    

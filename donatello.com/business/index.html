@@ -12,8 +12,8 @@
       <meta http-equiv="X-UA-Compatible" content="IE=Edge"> 
       <meta name="viewport" content="width=device-width,user-scalable=yes,initial-scale=1"> 
       <!-- ***** my style -->
-      <link rel="stylesheet" type="text/css" href="../common/css/nomalize.css">
-     <link rel="stylesheet" type="text/css" href="../common/css/style.min.css">      
+      <link rel="stylesheet" type="text/css" href="/common/css/nomalize.css">
+     <link rel="stylesheet" type="text/css" href="/common/css/style.min.css">      
       
       <!-- ///// my style -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
@@ -37,7 +37,7 @@
       <meta name="twitter:image" content="">
       <link rel="shortcut icon" href="../common/img/favicon.png"> 
 </head>
-<body class="business">
+<body id="barba-wrapper" class="business">
    <div id="loadingAnim"><svg version="1.1" id="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="90.302px" height="100px" viewBox="0 0 90.302 100" xml:space="preserve"><circle class="loadingAnim_circle" cx="0" cy="0" r="5"><animateMotion dur="2s" repeatCount="indefinite"><mpath xlink:href="#targetPath"></mpath></animateMotion></circle><path id="targetPath" class="loadingAnim_path" d="M45.151,2.91c-2.152,0-4.298,0.466-5.924,1.41L8.552,22.028c-3.258,1.881-5.925,6.499-5.925,10.261v35.423 c0,3.762,2.667,8.38,5.925,10.261l30.674,17.709c1.626,0.943, .772,1.408,5.924,1.408c2.146,0,4.293-0.465,5.924-1.408 l30.67-17.709c3.263-1.881,5.93-6.499,5.93-10.261V32.289c0-.762-2.667-8.38-5.93-10.261L51.075,4.319 C49.444,3.375,47.296,2.91,45.151,2.91L45.151,2.91z"/><text class="loadnigAnim_text" x="46.5" y="55" text-anchor="middle">LOADING..</text></svg></div>   
    <!-- ***** header  -->
    <header class="siteHeader">
@@ -48,6 +48,7 @@
       <p class="siteHeader_logo">
          <a href="../">
             <svg version="1.1" id="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="150px" height="20px" viewBox="0 0 150 20" xml:space="preserve">
+               <g>
                   <g>
                      <path d="M14.2,4.7l-5.1-3c-0.8-0.5-1.8-0.5-2.6,0l-5.1,3C0.5,5.1,0,6,0,6.9v5.9c0,0.9,0.5,1.8,1.3,2.3l5.1,3
                         c0.4,0.2,0.9,0.3,1.3,0.3c0.5,0,0.9-0.1,1.3-0.3l5.1-3c0.8-0.5,1.3-1.4,1.3-2.3V6.9C15.5,6,15,5.1,14.2,4.7z M12.1,12.4l-4.3,2.5
@@ -79,7 +80,8 @@
                      <path d="M126.7,18.6c-0.5,0-0.9-0.1-1.3-0.3l-5.1-3c-0.8-0.5-1.3-1.4-1.3-2.3V7c0-0.9,0.5-1.8,1.3-2.3l2.4-1.4
                         c0.2-0.1,0.6-0.1,0.7,0.2l1.2,2.1c0.1,0.2,0.1,0.6-0.2,0.7l-1.9,1.1v5l4.3,2.5l4.7-2.7c0.2-0.1,0.6-0.1,0.7,0.2l1.2,2.1
                         c0.1,0.2,0.1,0.6-0.2,0.7l-5.1,3C127.6,18.5,127.2,18.6,126.7,18.6z"/>
-                  </g>
+                  </g>               
+               </g>
             </svg>
          </a>
       </p>
@@ -95,7 +97,7 @@
    </div>
 </header>
    <!-- ///// header  -->
-   <div id="fetchContent" data-content="business">
+   <div id="fetchContent" class="barba-container" data-content="business">
       <!-- ***** mainvisual -->
       <section class="headingArea">
    <div class="wrap">
@@ -463,6 +465,7 @@ src="https://code.jquery.com/jquery-3.2.1.min.js"
 integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
 crossorigin="anonymous"></script>
 
+<script type="text/javascript" src="/common/js/pjax/barba.min.js"></script>
   
 <script type="text/javascript" src="../common/js/common.js"></script>
    
