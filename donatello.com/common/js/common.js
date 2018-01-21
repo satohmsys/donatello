@@ -363,6 +363,7 @@ function initForIndex(){
 		var $data = data,
 			$topicsArea = $( '#topicsWrapper' );
 
+		// $data.each( function( $index, $topic ){
 		$.each( $data, function( $index, $topic ){
 			var $wrapperDiv = $('<div class="update" />'),
 				$parentHTML = $('<dl />'),
