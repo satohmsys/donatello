@@ -18,16 +18,16 @@ $w.on( 'load scroll resize' , function( e ){
 	if(! $effectTarget.length ) return;
 	$distance = $scrollOffset + $scrollVal;
 
-	$.each( $effectTarget, function( e ){
-		var $self = $( this ),
-			$self_offsetTop = $self.offset().top;
+	// $.each( $effectTarget, function( e ){
+	// 	var $self = $( this ),
+	// 		$self_offsetTop = $self.offset().top;
 
-		if( $self_offsetTop < $distance ){
-			$self.css({
-				'transition-delay' : $self.data('delay') + 's'
-			}).addClass( 'doEffect' );
-		}
-	});
+	// 	if( $self_offsetTop < $distance ){
+	// 		$self.css({
+	// 			'transition-delay' : $self.data('delay') + 's'
+	// 		}).addClass( 'doEffect' );
+	// 	}
+	// });
 });
 
 
