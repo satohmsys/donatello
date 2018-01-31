@@ -15,19 +15,7 @@ $w.on( 'load scroll resize' , function( e ){
 	$scrollVal = $w.scrollTop();
 	$wW = $w.width();
 
-	if(! $effectTarget.length ) return;
-	$distance = $scrollOffset + $scrollVal;
 
-	// $.each( $effectTarget, function( e ){
-	// 	var $self = $( this ),
-	// 		$self_offsetTop = $self.offset().top;
-
-	// 	if( $self_offsetTop < $distance ){
-	// 		$self.css({
-	// 			'transition-delay' : $self.data('delay') + 's'
-	// 		}).addClass( 'doEffect' );
-	// 	}
-	// });
 });
 
 
@@ -228,17 +216,17 @@ $backtotop.on('click', function(){
 * page scripts
 */
 
-var $body = $('body'),
-	$pageType = $body.attr('class');
-
-switch( $pageType ){
+switch( $('body').attr('class') ){
 	case 'index' :
-		initForIndex();
+		forIndex();
 		break;
 	case 'about' :
 		break;
 	case 'works' :
-		initForWorks();
+		forWorks();
+		break;
+	case 'inquiry' :
+		forInquiry();
 		break;
 	default: 
 		break;		
@@ -249,7 +237,7 @@ switch( $pageType ){
 * index
 */
 
-function initForIndex(){
+function forIndex(){
 
 	///////// main visual
 	var $buildings = $('.building'),
@@ -413,7 +401,7 @@ function initForIndex(){
 * works
 */
 
-function initForWorks(){
+function forWorks(){
 	var $slickTarget = $('.worksContents'),
 		$slickAsNav = $('.worksNav .wrap'),
 		$hash = location.hash.substr( 1, location.hash.length );
@@ -479,6 +467,21 @@ function initForWorks(){
 	}
 }
 
+function forInquiry(){
+	if(! $effectTarget.length ) return;
+	$distance = $scrollOffset + $scrollVal;
+
+	$.each( $effectTarget, function( e ){
+		var $self = $( this ),
+			$self_offsetTop = $self.offset().top;
+
+		if( $self_offsetTop < $distance ){
+			$self.css({
+				'transition-delay' : $self.data('delay') + 's'
+			}).addClass( 'doEffect' );
+		}
+	});	
+}
 
 
 
