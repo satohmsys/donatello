@@ -15,7 +15,19 @@ $w.on( 'load scroll resize' , function( e ){
 	$scrollVal = $w.scrollTop();
 	$wW = $w.width();
 
+	if(! $effectTarget.length ) return;
+	$distance = $scrollOffset + $scrollVal;
 
+	$.each( $effectTarget, function( e ){
+		var $self = $( this ),
+			$self_offsetTop = $self.offset().top;
+
+		if( $self_offsetTop < $distance ){
+			$self.css({
+				'transition-delay' : $self.data('delay') + 's'
+			}).addClass( 'doEffect' );
+		}
+	});		
 });
 
 
@@ -224,9 +236,6 @@ switch( $('body').attr('class') ){
 		break;
 	case 'works' :
 		forWorks();
-		break;
-	case 'inquiry' :
-		forInquiry();
 		break;
 	default: 
 		break;		
@@ -466,23 +475,6 @@ function forWorks(){
 		});
 	}
 }
-
-function forInquiry(){
-	if(! $effectTarget.length ) return;
-	$distance = $scrollOffset + $scrollVal;
-
-	$.each( $effectTarget, function( e ){
-		var $self = $( this ),
-			$self_offsetTop = $self.offset().top;
-
-		if( $self_offsetTop < $distance ){
-			$self.css({
-				'transition-delay' : $self.data('delay') + 's'
-			}).addClass( 'doEffect' );
-		}
-	});	
-}
-
 
 
 
