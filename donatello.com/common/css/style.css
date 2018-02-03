@@ -1170,10 +1170,10 @@ a img:focus
     -webkit-transform: rotateX(0deg)                                    ;transform: rotateX(0deg);
 }.index.isLoaded.loadingAnimEnd .mainvisual_copy_en span
 {
-    transition-delay: 1.35s;
+    transition-delay: .55s;
 }.index.isLoaded.loadingAnimEnd .mainvisual_copy_ja
 {
-    transition-delay: 1.55s;
+    transition-delay: .75s;
 }.index .topics
 {
     padding-top: 10px;padding-bottom: 10px;
