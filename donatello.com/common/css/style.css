@@ -665,6 +665,14 @@ a img:focus
 .button.-disabled > button
 {
     padding: 0;color: #ddd;
+}.mailAddress
+{font-family: 'URW DIN Medium';
+
+    margin-top: 1em;text-align: center;color: #666;
+}.textMailAddress
+{text-decoration: underline;
+
+    color: #666;
 }.styleTable
 {
     width: 100%;border-collapse: collapse;
@@ -1193,8 +1201,9 @@ a img:focus
 {
     margin-left: 0;
 }.index .topics .slick-slide
-{
-    transition: all .3s cubic-bezier(.785, .135, .15, .86) 0s;
+{transition: all .3s cubic-bezier(.785, .135, .15, .86) 0s;
+
+    outline: none;
 }.index .topics .slick-slide.slick-current
 {
     -webkit-transform: translateX(0)                                ;-ms-transform: translateX(0);transform: translateX(0);
@@ -1570,7 +1579,12 @@ a img:focus
     border-bottom-color: #0c3fff;
 }.works .worksNav_tab
 {
-    line-height: 1;position: relative;display: block;box-sizing: border-box;margin-right: 4px;padding-top: 15px;padding-right: 10px;padding-bottom: 15px;padding-left: 10px;transition: all .3s cubic-bezier(.785, .135, .15, .86) 0s;transition: all .5s ease 0s;text-align: center;border-top: solid 1px #ccc;border-right: solid 1px #ccc;background-color: #fff;
+    line-height: 1;position: relative;display: block;box-sizing: border-box;margin-right: 4px;padding-top: 15px;padding-right: 10px;padding-bottom: 15px;padding-left: 10px;transition: all .3s cubic-bezier(.785, .135, .15, .86) 0s;transition: all .5s ease 0s;transition: all .5s ease 0s;text-align: center;border-top: solid 1px #ccc;border-right: solid 1px #ccc;background-color: #fff;
+}.works .worksNav_tab:hover,
+.works .worksNav_tab:active,
+.works .worksNav_tab:focus
+{
+    cursor: pointer;
 }.worksNav .wrap:not(.slick-slider) .worksNav_tab
 {
     display: table-cell;vertical-align: bottom;
@@ -1614,6 +1628,9 @@ a img:focus
     {
         width: 1px;height: 100%;
     }
+}.works .worksNav.-bottom .worksNav_tab:after
+{
+    border-top: none;border-bottom: solid 1px #0c3fff;
 }.works .worksNav_tab_en
 {font-family: 'URW DIN Medium';font-size: 1.2125em;
 

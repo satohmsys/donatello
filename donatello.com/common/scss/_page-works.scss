@@ -64,10 +64,16 @@
 		border-right: solid 1px $border;
 		text-align: center;
 		background-color: #fff;
+		
+		@include mouseOver(){
+			cursor: pointer;
+		}
+
 		@at-root .worksNav .wrap:not( .slick-slider ) .worksNav_tab{
 			display: table-cell;
 			vertical-align: bottom;
 		}
+
 
 		@include break( sp ){
 			width: 100%!important;
@@ -99,7 +105,7 @@
 			transition : transition();		
 			border-top: solid 1px $blue;
 
-			@include break( sp ){
+			@include break( sp ) {
 				width: 1px;
 				height: 0%;
 				left: -1px;
@@ -116,6 +122,15 @@
 				}						
 			}
 		}
+	}
+
+	&.-bottom .worksNav_tab {
+
+		&:after{
+			border-top: none;
+			border-bottom: solid 1px $blue;
+		}		
+
 	}
 
 

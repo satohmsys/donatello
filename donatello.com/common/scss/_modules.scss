@@ -713,6 +713,17 @@ body:before{
 
 }
 
+.mailAddress{
+	margin-top: 1em;
+	text-align: center;
+	font-family: $din_medium;
+	color: $gray_primary;
+}
+.textMailAddress{
+	color: $gray_primary;	
+	text-decoration: underline;
+}
+
 
 
 ////////////////////

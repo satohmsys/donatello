@@ -145,60 +145,7 @@ if( $cP ){
 		}
 	});
 });
-	// ctx.fill( path2d );
-	// ctx.globalCompositeOperation = 'source-over';
-	// ctx.save();
 }
-// if( $mainvisual ){
-// 	let $ctx = $mainvisual[0].getContext('2d'),
-// 		$canvas_width = $wW,
-// 		$canvas_height = $wH,
-// 		// $srcs = {
-// 		// 	cityFront: './common/img/mainvisual-city-front.svg', 
-// 		// 	cityBack: './common/img/mainvisual-city-behind.svg', 
-// 		// 	cloud1: './common/img/mainvisual-cloud1.svg',
-// 		// 	cloud2: './common/img/mainvisual-cloud2.svg',
-// 		// 	cloud3: './common/img/mainvisual-cloud3.svg'
-// 		// },
-// 		$srcs = [
-// 			'./common/img/mainvisual-city-front.svg', 
-// 			'./common/img/mainvisual-city-behind.svg', 
-// 			'./common/img/mainvisual-cloud-1.svg',
-// 			'./common/img/mainvisual-cloud-2.svg',
-// 			'./common/img/mainvisual-cloud-3.svg'
-// 		],		
-// 		$images = new Array(),
-// 		$length = $srcs.length,
-// 		$count = 0,
-// 		$i = 0;
-
-
-// 		canvasReset();
-// 		loadImg();
-
-// 		function canvasReset(){
-// 			$ctx.clearRect( 0,0,$canvas_width, $canvas_height );
-// 		}
-
-// 		function loadImg(){
-// 			for( var i=0; i<$length; i++){
-// 				$images[i] = new Image();
-// 				$images[i].onload = handleLoad;
-// 				$images[i].src = $srcs[i];
-// 			}
-
-// 			function handleLoad(){
-// 				console.log( $count )
-// 				if( ++$count == $length ) draw();
-// 			}
-// 		}
-
-
-// 		function draw(){
-// 			console.log( $images)
-// 			$ctx.drawImage( $images[0], 0, 0, 1449, 476 );
-// 		}
-// }
 
 
 
@@ -399,8 +346,8 @@ function forIndex(){
 			});	
 		}
 	}).fail( function( error ){
-		$topicsArea.html('<<div class="update"><dt class="update_date">ERROR! Please reload own browser. To see Donatello company\'s news.</dt></div>')
-		// console.error( error );
+		// var $topicsArea = $( '#topicsWrapper' );
+		// $topicsArea.html('<div class="update"><dt class="update_date">ERROR! Please reload own browser. To see Donatello company\'s news.</dt></div>')
 	});
 
 }
