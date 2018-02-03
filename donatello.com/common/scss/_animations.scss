@@ -23,3 +23,19 @@
 		right: -50%;
 	}
 }
+
+
+@keyframes stroke {
+	0% {
+		stroke-dashoffset: 0px;
+		stroke-dasharray: 290px;		
+	}
+	50%{
+		stroke-dashoffset: 290px;
+	}
+	100% {
+		stroke-dashoffset: 580px;
+		stroke-dasharray: 290px;		
+	}
+
+}

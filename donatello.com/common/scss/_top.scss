@@ -392,6 +392,9 @@
 			color: $gray_primary;
 			font-family: $din_medium;
 			font-size: 1.1em;
+			@include break( sp ){
+				margin-right: 11px;
+			}
 		}
 
 		&_info{
@@ -400,8 +403,7 @@
 
 	}	
 
-	.slick-slide{
-		outline: none;		
+	.slick-slide{	
 		transition: transition();
 		// transform: translateX(10px);
 	}

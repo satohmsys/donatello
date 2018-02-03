@@ -184,7 +184,7 @@
 				opacity: 0;
 				position: relative;
 				z-index: -10;
-				transform: scaleX(1.2) translateX(20px);
+				transform: translateX(20px);
 				font-size: 16px;
 				font-weight: bold;
 				
@@ -208,7 +208,7 @@
 				}
 				li{
 					opacity: 1;
-					transform: scaleX(1) translateX(0);
+					transform: translateX(0);
 					transition: all 0.3s ease 0.7s;
 				
 					// @for $i from 1 through 7 {
@@ -372,16 +372,21 @@ body:after{
 	{
 		.navToggle_hitArea_line{
 			&.-lineTop{
-				transform-origin: 50%;
-				transform: translateY(9px) rotate(45deg);
+				stroke-dasharray: 34px;
+				stroke-dashoffset: 34px;
+				// transform-origin: 50%;
+				// transform: rotate(-45deg) translateY(7px);
 			}
 			&.-lineButtom{
-				transform-origin: 50%;
-				transform: translateY(-9px) rotate(135deg);
+				stroke-dasharray: 34px;
+				stroke-dashoffset: 34px;
+				// transform-origin: 50%;
+				// transform: rotate( 135deg) translateY(-10px);
 			}
 
 			&.-lineCenter{
-				opacity: 0;
+				stroke-width: 4px;
+
 			}
 		}
 		.navToggle_oct{
@@ -827,7 +832,7 @@ body:before{
 		width: 100px;
 		height: 100px;
 		fill: none;
-		transition: transition();		
+		// transition: transition();		
 	}
 
 	text{
@@ -848,11 +853,11 @@ body:before{
 		stroke: #fff;
 		stroke-width: 1px;
 		transition: transition();
-		stroke-dashoffset: 290px;
+		// animation: stroke 5s ease-in 0s infinite normal both;
 	}
 
 	.loadingAnim_circle{
-		transition: transition();		
+		// transition: transition();		
 		fill : $green;
 	}
 }

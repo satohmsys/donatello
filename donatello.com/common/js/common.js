@@ -44,7 +44,7 @@ $w.on( 'load', function(){
 		$('body').addClass( 'isLoaded' );
 		$loadingAnim.on( 'transitionend', function(){
 			$('body').addClass( 'loadingAnimEnd' );
-				// $loadingAnim.remove();
+				$loadingAnim.remove();
 		});
 	}, 250 )
 });
