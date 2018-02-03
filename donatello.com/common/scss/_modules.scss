@@ -846,6 +846,7 @@ body:before{
 		transition: transition();	
 		fill: #fff;
 		stroke: 1px;
+		animation: loadingtext 3s ease 0s infinite normal both;		
 	}
 	
 	.loadingAnim_path{
@@ -853,7 +854,7 @@ body:before{
 		stroke: #fff;
 		stroke-width: 1px;
 		transition: transition();
-		// animation: stroke 5s ease-in 0s infinite normal both;
+		animation: loadingstroke 3s ease 0s infinite normal both;
 	}
 
 	.loadingAnim_circle{

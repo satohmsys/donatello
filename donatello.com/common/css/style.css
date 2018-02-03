@@ -49,29 +49,53 @@
     {
         right: -50%;
     }
-}@-webkit-keyframes stroke
+}@-webkit-keyframes loadingstroke
 {
     0%
     {
-        stroke-dashoffset: 0;stroke-dasharray: 290px;
+        stroke-dashoffset: 0;stroke-dasharray: 290px;stroke: #8bffac;
     }50%
     {
-        stroke-dashoffset: 290px;
+        stroke-dashoffset: 290px;stroke: #597bff;
     }100%
     {
-        stroke-dashoffset: 580px;stroke-dasharray: 290px;
+        stroke-dashoffset: 580px;stroke-dasharray: 290px;stroke: #8bffac;
     }
-}@keyframes stroke
+}@keyframes loadingstroke
 {
     0%
     {
-        stroke-dashoffset: 0;stroke-dasharray: 290px;
+        stroke-dashoffset: 0;stroke-dasharray: 290px;stroke: #8bffac;
     }50%
     {
-        stroke-dashoffset: 290px;
+        stroke-dashoffset: 290px;stroke: #597bff;
     }100%
     {
-        stroke-dashoffset: 580px;stroke-dasharray: 290px;
+        stroke-dashoffset: 580px;stroke-dasharray: 290px;stroke: #8bffac;
+    }
+}@-webkit-keyframes loadingtext
+{
+    0%
+    {
+        fill: #8bffac;
+    }50%
+    {
+        fill: #597bff;
+    }100%
+    {
+        fill: #8bffac;
+    }
+}@keyframes loadingtext
+{
+    0%
+    {
+        fill: #8bffac;
+    }50%
+    {
+        fill: #597bff;
+    }100%
+    {
+        fill: #8bffac;
     }
 }::-moz-selection
 {
@@ -750,10 +774,10 @@ a img:focus
     width: 100px;height: 100px;fill: none;
 }#loadingAnim text
 {font-family: 'URW DIN Medium';
-    line-height: 1;position: relative;overflow: hidden;height: 1em;transition: all .3s cubic-bezier(.785, .135, .15, .86) 0s;text-align: center;letter-spacing: .015em;fill: #fff;stroke: 1px;
+    line-height: 1;position: relative;overflow: hidden;height: 1em;transition: all .3s cubic-bezier(.785, .135, .15, .86) 0s;-webkit-animation: loadingtext 3s ease 0s infinite normal both;animation: loadingtext 3s ease 0s infinite normal both;text-align: center;letter-spacing: .015em;fill: #fff;stroke: 1px;
 }#loadingAnim .loadingAnim_path
 {
-    display: block;transition: all .3s cubic-bezier(.785, .135, .15, .86) 0s;stroke: #fff;stroke-width: 1px;
+    display: block;transition: all .3s cubic-bezier(.785, .135, .15, .86) 0s;-webkit-animation: loadingstroke 3s ease 0s infinite normal both;animation: loadingstroke 3s ease 0s infinite normal both;stroke: #fff;stroke-width: 1px;
 }#loadingAnim .loadingAnim_circle
 {
     fill: #8bffac;

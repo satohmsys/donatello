@@ -25,17 +25,31 @@
 }
 
 
-@keyframes stroke {
+@keyframes loadingstroke {
 	0% {
 		stroke-dashoffset: 0px;
-		stroke-dasharray: 290px;		
+		stroke-dasharray: 290px;	
+		stroke: $green;	
 	}
 	50%{
 		stroke-dashoffset: 290px;
+		stroke: lighten( $blue, 15% );	
 	}
 	100% {
 		stroke-dashoffset: 580px;
-		stroke-dasharray: 290px;		
-	}
+		stroke-dasharray: 290px;	
+		stroke: $green;	
 
+	}
+}
+@keyframes loadingtext {
+	0% {
+		fill: $green;	
+	}
+	50%{
+		fill: lighten( $blue, 15% );	
+	}
+	100% {
+		fill: $green;	
+	}
 }
